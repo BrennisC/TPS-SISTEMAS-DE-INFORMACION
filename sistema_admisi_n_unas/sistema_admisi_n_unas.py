@@ -1,5 +1,6 @@
 import reflex as rx
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
+from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 from sistema_admisi_n_unas.components.sidebar import sidebar
 from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
@@ -35,6 +36,7 @@ def dashboard_header() -> rx.Component:
                     rx.icon("plus", class_name="h-4 w-4 mr-2"),
                     "Nueva Inscripción",
                     class_name="flex items-center px-4 py-2 bg-[#228B22] rounded-xl text-sm font-semibold text-white hover:bg-[#1a6b1a] transition-colors shadow-sm",
+                    on_click=rx.redirect("/inscripcion")
                 ),
                 class_name="flex items-center gap-3",
             ),
@@ -191,28 +193,28 @@ def index() -> rx.Component:
                 rx.el.div(
                     stats_card(
                         "Postulantes",
-                        f"{DashboardState.total_applicants}",
+                        f"{PostulantesState.total_postulantes}",
                         "users",
                         "blue",
                         "Total inscritos 2024-II",
                     ),
                     stats_card(
                         "Ingresantes",
-                        f"{DashboardState.admitted_count}",
+                        f"{PostulantesState.admitted_count}",
                         "user-check",
                         "green",
                         "Vacantes cubiertas al 85%",
                     ),
                     stats_card(
                         "Promedio General",
-                        f"{DashboardState.general_avg:.1f}",
+                        f"{PostulantesState.general_avg:.1f}",
                         "trending-up",
                         "amber",
                         "Supera el 13.8 del 2023",
                     ),
                     stats_card(
                         "Carrera Top",
-                        "Forestal",
+                        f"{PostulantesState.top_career}",
                         "award",
                         "purple",
                         "Mayor número de postulantes",
@@ -341,9 +343,21 @@ app = rx.App(
         ),
     ],
 )
-app.add_page(index, route="/")
-app.add_page(inscripcion_page, route="/inscripcion")
-app.add_page(postulantes_page, route="/postulantes")
+app.add_page(
+    index,
+    route="/",
+    on_load=PostulantesState.cargar_datos,
+)
+app.add_page(
+    inscripcion_page,
+    route="/inscripcion",
+    on_load=PostulantesState.cargar_datos,
+)
+app.add_page(
+    postulantes_page,
+    route="/postulantes",
+    on_load=PostulantesState.cargar_datos,
+)
 app.add_page(examen_page, route="/examen")
 app.add_page(resultados_page, route="/resultados")
 app.add_page(retroalimentacion_page, route="/retroalimentacion")

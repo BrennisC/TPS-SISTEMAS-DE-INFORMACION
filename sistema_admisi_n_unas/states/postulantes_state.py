@@ -1,6 +1,10 @@
 import reflex as rx
 from typing import TypedDict
 from datetime import datetime
+from sistema_admisi_n_unas.utils.csv_loader import (
+    cargar_postulantes,
+    append_postulante,
+)
 
 
 class Postulante(TypedDict):
@@ -27,12 +31,24 @@ CARRERAS: list[str] = [
     "Economía",
     "Contabilidad",
     "Ingeniería de Sistemas e Informática",
-    "Educación Básica",
-    "Enfermería",
 ]
+
+FACULTAD_POR_CARRERA: dict[str, str] = {
+    "Ingeniería Forestal": "Fac. Recursos Naturales Renovables",
+    "Agronomía": "Fac. Agronomía",
+    "Administración de Empresas": "Fac. Ciencias Económicas y Administrativas",
+    "Ingeniería en Industrias Alimentarias": "Fac. Ingeniería en Industrias Alimentarias",
+    "Ingeniería en Recursos Naturales Renovables": "Fac. Recursos Naturales Renovables",
+    "Ingeniería en Conservación de Suelos y Agua": "Fac. Recursos Naturales Renovables",
+    "Economía": "Fac. Ciencias Económicas y Administrativas",
+    "Contabilidad": "Fac. Ciencias Económicas y Administrativas",
+    "Ingeniería de Sistemas e Informática": "Fac. Ingeniería en Informática y Sistemas",
+}
 
 
 class PostulantesState(rx.State):
+    postulantes: list[Postulante] = []
+
     # Form fields
     f_nombres: str = ""
     f_apellidos: str = ""
@@ -49,69 +65,17 @@ class PostulantesState(rx.State):
 
     show_success: bool = False
 
-    postulantes: list[Postulante] = [
-        {
-            "id": 1,
-            "nombres": "María Fernanda",
-            "apellidos": "Quispe Huamán",
-            "dni": "73829145",
-            "carrera": "Ingeniería Forestal",
-            "tipo_colegio": "Estatal",
-            "costo": 220.0,
-            "voucher": "V-001245",
-            "fecha": "2024-03-12",
-            "estado": "Inscrito",
-        },
-        {
-            "id": 2,
-            "nombres": "Carlos Andrés",
-            "apellidos": "Rojas Ventura",
-            "dni": "74512893",
-            "carrera": "Agronomía",
-            "tipo_colegio": "Privado",
-            "costo": 240.0,
-            "voucher": "V-001246",
-            "fecha": "2024-03-13",
-            "estado": "Inscrito",
-        },
-        {
-            "id": 3,
-            "nombres": "Diana Lucía",
-            "apellidos": "Mendoza Paredes",
-            "dni": "72938174",
-            "carrera": "Ingeniería de Sistemas e Informática",
-            "tipo_colegio": "Estatal",
-            "costo": 220.0,
-            "voucher": "V-001247",
-            "fecha": "2024-03-14",
-            "estado": "Pendiente",
-        },
-        {
-            "id": 4,
-            "nombres": "Jorge Luis",
-            "apellidos": "Salazar Cárdenas",
-            "dni": "75829341",
-            "carrera": "Administración de Empresas",
-            "tipo_colegio": "Privado",
-            "costo": 240.0,
-            "voucher": "V-001248",
-            "fecha": "2024-03-15",
-            "estado": "Inscrito",
-        },
-        {
-            "id": 5,
-            "nombres": "Andrea Sofía",
-            "apellidos": "Campos Lazo",
-            "dni": "76123498",
-            "carrera": "Medicina Veterinaria",
-            "tipo_colegio": "Estatal",
-            "costo": 220.0,
-            "voucher": "V-001249",
-            "fecha": "2024-03-16",
-            "estado": "Pendiente",
-        },
-    ]
     next_id: int = 6
+
+    @rx.event
+    def cargar_datos(self):
+        "Carga los datos de los postulantes desde el archivo CSV"
+        datos = cargar_postulantes()
+        self.postulantes = datos
+        if datos:
+            self.next_id = max(p["id"] for p in datos) + 1
+        else:
+            self.next_id = 1
 
     # Validation computed vars
     @rx.var
@@ -201,6 +165,37 @@ class PostulantesState(rx.State):
         return sum(p["costo"] for p in self.postulantes)
 
     @rx.var
+    def admitted_count(self) -> int:
+        return len(
+            [
+                p
+                for p in self.postulantes
+                if p["estado"].strip().lower() == "ingresante"
+            ]
+        )
+
+    @rx.var
+    def general_avg(self) -> float:
+        puntajes = [
+            float(p.get("puntaje", 0))
+            for p in self.postulantes
+            if float(p.get("puntaje", 0)) > 0
+        ]
+        if not puntajes:
+            return 0.0
+        return sum(puntajes) / len(puntajes)
+
+    @rx.var
+    def top_career(self) -> str:
+        if not self.postulantes:
+            return "N/D"
+        counts: dict[str, int] = {}
+        for p in self.postulantes:
+            carrera = p["carrera"]
+            counts[carrera] = counts.get(carrera, 0) + 1
+        return max(counts.items(), key=lambda item: item[1])[0]
+
+    @rx.var
     def filtered_postulantes(self) -> list[Postulante]:
         result = self.postulantes
         if self.filter_carrera != "Todas":
@@ -256,6 +251,15 @@ class PostulantesState(rx.State):
                 "Por favor completa todos los campos correctamente",
                 duration=3000,
             )
+        fecha_actual = datetime.now()
+        convocatoria = (
+            f"{fecha_actual.year}-I"
+            if fecha_actual.month <= 6
+            else f"{fecha_actual.year}-II"
+        )
+        facultad = FACULTAD_POR_CARRERA.get(
+            self.f_carrera, "Otras Escuelas"
+        )
         nuevo: Postulante = {
             "id": self.next_id,
             "nombres": self.f_nombres.strip().title(),
@@ -265,11 +269,20 @@ class PostulantesState(rx.State):
             "tipo_colegio": self.f_tipo_colegio,
             "costo": self.costo_actual,
             "voucher": self.f_voucher.strip().upper(),
-            "fecha": datetime.now().strftime("%Y-%m-%d"),
+            "fecha": fecha_actual.strftime("%Y-%m-%d"),
             "estado": "Inscrito",
+            "puntaje": 0.0,
         }
         self.postulantes.append(nuevo)
         self.next_id += 1
+        append_postulante(
+            {
+                **nuevo,
+                "convocatoria": convocatoria,
+                "facultad": facultad,
+                "puntaje": 0,
+            }
+        )
         # Reset fields
         self.f_nombres = ""
         self.f_apellidos = ""
