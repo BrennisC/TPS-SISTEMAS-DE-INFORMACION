@@ -44,7 +44,16 @@ class DashboardState(rx.State):
     ]
 
     current_page: str = "Dashboard"
+    mobile_menu_open: bool = False
 
     @rx.event
     def set_page(self, page: str):
         self.current_page = page
+
+    @rx.event
+    def toggle_mobile_menu(self):
+        self.mobile_menu_open = not self.mobile_menu_open
+
+    @rx.event
+    def close_mobile_menu(self):
+        self.mobile_menu_open = False

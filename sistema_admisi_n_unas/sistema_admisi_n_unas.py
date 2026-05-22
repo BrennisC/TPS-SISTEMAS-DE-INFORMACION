@@ -1,7 +1,7 @@
 import reflex as rx
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
-from sistema_admisi_n_unas.components.sidebar import sidebar
+from sistema_admisi_n_unas.components.sidebar import sidebar, mobile_sidebar
 from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
 from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
@@ -10,6 +10,18 @@ from sistema_admisi_n_unas.components.page_layout import page_header
 from sistema_admisi_n_unas.components.examen import examen_view
 from sistema_admisi_n_unas.components.resultados import resultados_view
 from sistema_admisi_n_unas.components.feedback import feedback_view
+
+
+def mobile_header() -> rx.Component:
+    """Header con botón hamburguesa para móvil"""
+    return rx.el.div(
+        rx.el.button(
+            rx.icon("menu", class_name="h-6 w-6 text-slate-700"),
+            on_click=DashboardState.toggle_mobile_menu,
+            class_name="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors",
+        ),
+        class_name="md:hidden flex items-center gap-4 p-4 bg-white border-b border-gray-200",
+    )
 
 
 def dashboard_header() -> rx.Component:
@@ -185,51 +197,56 @@ def recent_activity() -> rx.Component:
 
 def index() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                dashboard_header(),
-                # Stats Grid
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
                 rx.el.div(
-                    stats_card(
-                        "Postulantes",
-                        f"{PostulantesState.total_postulantes}",
-                        "users",
-                        "blue",
-                        "Total inscritos 2024-II",
+                    dashboard_header(),
+                    # Stats Grid
+                    rx.el.div(
+                        stats_card(
+                            "Postulantes",
+                            f"{PostulantesState.total_postulantes}",
+                            "users",
+                            "blue",
+                            "Total inscritos 2024-II",
+                        ),
+                        stats_card(
+                            "Ingresantes",
+                            f"{PostulantesState.admitted_count}",
+                            "user-check",
+                            "green",
+                            "Vacantes cubiertas al 85%",
+                        ),
+                        stats_card(
+                            "Promedio General",
+                            f"{PostulantesState.general_avg:.1f}",
+                            "trending-up",
+                            "amber",
+                            "Supera el 13.8 del 2023",
+                        ),
+                        stats_card(
+                            "Carrera Top",
+                            f"{PostulantesState.top_career}",
+                            "award",
+                            "purple",
+                            "Mayor número de postulantes",
+                        ),
+                        class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8",
                     ),
-                    stats_card(
-                        "Ingresantes",
-                        f"{PostulantesState.admitted_count}",
-                        "user-check",
-                        "green",
-                        "Vacantes cubiertas al 85%",
+                    # Content Grid
+                    rx.el.div(
+                        scores_chart(),
+                        recent_activity(),
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
                     ),
-                    stats_card(
-                        "Promedio General",
-                        f"{PostulantesState.general_avg:.1f}",
-                        "trending-up",
-                        "amber",
-                        "Supera el 13.8 del 2023",
-                    ),
-                    stats_card(
-                        "Carrera Top",
-                        f"{PostulantesState.top_career}",
-                        "award",
-                        "purple",
-                        "Mayor número de postulantes",
-                    ),
-                    class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8",
+                    class_name="max-w-7xl mx-auto",
                 ),
-                # Content Grid
-                rx.el.div(
-                    scores_chart(),
-                    recent_activity(),
-                    class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
-                ),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -237,18 +254,23 @@ def index() -> rx.Component:
 
 def inscripcion_page() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                page_header(
-                    "Inscripción de Postulantes",
-                    "Registra un nuevo postulante en el proceso de admisión 2024-II",
-                    "user-plus",
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
+                rx.el.div(
+                    page_header(
+                        "Inscripción de Postulantes",
+                        "Registra un nuevo postulante en el proceso de admisión 2024-II",
+                        "user-plus",
+                    ),
+                    inscripcion_form(),
+                    class_name="max-w-7xl mx-auto",
                 ),
-                inscripcion_form(),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -256,18 +278,23 @@ def inscripcion_page() -> rx.Component:
 
 def postulantes_page() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                page_header(
-                    "Gestión de Postulantes",
-                    "Administra y consulta a todos los postulantes registrados",
-                    "users",
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
+                rx.el.div(
+                    page_header(
+                        "Gestión de Postulantes",
+                        "Administra y consulta a todos los postulantes registrados",
+                        "users",
+                    ),
+                    postulantes_table(),
+                    class_name="max-w-7xl mx-auto",
                 ),
-                postulantes_table(),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -275,18 +302,23 @@ def postulantes_page() -> rx.Component:
 
 def examen_page() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                page_header(
-                    "Simulador de Examen",
-                    "Practica con un examen de admisión simulado",
-                    "file-pen",
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
+                rx.el.div(
+                    page_header(
+                        "Simulador de Examen",
+                        "Practica con un examen de admisión simulado",
+                        "file-pen",
+                    ),
+                    examen_view(),
+                    class_name="max-w-7xl mx-auto",
                 ),
-                examen_view(),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -294,18 +326,23 @@ def examen_page() -> rx.Component:
 
 def resultados_page() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                page_header(
-                    "Ranking de Resultados",
-                    "Consulta el ranking ordenado de postulantes según puntaje",
-                    "trophy",
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
+                rx.el.div(
+                    page_header(
+                        "Ranking de Resultados",
+                        "Consulta el ranking ordenado de postulantes según puntaje",
+                        "trophy",
+                    ),
+                    resultados_view(),
+                    class_name="max-w-7xl mx-auto",
                 ),
-                resultados_view(),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -313,18 +350,23 @@ def resultados_page() -> rx.Component:
 
 def retroalimentacion_page() -> rx.Component:
     return rx.el.div(
+        mobile_sidebar(),
         sidebar(),
-        rx.el.main(
-            rx.el.div(
-                page_header(
-                    "Retroalimentación y Apelaciones",
-                    "Análisis de errores frecuentes y gestión de reclamos",
-                    "message-square",
+        rx.el.div(
+            mobile_header(),
+            rx.el.main(
+                rx.el.div(
+                    page_header(
+                        "Retroalimentación y Apelaciones",
+                        "Análisis de errores frecuentes y gestión de reclamos",
+                        "message-square",
+                    ),
+                    feedback_view(),
+                    class_name="max-w-7xl mx-auto",
                 ),
-                feedback_view(),
-                class_name="max-w-7xl mx-auto",
+                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
             ),
-            class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+            class_name="flex-1 flex flex-col",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
