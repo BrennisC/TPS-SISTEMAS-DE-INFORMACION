@@ -59,6 +59,8 @@ class PostulantesState(rx.State):
 
     search_query: str = ""
     filter_carrera: str = "Todas"
+    current_page: int = 1
+    page_size: int = 10
 
     carreras: list[str] = CARRERAS
     tipos_colegio: list[str] = ["Estatal", "Privado"]
@@ -72,6 +74,7 @@ class PostulantesState(rx.State):
         "Carga los datos de los postulantes desde el archivo CSV"
         datos = cargar_postulantes()
         self.postulantes = datos
+        self.current_page = 1
         if datos:
             self.next_id = max(p["id"] for p in datos) + 1
         else:
@@ -212,6 +215,20 @@ class PostulantesState(rx.State):
             ]
         return result
 
+    @rx.var
+    def total_pages(self) -> int:
+        total = len(self.filtered_postulantes)
+        if total == 0:
+            return 1
+        return (total + self.page_size - 1) // self.page_size
+
+    @rx.var
+    def paginated_postulantes(self) -> list[Postulante]:
+        page = min(max(self.current_page, 1), self.total_pages)
+        start = (page - 1) * self.page_size
+        end = start + self.page_size
+        return self.filtered_postulantes[start:end]
+
     @rx.event
     def set_nombres(self, v: str):
         self.f_nombres = v
@@ -239,10 +256,31 @@ class PostulantesState(rx.State):
     @rx.event
     def set_search_query(self, v: str):
         self.search_query = v
+        self.current_page = 1
 
     @rx.event
     def set_filter_carrera(self, v: str):
         self.filter_carrera = v
+        self.current_page = 1
+
+    @rx.event
+    def set_page(self, page: int):
+        if page < 1:
+            self.current_page = 1
+        elif page > self.total_pages:
+            self.current_page = self.total_pages
+        else:
+            self.current_page = page
+
+    @rx.event
+    def next_page(self):
+        if self.current_page < self.total_pages:
+            self.current_page += 1
+
+    @rx.event
+    def prev_page(self):
+        if self.current_page > 1:
+            self.current_page -= 1
 
     @rx.event
     def submit_form(self):
@@ -299,6 +337,8 @@ class PostulantesState(rx.State):
     @rx.event
     def delete_postulante(self, pid: int):
         self.postulantes = [p for p in self.postulantes if p["id"] != pid]
+        if self.current_page > self.total_pages:
+            self.current_page = self.total_pages
         return rx.toast("Postulante eliminado", duration=2000)
 
     @rx.event

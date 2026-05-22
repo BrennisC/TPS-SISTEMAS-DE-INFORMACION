@@ -298,7 +298,7 @@ def postulantes_table() -> rx.Component:
                         rx.cond(
                             PostulantesState.filtered_postulantes.length() > 0,
                             rx.foreach(
-                                PostulantesState.filtered_postulantes,
+                                PostulantesState.paginated_postulantes,
                                 table_row,
                             ),
                             empty_state(),
@@ -309,6 +309,40 @@ def postulantes_table() -> rx.Component:
                 class_name="overflow-x-auto",
             ),
             class_name="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm",
+        ),
+        rx.el.div(
+            rx.el.div(
+                rx.el.button(
+                    rx.icon("chevron-left", class_name="h-4 w-4"),
+                    "Anterior",
+                    on_click=PostulantesState.prev_page,
+                    disabled=PostulantesState.current_page == 1,
+                    class_name=rx.cond(
+                        PostulantesState.current_page == 1,
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                    ),
+                ),
+                rx.el.span(
+                    f"Página {PostulantesState.current_page} de {PostulantesState.total_pages}",
+                    class_name="text-sm font-medium text-gray-600",
+                ),
+                rx.el.button(
+                    "Siguiente",
+                    rx.icon("chevron-right", class_name="h-4 w-4"),
+                    on_click=PostulantesState.next_page,
+                    disabled=PostulantesState.current_page
+                    == PostulantesState.total_pages,
+                    class_name=rx.cond(
+                        PostulantesState.current_page
+                        == PostulantesState.total_pages,
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                    ),
+                ),
+                class_name="flex items-center justify-center gap-4",
+            ),
+            class_name="mt-4",
         ),
         class_name="max-w-7xl mx-auto w-full",
     )
