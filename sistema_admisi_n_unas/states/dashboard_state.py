@@ -1,36 +1,25 @@
+from typing import Dict, List
+
 import reflex as rx
-from typing import TypedDict
+from annotated_types import T
 
-
-class AreaMetric(TypedDict):
-    area: str
-    avg_score: float
-
-
-class SidebarItem(TypedDict):
-    label: str
-    icon: str
-    href: str
+# Importamos tus funciones nativas
+from ..utils.csv_loader import cargar_postulantes
 
 
 class DashboardState(rx.State):
-    # Metrics data
-    total_applicants: int = 1250
-    admitted_count: int = 342
-    general_avg: float = 14.5
-    top_career: str = "Ingeniería Forestal"
+    # KPIs Básicos que se reflejan en las cards
+    current_page: str = "Dashboard"
+    mobile_menu_open: bool = False
 
-    # Area scores for the bar chart
-    area_scores: list[AreaMetric] = [
-        {"area": "Matemática", "avg_score": 15.2},
-        {"area": "Comunicación", "avg_score": 13.8},
-        {"area": "Ciencias Nat.", "avg_score": 14.5},
-        {"area": "Cultura Gral.", "avg_score": 12.1},
-        {"area": "Psicotécnico", "avg_score": 16.4},
-    ]
-
-    # Sidebar state
-    sidebar_items: list[SidebarItem] = [
+    total_postulantes: int = 0
+    admitted_count: int = 0
+    total_recaudado: float = 0.0
+    total_estatal: int = 0
+    total_privado: int = 0
+    top_career: str = "Cargando..."
+    general_avg: float = 0.0
+    sidebar_items: list[dict[str, str]] = [
         {"label": "Dashboard", "icon": "layout-dashboard", "href": "/"},
         {"label": "Postulantes", "icon": "users", "href": "/postulantes"},
         {"label": "Inscripción", "icon": "user-plus", "href": "/inscripcion"},
@@ -43,8 +32,12 @@ class DashboardState(rx.State):
         },
     ]
 
-    current_page: str = "Dashboard"
-    mobile_menu_open: bool = False
+    # Listas dinámicas para alimentar a Recharts
+    chart_postulantes_vs_ingresantes: List[Dict] = []
+    chart_rendimiento_areas: List[Dict] = []
+    chart_evolucion_historica: List[Dict] = []
+    chart_genero: List[Dict] = []
+    paginated_postulantes: list[dict[str, str]] = []
 
     @rx.event
     def set_page(self, page: str):
@@ -57,3 +50,121 @@ class DashboardState(rx.State):
     @rx.event
     def close_mobile_menu(self):
         self.mobile_menu_open = False
+
+    @rx.event
+    def cargar_datos_csv(self):
+        """
+        Ejecuta tu función nativa en segundo plano para no congelar el frontend
+        y calcula las agrupaciones requeridas por los gráficos de Recharts.
+        """
+        try:
+            # 1. Cargamos el archivo usando TU función nativa
+            # (Por defecto busca 'postulantes.csv' usando tu ruta relativa corregida)
+            lista_postulantes = cargar_postulantes()
+        except Exception as e:
+            print(f"Error al leer el archivo CSV: {e}")
+            return
+
+        if not lista_postulantes:
+            return
+
+        # 2. Procesamiento y cálculo de métricas usando bucles limpios de Python
+        total_p = len(lista_postulantes)
+        ingresantes = [
+            p for p in lista_postulantes if p["estado"].strip().lower() == "ingresante"
+        ]
+        total_ing = len(ingresantes)
+
+        recaudado = sum(p["costo"] for p in lista_postulantes)
+        estatal = sum(
+            1
+            for p in lista_postulantes
+            if p["tipo_colegio"].strip().lower() == "estatal"
+        )
+        privado = total_p - estatal
+
+        # Calcular promedios y carreras más demandadas
+        conteo_carreras = {}
+        suma_puntajes = 0.0
+        conteo_puntajes = 0
+
+        for p in lista_postulantes:
+            carrera = p["carrera"]
+            conteo_carreras[carrera] = conteo_carreras.get(carrera, 0) + 1
+            if p["puntaje"] > 0:
+                suma_puntajes += p["puntaje"]
+                conteo_puntajes += 1
+
+        top_c = (
+            max(conteo_carreras, key=conteo_carreras.get) if conteo_carreras else "N/A"
+        )
+        avg_general = (suma_puntajes / conteo_puntajes) if conteo_puntajes > 0 else 0.0
+
+        # 3. Construcción de la Estructura para el Gráfico: Postulantes vs Ingresantes
+        carreras_unicas = set(p["carrera"] for p in lista_postulantes)
+        mix_carreras = []
+        for corr_carrera in carreras_unicas:
+            post_c = sum(1 for p in lista_postulantes if p["carrera"] == corr_carrera)
+            ing_c = sum(1 for p in ingresantes if p["carrera"] == corr_carrera)
+            mix_carreras.append(
+                {"carrera": corr_carrera, "Postulantes": post_c, "Ingresantes": ing_c}
+            )
+
+        # 4. Estructura para Rendimiento por Áreas (Agrupado por facultades del CSV)
+        facultades_unicas = set(
+            p["facultad"] for p in lista_postulantes if p["facultad"]
+        )
+        mix_areas = []
+        for fac in facultades_unicas:
+            puntajes_fac = [
+                p["puntaje"]
+                for p in lista_postulantes
+                if p["facultad"] == fac and p["puntaje"] > 0
+            ]
+            avg_fac = (sum(puntajes_fac) / len(puntajes_fac)) if puntajes_fac else 0.0
+            mix_areas.append({"area": fac, "avg_score": round(avg_fac, 2)})
+
+        # 5. Estructura para Evolución Histórica (Agrupado por Convocatoria, ej: '2026-I')
+        convocatorias_unicas = sorted(
+            list(set(p["convocatoria"] for p in lista_postulantes))
+        )
+        mix_evolucion = []
+        for conv in convocatorias_unicas:
+            post_conv = sum(1 for p in lista_postulantes if p["convocatoria"] == conv)
+            mix_evolucion.append({"year": conv, "Postulantes": post_conv})
+
+        # 6. Distribución de Colegio para el Gráfico Donut/Circular
+        mix_colegio = [
+            {"name": "Estatal", "value": estatal, "fill": "#228B22"},
+            {"name": "Privado", "value": privado, "fill": "#FFB020"},
+        ]
+
+        # 7. Mapear los últimos 5 alumnos para la Tabla del Dashboard
+        ultimos_alumnos = []
+        # Tomamos los últimos 5 agregados al CSV
+        for p in lista_postulantes[-5:]:
+            ultimos_alumnos.append(
+                {
+                    "dni": p["dni"],
+                    "apellidos": p["apellidos"],
+                    "nombres": p["nombres"],
+                    "carrera": p["carrera"],
+                    "estado": p["estado"],
+                }
+            )
+
+        # 8. Guardamos los datos en el estado de Reflex
+        self.total_postulantes = total_p
+        self.admitted_count = total_ing
+        self.total_recaudado = recaudado
+        self.total_estatal = estatal
+        self.total_privado = privado
+        self.top_career = top_c
+        self.general_avg = round(avg_general, 2)
+        self.chart_postulantes_vs_ingresantes = mix_carreras
+        self.chart_rendimiento_areas = mix_areas
+        self.chart_evolucion_historica = mix_evolucion
+        self.chart_genero = (
+            mix_colegio  # Reutilizado dinámicamente como gráfico de Tipo de Colegio
+        )
+        self.paginated_postulantes = ultimos_alumnos

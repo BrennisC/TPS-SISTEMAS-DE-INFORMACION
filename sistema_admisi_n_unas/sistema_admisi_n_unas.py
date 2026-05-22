@@ -1,15 +1,24 @@
 import reflex as rx
+
+from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
+from sistema_admisi_n_unas.components.examen import examen_view
+from sistema_admisi_n_unas.components.feedback import feedback_view
+from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
+from sistema_admisi_n_unas.components.page_layout import page_header
+from sistema_admisi_n_unas.components.postulantes_table import postulantes_table
+from sistema_admisi_n_unas.components.resultados import resultados_view
+from sistema_admisi_n_unas.components.sidebar import mobile_sidebar, sidebar
+from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
-from sistema_admisi_n_unas.components.sidebar import sidebar, mobile_sidebar
-from sistema_admisi_n_unas.components.stats_card import stats_card
-from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
-from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
-from sistema_admisi_n_unas.components.postulantes_table import postulantes_table
-from sistema_admisi_n_unas.components.page_layout import page_header
-from sistema_admisi_n_unas.components.examen import examen_view
-from sistema_admisi_n_unas.components.resultados import resultados_view
-from sistema_admisi_n_unas.components.feedback import feedback_view
+
+from .components.charts import (
+    grafico_distribucion_colegios,
+    grafico_evolucion_historica,
+    grafico_postulantes_vs_ingresantes,
+    grafico_rendimiento_areas,
+)
+from .components.tables import panel_preguntas_errores, tabla_ultimos_registrados
 
 
 def mobile_header() -> rx.Component:
@@ -48,7 +57,7 @@ def dashboard_header() -> rx.Component:
                     rx.icon("plus", class_name="h-4 w-4 mr-2"),
                     "Nueva Inscripción",
                     class_name="flex items-center px-4 py-2 bg-[#228B22] rounded-xl text-sm font-semibold text-white hover:bg-[#1a6b1a] transition-colors shadow-sm",
-                    on_click=rx.redirect("/inscripcion")
+                    on_click=rx.redirect("/inscripcion"),
                 ),
                 class_name="flex items-center gap-3",
             ),
@@ -204,47 +213,86 @@ def index() -> rx.Component:
             rx.el.main(
                 rx.el.div(
                     dashboard_header(),
-                    # Stats Grid
+                    # 1. FILA SUPERIOR: Cards de control con datos reales del CSV
                     rx.el.div(
                         stats_card(
-                            "Postulantes",
-                            f"{PostulantesState.total_postulantes}",
+                            "Total Postulantes",
+                            f"{DashboardState.total_postulantes}",
+                            "Registrados en CSV",
                             "users",
-                            "blue",
-                            "Total inscritos 2024-II",
+                            "#228B22",
                         ),
                         stats_card(
-                            "Ingresantes",
-                            f"{PostulantesState.admitted_count}",
+                            "Total Ingresantes",
+                            f"{DashboardState.admitted_count}",
+                            "Vacantes validadas",
                             "user-check",
-                            "green",
-                            "Vacantes cubiertas al 85%",
+                            "#228B22",
                         ),
                         stats_card(
-                            "Promedio General",
-                            f"{PostulantesState.general_avg:.1f}",
-                            "trending-up",
-                            "amber",
-                            "Supera el 13.8 del 2023",
+                            "Total Recaudado",
+                            f"S/. {DashboardState.total_recaudado:,.2f}",
+                            f"Estatal: {DashboardState.total_estatal} | Priv.: {DashboardState.total_privado}",
+                            "circle-dollar-sign",
+                            "#228B22",
                         ),
                         stats_card(
-                            "Carrera Top",
-                            f"{PostulantesState.top_career}",
-                            "award",
-                            "purple",
-                            "Mayor número de postulantes",
+                            "Carrera Más Demandada",
+                            f"{DashboardState.top_career}",
+                            "Mayor N° de registros",
+                            "graduation-cap",
+                            "#003366",
                         ),
-                        class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8",
+                        class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
                     ),
-                    # Content Grid
+                    # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
                     rx.el.div(
-                        scores_chart(),
-                        recent_activity(),
+                        rx.el.div(
+                            rx.el.h3(
+                                "Rendimiento General del Examen",
+                                class_name="text-sm font-bold text-gray-700 mb-4",
+                            ),
+                            rx.el.div(
+                                rx.el.h1(
+                                    rx.cond(
+                                        DashboardState.general_avg > 0,
+                                        f"{DashboardState.general_avg:.2f}",
+                                        "0.00",
+                                    ),
+                                    class_name="text-4xl font-extrabold text-gray-900",
+                                ),
+                                rx.el.p(
+                                    "Promedio General Real (Data CSV)",
+                                    class_name="text-xs text-gray-500 mt-1",
+                                ),
+                                class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
+                            ),
+                            class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+                        ),
+                        grafico_postulantes_vs_ingresantes(),
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                    ),
+                    # 3. TERCERA FILA (¡AÑADIDA!): Evolución de Años + Gráfico de Torta de Colegios
+                    rx.el.div(
+                        grafico_evolucion_historica(),
+                        grafico_distribucion_colegios(),
+                        recent_activity(),  # Mantiene tu componente lateral original
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                    ),
+                    # 4. CUARTA FILA: Áreas Analíticas + Top Errores Fijos
+                    rx.el.div(
+                        grafico_rendimiento_areas(),
+                        panel_preguntas_errores(),
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                    ),
+                    # 5. QUINTA FILA: Tabla de alumnos del CSV
+                    rx.el.div(
+                        tabla_ultimos_registrados(),
                         class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
                     ),
                     class_name="max-w-7xl mx-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 bg-gray-50/40 p-6 md:p-8 overflow-y-auto",
             ),
             class_name="flex-1 flex flex-col",
         ),
@@ -376,9 +424,7 @@ app = rx.App(
     theme=rx.theme(appearance="light"),
     head_components=[
         rx.el.link(rel="preconnect", href="https://fonts.googleapis.com"),
-        rx.el.link(
-            rel="preconnect", href="https://fonts.gstatic.com", cross_origin=""
-        ),
+        rx.el.link(rel="preconnect", href="https://fonts.gstatic.com", cross_origin=""),
         rx.el.link(
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
             rel="stylesheet",
@@ -388,7 +434,7 @@ app = rx.App(
 app.add_page(
     index,
     route="/",
-    on_load=PostulantesState.cargar_datos,
+    on_load=DashboardState.cargar_datos_csv,
 )
 app.add_page(
     inscripcion_page,

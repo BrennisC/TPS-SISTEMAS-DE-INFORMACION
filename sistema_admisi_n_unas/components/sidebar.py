@@ -2,7 +2,7 @@ import reflex as rx
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 
 
-def nav_item(item: dict) -> rx.Component:
+def nav_item(item: dict[str, str]) -> rx.Component:
     is_active = DashboardState.current_page == item["label"]
     return rx.el.a(
         rx.icon(
