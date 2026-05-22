@@ -66,6 +66,7 @@ class PostulantesState(rx.State):
     show_success: bool = False
 
     next_id: int = 6
+    
 
     @rx.event
     def cargar_datos(self):
