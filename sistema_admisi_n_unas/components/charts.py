@@ -97,3 +97,73 @@ def grafico_distribucion_colegios():
         ),
         class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
     )
+
+
+def grafico_distribucion_puntajes():
+    return rx.el.div(
+        rx.el.h3(
+            "Distribución de Puntajes (Rangos)",
+            class_name="text-sm font-bold text-gray-700 mb-4",
+        ),
+        rx.recharts.bar_chart(
+            rx.recharts.cartesian_grid(stroke_dasharray="3 3", vertical=False),
+            rx.recharts.x_axis(data_key="rango", custom_attrs={"fontSize": "11px"}),
+            rx.recharts.y_axis(),
+            rx.recharts.graphing_tooltip(),
+            rx.recharts.bar(
+                data_key="cantidad", fill="#228B22", radius=[4, 4, 0, 0]
+            ),
+            data=DashboardState.chart_puntajes_rango,
+            height=220,
+            width="100%",
+        ),
+        class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+    )
+
+
+def grafico_promedio_convocatoria():
+    return rx.el.div(
+        rx.el.h3(
+            "Promedio de Puntajes por Convocatoria",
+            class_name="text-sm font-bold text-gray-700 mb-4",
+        ),
+        rx.recharts.area_chart(
+            rx.recharts.cartesian_grid(stroke_dasharray="3 3"),
+            rx.recharts.x_axis(
+                data_key="convocatoria", custom_attrs={"fontSize": "11px"}
+            ),
+            rx.recharts.y_axis(),
+            rx.recharts.graphing_tooltip(),
+            rx.recharts.area(
+                data_key="avg_score", fill="#E8F5E9", stroke="#228B22", stroke_width=2
+            ),
+            data=DashboardState.chart_promedio_convocatoria,
+            height=220,
+            width="100%",
+        ),
+        class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1 lg:col-span-2",
+    )
+
+
+def grafico_top_carreras_puntaje():
+    return rx.el.div(
+        rx.el.h3(
+            "Top Carreras por Puntaje Promedio",
+            class_name="text-sm font-bold text-gray-700 mb-4",
+        ),
+        rx.recharts.bar_chart(
+            rx.recharts.cartesian_grid(stroke_dasharray="3 3", vertical=False),
+            rx.recharts.x_axis(
+                data_key="carrera", custom_attrs={"fontSize": "9px"}
+            ),
+            rx.recharts.y_axis(),
+            rx.recharts.graphing_tooltip(),
+            rx.recharts.bar(
+                data_key="avg_score", fill="#0288D1", radius=[4, 4, 0, 0]
+            ),
+            data=DashboardState.chart_top_carreras_puntaje,
+            height=220,
+            width="100%",
+        ),
+        class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1 lg:col-span-2",
+    )

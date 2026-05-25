@@ -37,6 +37,9 @@ class DashboardState(rx.State):
     chart_rendimiento_areas: List[Dict] = []
     chart_evolucion_historica: List[Dict] = []
     chart_genero: List[Dict] = []
+    chart_puntajes_rango: list[dict[str, int | str]] = []
+    chart_promedio_convocatoria: list[dict[str, float | str]] = []
+    chart_top_carreras_puntaje: list[dict[str, float | str]] = []
     paginated_postulantes: list[dict[str, str]] = []
 
     @rx.event
@@ -139,7 +142,54 @@ class DashboardState(rx.State):
             {"name": "Privado", "value": privado, "fill": "#FFB020"},
         ]
 
-        # 7. Mapear los últimos 5 alumnos para la Tabla del Dashboard
+        # 7. Distribución de puntajes por rangos
+        rangos = [
+            ("0-20", 0, 20),
+            ("21-40", 21, 40),
+            ("41-60", 41, 60),
+            ("61-80", 61, 80),
+            ("81-100", 81, 100),
+        ]
+        mix_rangos = []
+        for etiqueta, minimo, maximo in rangos:
+            cantidad = sum(
+                1
+                for p in lista_postulantes
+                if p["puntaje"] > 0 and minimo <= p["puntaje"] <= maximo
+            )
+            mix_rangos.append({"rango": etiqueta, "cantidad": cantidad})
+
+        # 8. Promedio por convocatoria
+        mix_promedios_conv = []
+        for conv in convocatorias_unicas:
+            puntajes_conv = [
+                p["puntaje"]
+                for p in lista_postulantes
+                if p["convocatoria"] == conv and p["puntaje"] > 0
+            ]
+            avg_conv = (sum(puntajes_conv) / len(puntajes_conv)) if puntajes_conv else 0.0
+            mix_promedios_conv.append(
+                {"convocatoria": conv, "avg_score": round(avg_conv, 2)}
+            )
+
+        # 9. Top carreras por puntaje promedio
+        puntaje_por_carrera: dict[str, list[float]] = {}
+        for p in lista_postulantes:
+            if p["puntaje"] > 0:
+                carrera = p["carrera"]
+                puntaje_por_carrera.setdefault(carrera, []).append(p["puntaje"])
+        mix_top_carreras = []
+        for carrera, puntajes in puntaje_por_carrera.items():
+            mix_top_carreras.append(
+                {
+                    "carrera": carrera,
+                    "avg_score": round(sum(puntajes) / len(puntajes), 2),
+                }
+            )
+        mix_top_carreras.sort(key=lambda item: item["avg_score"], reverse=True)
+        mix_top_carreras = mix_top_carreras[:5]
+
+        # 10. Mapear los últimos 5 alumnos para la Tabla del Dashboard
         ultimos_alumnos = []
         # Tomamos los últimos 5 agregados al CSV
         for p in lista_postulantes[-5:]:
@@ -153,7 +203,7 @@ class DashboardState(rx.State):
                 }
             )
 
-        # 8. Guardamos los datos en el estado de Reflex
+        # 11. Guardamos los datos en el estado de Reflex
         self.total_postulantes = total_p
         self.admitted_count = total_ing
         self.total_recaudado = recaudado
@@ -167,4 +217,7 @@ class DashboardState(rx.State):
         self.chart_genero = (
             mix_colegio  # Reutilizado dinámicamente como gráfico de Tipo de Colegio
         )
+        self.chart_puntajes_rango = mix_rangos
+        self.chart_promedio_convocatoria = mix_promedios_conv
+        self.chart_top_carreras_puntaje = mix_top_carreras
         self.paginated_postulantes = ultimos_alumnos

@@ -4,19 +4,24 @@ from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_le
 from sistema_admisi_n_unas.components.examen import examen_view
 from sistema_admisi_n_unas.components.feedback import feedback_view
 from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
+from sistema_admisi_n_unas.components.login_form import login_form
 from sistema_admisi_n_unas.components.page_layout import page_header
 from sistema_admisi_n_unas.components.postulantes_table import postulantes_table
 from sistema_admisi_n_unas.components.resultados import resultados_view
 from sistema_admisi_n_unas.components.sidebar import mobile_sidebar, sidebar
 from sistema_admisi_n_unas.components.stats_card import stats_card
+from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 
 from .components.charts import (
     grafico_distribucion_colegios,
+    grafico_distribucion_puntajes,
     grafico_evolucion_historica,
     grafico_postulantes_vs_ingresantes,
+    grafico_promedio_convocatoria,
     grafico_rendimiento_areas,
+    grafico_top_carreras_puntaje,
 )
 from .components.tables import panel_preguntas_errores, tabla_ultimos_registrados
 
@@ -204,8 +209,33 @@ def recent_activity() -> rx.Component:
     )
 
 
-def index() -> rx.Component:
+def login_view() -> rx.Component:
     return rx.el.div(
+        login_form(),
+        class_name="w-full max-w-md",
+    )
+
+
+def login_page() -> rx.Component:
+    return rx.el.div(
+        rx.el.main(
+        rx.el.div(
+            login_view(),
+            class_name="flex items-center justify-center min-h-screen bg-gray-50 p-6",
+        ),
+        class_name="flex-1",
+        ),
+        class_name="flex min-h-screen bg-white font-['Inter']",
+    )
+
+
+def require_auth(content: rx.Component) -> rx.Component:
+    return rx.cond(AuthState.is_authenticated, content, login_page())
+
+
+def index() -> rx.Component:
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -285,7 +315,17 @@ def index() -> rx.Component:
                         panel_preguntas_errores(),
                         class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
                     ),
-                    # 5. QUINTA FILA: Tabla de alumnos del CSV
+                    # 5. QUINTA FILA: Análisis de puntajes
+                    rx.el.div(
+                        grafico_distribucion_puntajes(),
+                        grafico_promedio_convocatoria(),
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                    ),
+                    rx.el.div(
+                        grafico_top_carreras_puntaje(),
+                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                    ),
+                    # 6. SEXTA FILA: Tabla de alumnos del CSV
                     rx.el.div(
                         tabla_ultimos_registrados(),
                         class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
@@ -296,12 +336,14 @@ def index() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
 def inscripcion_page() -> rx.Component:
-    return rx.el.div(
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -320,12 +362,14 @@ def inscripcion_page() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
 def postulantes_page() -> rx.Component:
-    return rx.el.div(
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -344,12 +388,14 @@ def postulantes_page() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
 def examen_page() -> rx.Component:
-    return rx.el.div(
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -368,12 +414,14 @@ def examen_page() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
 def resultados_page() -> rx.Component:
-    return rx.el.div(
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -392,12 +440,14 @@ def resultados_page() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
 def retroalimentacion_page() -> rx.Component:
-    return rx.el.div(
+    return require_auth(
+        rx.el.div(
         mobile_sidebar(),
         sidebar(),
         rx.el.div(
@@ -416,7 +466,8 @@ def retroalimentacion_page() -> rx.Component:
             ),
             class_name="flex-1 flex flex-col",
         ),
-        class_name="flex min-h-screen bg-white font-['Inter']",
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
     )
 
 
@@ -436,6 +487,7 @@ app.add_page(
     route="/",
     on_load=DashboardState.cargar_datos_csv,
 )
+app.add_page(login_page, route="/login")
 app.add_page(
     inscripcion_page,
     route="/inscripcion",

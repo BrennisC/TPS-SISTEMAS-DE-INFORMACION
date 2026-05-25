@@ -1,4 +1,5 @@
 import reflex as rx
+from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 
 
@@ -15,7 +16,10 @@ def nav_item(item: dict[str, str]) -> rx.Component:
         ),
         rx.el.span(item["label"]),
         href=item["href"],
-        on_click=[lambda: DashboardState.set_page(item["label"]), DashboardState.close_mobile_menu],
+        on_click=[
+            DashboardState.set_page(item["label"]),
+            DashboardState.close_mobile_menu,
+        ],
         class_name=rx.cond(
             is_active,
             "flex items-center gap-3 px-4 py-3 rounded-xl bg-[#003366] text-white font-semibold transition-all shadow-md",
@@ -74,6 +78,12 @@ def sidebar() -> rx.Component:
                         class_name="flex flex-col",
                     ),
                     class_name="flex items-center gap-3 p-4 bg-gray-100 rounded-2xl border border-gray-300",
+                ),
+                rx.el.button(
+                    rx.icon("log-out", class_name="h-4 w-4 mr-2"),
+                    "Cerrar sesión",
+                    on_click=AuthState.logout,
+                    class_name="flex items-center justify-center w-full px-4 py-2 mt-3 rounded-xl text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors",
                 ),
                 class_name="p-4",
             ),
