@@ -1,2 +1,25 @@
+# Production dependencies for Sistema Admisión UNAS
 
+# Core framework
 reflex[db]==0.9.2
+
+# Database (SQLite for local, use config for PostgreSQL/MySQL in production)
+# Already included in reflex[db]: python-socketio, redis, sqlalchemy
+
+# PDF Generation
+reportlab>=4.0.0
+
+# Excel/CSV export
+openpyxl>=3.1.0
+
+# Logging and configuration
+python-dotenv>=1.0.0
+
+# Gunicorn for production server
+gunicorn>=21.0.0
+
+# Optionally for Redis cache (production)
+# redis>=5.0.0
+
+# Optionally for PostgreSQL (production)
+# psycopg2-binary>=2.9.0

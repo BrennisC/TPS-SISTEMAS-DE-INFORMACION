@@ -107,6 +107,20 @@ def ranking_row(r: Resultado) -> rx.Component:
             ),
             class_name="px-6 py-4",
         ),
+        rx.el.td(
+            rx.el.span(
+                r.get("convocatoria", "-"),
+                class_name="text-xs font-semibold text-gray-600",
+            ),
+            class_name="px-6 py-4",
+        ),
+        rx.el.td(
+            rx.el.span(
+                r.get("fecha", "-"),
+                class_name="text-xs font-semibold text-gray-600",
+            ),
+            class_name="px-6 py-4",
+        ),
         rx.el.td(condicion_badge(r["condicion"]), class_name="px-6 py-4"),
         class_name="border-b border-gray-100 hover:bg-gray-50/50 transition-colors",
     )
@@ -170,6 +184,25 @@ def resultados_view() -> rx.Component:
                     value=ResultadosState.filter_carrera,
                     on_change=ResultadosState.set_filter_carrera,
                     class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[260px]",
+                ),
+                rx.icon(
+                    "chevron-down",
+                    class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+                ),
+                class_name="relative",
+            ),
+            rx.el.div(
+                rx.icon(
+                    "check-circle",
+                    class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+                ),
+                rx.el.select(
+                    rx.el.option("Todas", value="Todas"),
+                    rx.el.option("INGRESÓ", value="INGRESÓ"),
+                    rx.el.option("NO INGRESÓ", value="NO INGRESÓ"),
+                    value=ResultadosState.filter_condicion,
+                    on_change=ResultadosState.set_filter_condicion,
+                    class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[220px]",
                 ),
                 rx.icon(
                     "chevron-down",
@@ -246,6 +279,28 @@ def resultados_view() -> rx.Component:
                                 class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
                             ),
                             rx.el.th(
+                                rx.el.div(
+                                    rx.icon(
+                                        "calendar",
+                                        class_name="h-3.5 w-3.5",
+                                    ),
+                                    "Convocatoria",
+                                    class_name="flex items-center gap-2",
+                                ),
+                                class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
+                            ),
+                            rx.el.th(
+                                rx.el.div(
+                                    rx.icon(
+                                        "calendar-clock",
+                                        class_name="h-3.5 w-3.5",
+                                    ),
+                                    "Fecha",
+                                    class_name="flex items-center gap-2",
+                                ),
+                                class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
+                            ),
+                            rx.el.th(
                                 "Condición",
                                 class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
                             ),
@@ -253,7 +308,8 @@ def resultados_view() -> rx.Component:
                     ),
                     rx.el.tbody(
                         rx.foreach(
-                            ResultadosState.ranking_ordenado, ranking_row
+                            ResultadosState.paginated_resultados,
+                            ranking_row,
                         ),
                     ),
                     class_name="table-auto w-full",
@@ -261,6 +317,40 @@ def resultados_view() -> rx.Component:
                 class_name="overflow-x-auto",
             ),
             class_name="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm",
+        ),
+        rx.el.div(
+            rx.el.div(
+                rx.el.button(
+                    rx.icon("chevron-left", class_name="h-4 w-4"),
+                    "Anterior",
+                    on_click=ResultadosState.prev_page,
+                    disabled=ResultadosState.current_page == 1,
+                    class_name=rx.cond(
+                        ResultadosState.current_page == 1,
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                    ),
+                ),
+                rx.el.span(
+                    f"Página {ResultadosState.current_page} de {ResultadosState.total_pages}",
+                    class_name="text-sm font-medium text-gray-600",
+                ),
+                rx.el.button(
+                    "Siguiente",
+                    rx.icon("chevron-right", class_name="h-4 w-4"),
+                    on_click=ResultadosState.next_page,
+                    disabled=ResultadosState.current_page
+                    == ResultadosState.total_pages,
+                    class_name=rx.cond(
+                        ResultadosState.current_page
+                        == ResultadosState.total_pages,
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                    ),
+                ),
+                class_name="flex items-center justify-center gap-4",
+            ),
+            class_name="mt-4",
         ),
         class_name="max-w-7xl mx-auto w-full",
     )

@@ -1,0 +1,501 @@
+id,dni,nombres,apellidos,carrera,puntaje,correctas,condicion,convocatoria,fecha
+1,71719583,Liseth,Apaza González,Agronomía,3,3,NO INGRESÓ,2026-II,2026-08-03
+2,73698379,Víctor Erick,Huanca Aguilar,Ingeniería en Conservación de Suelos y Agua,93,93,INGRESÓ,2024-II,2024-08-11
+3,76374122,Sofía,Torres Carrasco,Ingeniería en Informática y Sistemas,14,14,NO INGRESÓ,2025-I,2025-03-22
+4,76067228,Flor,Villanueva Núñez,Zootecnia,29,29,NO INGRESÓ,2026-I,2026-03-22
+5,76120868,Fernando,Puma Cano,Ingeniería en Informática y Sistemas,30,30,NO INGRESÓ,2024-I,2024-03-22
+6,72741438,Diego,Herrera Moreno,Ingeniería en Conservación de Suelos y Agua,100,100,INGRESÓ,2026-II,2026-08-21
+7,73539704,Fernando,Puma Blanco,Ingeniería Mecánica Eléctrica,56,56,INGRESÓ,2024-II,2024-09-01
+8,79807725,Liseth Lorena,Villanueva Muñoz,Ingeniería Ambiental,12,12,NO INGRESÓ,2026-II,2026-08-15
+9,77082668,Miguel,Espinoza Hidalgo,Zootecnia,53,53,INGRESÓ,2024-I,2024-03-20
+10,75707197,Pablo Rubén,Flores Navarro,Ingeniería en Informática y Sistemas,28,28,NO INGRESÓ,2026-I,2026-03-15
+11,75007072,Andrea,Cárdenas Delgado,Desarrollo Rural,100,100,INGRESÓ,2026-II,2026-08-24
+12,76089806,Héctor,Rodríguez Fuentes,Ingeniería Mecánica Eléctrica,32,32,NO INGRESÓ,2026-I,2026-03-02
+13,72154051,Flor,Herrera González,Agronomía,71,71,INGRESÓ,2024-I,2024-03-17
+14,76693979,Wilmer,Condori Pérez,Ingeniería Mecánica Eléctrica,57,57,INGRESÓ,2024-II,2024-09-03
+15,70120642,Nadia Fatima,Apaza Molina,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2024-II,2024-08-05
+16,79580513,César Alex,Huamán González,Zootecnia,56,56,INGRESÓ,2024-I,2024-03-26
+17,71651177,Raúl,Cruz Benítez,Ingeniería en Informática y Sistemas,17,17,NO INGRESÓ,2024-I,2024-03-08
+18,77434500,Patricia Mariana,Ccopa Blanco,Turismo Rural y Comunitario,0,0,NO INGRESÓ,2025-II,2025-09-04
+19,72762152,Karina,Castillo Benítez,Administración,46,46,NO INGRESÓ,2024-II,2024-08-30
+20,73185957,Wilmer,Morales Gutiérrez,Economía,2,2,NO INGRESÓ,2026-II,2026-08-21
+21,73117625,Diego,López Carrasco,Ingeniería en Informática y Sistemas,19,19,NO INGRESÓ,2025-II,2025-08-26
+22,79792396,Daniela,Ramírez Aguilar,Zootecnia,89,89,INGRESÓ,2026-I,2026-03-07
+23,75304573,Daniela Valeria,Pilco Cano,Turismo Rural y Comunitario,89,89,INGRESÓ,2024-II,2024-08-30
+24,71154126,Stephanie Liseth,Pérez Vásquez,Ingeniería Mecánica Eléctrica,47,47,NO INGRESÓ,2024-I,2024-03-06
+25,79304682,Ana,Huanca Castro,Contabilidad,37,37,NO INGRESÓ,2026-II,2026-08-09
+26,75752576,Raúl Javier,Rojas Lozano,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2024-I,2024-03-09
+27,72710895,Héctor Jorge,Pérez Muñoz,Ingeniería en Industrias Alimentarias,2,2,NO INGRESÓ,2025-II,2025-08-08
+28,77210624,Ricardo,Ventura Gutiérrez,Ingeniería en Informática y Sistemas,52,52,INGRESÓ,2026-II,2026-08-03
+29,73971793,Javier,Ortega Gutiérrez,Desarrollo Rural,27,27,NO INGRESÓ,2024-II,2024-08-02
+30,72670896,Víctor,Ccopa Navarro,Ingeniería en Industrias Alimentarias,0,0,NO INGRESÓ,2025-I,2025-03-24
+31,73740036,Claudia,Pilco Molina,Ingeniería en Informática y Sistemas,33,33,NO INGRESÓ,2024-II,2024-08-22
+32,70463060,Yaneth,Herrera Serrano,Ingeniería en Informática y Sistemas,33,33,NO INGRESÓ,2025-I,2025-03-15
+33,76462506,Sofía,Ruiz Fuentes,Desarrollo Rural,99,99,INGRESÓ,2026-I,2026-03-02
+34,76110622,Jorge,Reyes Jiménez,Ingeniería en Conservación de Suelos y Agua,14,14,NO INGRESÓ,2026-I,2026-03-22
+35,79301497,Jhon,Castillo Núñez,Ingeniería en Informática y Sistemas,88,88,INGRESÓ,2025-I,2025-03-18
+36,74813613,Ricardo,García Pérez,Ingeniería en Informática y Sistemas,58,58,INGRESÓ,2026-I,2026-03-15
+37,74761145,Ana,Mamani Carrasco,Ingeniería en Conservación de Suelos y Agua,100,100,INGRESÓ,2026-I,2026-03-27
+38,77971465,Rosa Cinthia,Martínez Moreno,Zootecnia,85,85,INGRESÓ,2025-I,2025-03-10
+39,71788238,Sebastián,Chávez Castro,Ingeniería en Industrias Alimentarias,56,56,INGRESÓ,2026-II,2026-09-03
+40,77425149,Jhon Carlos,Cruz Romero,Zootecnia,100,100,INGRESÓ,2024-II,2024-08-11
+41,74013879,Daniela Valeria,Puma Muñoz,Economía,26,26,NO INGRESÓ,2025-II,2025-08-16
+42,73589533,Karina Valeria,Soto Gutiérrez,Ingeniería en Informática y Sistemas,59,59,INGRESÓ,2026-I,2026-03-18
+43,79658481,Marco,Campos Cabrera,Economía,96,96,INGRESÓ,2024-II,2024-08-20
+44,78191131,David,Rojas Molina,Ingeniería en Informática y Sistemas,48,48,NO INGRESÓ,2025-II,2025-08-02
+45,78961107,Ricardo,Cruz González,Ingeniería en Informática y Sistemas,80,80,INGRESÓ,2026-II,2026-08-06
+46,75483562,Carmen Daniela,Huamán Cano,Administración,37,37,NO INGRESÓ,2025-II,2025-08-27
+47,70675419,Claudia,Apaza Blanco,Ingeniería en Industrias Alimentarias,83,83,INGRESÓ,2025-II,2025-08-02
+48,76189034,Liseth Lorena,Cruz Muñoz,Ingeniería en Informática y Sistemas,11,11,NO INGRESÓ,2024-II,2024-08-20
+49,71275009,Fernando,Castillo Jiménez,Zootecnia,95,95,INGRESÓ,2025-I,2025-03-19
+50,78937982,Rubén César,Martínez Vásquez,Ingeniería en Conservación de Suelos y Agua,74,74,INGRESÓ,2026-II,2026-09-02
+51,72566765,Héctor Jorge,Espinoza Cano,Ingeniería en Conservación de Suelos y Agua,50,50,NO INGRESÓ,2025-II,2025-08-30
+52,77563202,Sandra,Ramírez Navarro,Administración,9,9,NO INGRESÓ,2026-I,2026-03-11
+53,74691890,Fatima Liseth,Ccallo Serrano,Ingeniería Mecánica Eléctrica,18,18,NO INGRESÓ,2025-I,2025-03-13
+54,78234615,Liseth,Soto Castro,Ingeniería en Recursos Naturales Renovables,29,29,NO INGRESÓ,2026-II,2026-08-19
+55,77138769,Cinthia,Villanueva Vásquez,Ingeniería Mecánica Eléctrica,44,44,NO INGRESÓ,2024-II,2024-08-30
+56,73213524,Nadia Rocío,Herrera Iglesias,Ingeniería en Informática y Sistemas,79,79,INGRESÓ,2024-II,2024-09-03
+57,70237370,Héctor Jorge,Quispe Pérez,Ingeniería en Industrias Alimentarias,7,7,NO INGRESÓ,2024-I,2024-03-02
+58,70205779,Marco,Morales Delgado,Zootecnia,41,41,NO INGRESÓ,2026-II,2026-08-29
+59,78250138,Carmen,Sánchez Fernández,Ingeniería en Informática y Sistemas,66,66,INGRESÓ,2024-I,2024-03-05
+60,78767312,Iván José,Ortega Molina,Administración,75,75,INGRESÓ,2024-I,2024-03-28
+61,73540415,Pablo Rubén,Torres Lozano,Economía,29,29,NO INGRESÓ,2025-I,2025-03-04
+62,70547605,Daniela,Mendoza Núñez,Contabilidad,0,0,NO INGRESÓ,2024-II,2024-08-30
+63,71925626,Víctor,Condori Martínez,Ingeniería Forestal,9,9,NO INGRESÓ,2025-I,2025-03-23
+64,77367772,Ricardo,Paredes Núñez,Ingeniería en Informática y Sistemas,64,64,INGRESÓ,2024-II,2024-08-18
+65,70433940,Karina Valeria,Cutipa Muñoz,Ingeniería en Informática y Sistemas,100,100,INGRESÓ,2025-II,2025-08-03
+66,78249789,Erick,Quispe Martínez,Turismo,47,47,NO INGRESÓ,2025-II,2025-08-27
+67,76718473,Wilmer,Morales Núñez,Turismo Rural y Comunitario,43,43,NO INGRESÓ,2024-I,2024-03-03
+68,76933143,Iván,García Cano,Ingeniería en Informática y Sistemas,55,55,INGRESÓ,2024-I,2024-03-21
+69,72037191,Stephanie Liseth,Vega Muñoz,Ingeniería en Informática y Sistemas,66,66,INGRESÓ,2024-II,2024-08-20
+70,71970754,Liliana,Flores Cano,Agronomía,69,69,INGRESÓ,2025-II,2025-08-19
+71,76435505,Sebastián,Cruz Gutiérrez,Ingeniería en Informática y Sistemas,94,94,INGRESÓ,2025-II,2025-08-18
+72,75008935,Fatima,García Núñez,Turismo,70,70,INGRESÓ,2025-II,2025-08-29
+73,74006492,Alex,Cutipa Jiménez,Zootecnia,43,43,NO INGRESÓ,2025-I,2025-02-26
+74,78310235,Víctor,Huanca Gutiérrez,Desarrollo Rural,65,65,INGRESÓ,2026-II,2026-08-07
+75,71255409,Evelyn Carmen,Huanca Gutiérrez,Ingeniería en Conservación de Suelos y Agua,78,78,INGRESÓ,2025-II,2025-08-26
+76,79076742,Fernando,Cutipa Muñoz,Ingeniería en Informática y Sistemas,95,95,INGRESÓ,2025-I,2025-03-17
+77,77443690,José,Espinoza Delgado,Ingeniería en Informática y Sistemas,43,43,NO INGRESÓ,2024-II,2024-08-03
+78,79494697,Liseth,Ramos Aguilar,Agronomía,5,5,NO INGRESÓ,2025-I,2025-03-02
+79,73895475,Miguel Ángel,Campos Gutiérrez,Ingeniería en Conservación de Suelos y Agua,84,84,INGRESÓ,2025-II,2025-08-17
+80,75797629,Diego,Sánchez Sánchez,Ingeniería Mecánica Eléctrica,59,59,INGRESÓ,2025-II,2025-08-17
+81,79595270,José,Ccopa Moran,Administración,85,85,INGRESÓ,2024-II,2024-08-02
+82,74801541,Jorge,López Muñoz,Ingeniería en Industrias Alimentarias,91,91,INGRESÓ,2024-I,2024-03-08
+83,71630140,Víctor,Vargas González,Turismo Rural y Comunitario,59,59,INGRESÓ,2025-I,2025-03-22
+84,72946751,Raúl Javier,Cutipa Aguilar,Ingeniería en Informática y Sistemas,22,22,NO INGRESÓ,2025-I,2025-03-23
+85,77857296,Wilmer Rodrigo,Lazo Fuentes,Desarrollo Rural,68,68,INGRESÓ,2025-II,2025-08-26
+86,79807290,Lorena,Ventura Muñoz,Contabilidad,80,80,INGRESÓ,2025-II,2025-08-07
+87,71060605,Jhon,León Molina,Agronomía,48,48,NO INGRESÓ,2024-I,2024-03-21
+88,73939290,Héctor,Flores Delgado,Desarrollo Rural,55,55,INGRESÓ,2024-I,2024-03-15
+89,71661307,Ronal,Chávez Aguilar,Turismo,93,93,INGRESÓ,2026-II,2026-08-03
+90,79134621,Carmen Daniela,Torres Álvarez,Ingeniería Mecánica Eléctrica,37,37,NO INGRESÓ,2025-II,2025-08-26
+91,70358318,Juan,Reyes Lozano,Ingeniería en Informática y Sistemas,100,100,INGRESÓ,2024-I,2024-03-05
+92,75512314,Ronal,Huamán Molina,Ingeniería en Industrias Alimentarias,9,9,NO INGRESÓ,2024-I,2024-03-28
+93,70249314,Daniela Valeria,Rodríguez González,Economía,17,17,NO INGRESÓ,2026-I,2026-03-01
+94,77520810,Jorge,Sánchez Castro,Ingeniería en Industrias Alimentarias,19,19,NO INGRESÓ,2024-II,2024-09-02
+95,77684678,Víctor,Ramos Pérez,Agronomía,49,49,NO INGRESÓ,2024-I,2024-03-16
+96,72488628,Flor,Ramírez Romero,Ingeniería en Informática y Sistemas,85,85,INGRESÓ,2024-I,2024-03-13
+97,79249870,David,Soto Fuentes,Ingeniería en Industrias Alimentarias,29,29,NO INGRESÓ,2025-II,2025-08-29
+98,74276341,Sofía,Ruiz Romero,Economía,7,7,NO INGRESÓ,2025-II,2025-08-05
+99,79839251,Claudia,Pérez Benítez,Ingeniería Mecánica Eléctrica,51,51,INGRESÓ,2024-I,2024-03-14
+100,75899644,Kevin,Rojas Pérez,Ingeniería en Informática y Sistemas,19,19,NO INGRESÓ,2025-II,2025-08-31
+101,77199311,Marco,Puma Molina,Turismo Rural y Comunitario,31,31,NO INGRESÓ,2025-I,2025-02-25
+102,71167449,Diego,Chávez Fernández,Ingeniería en Informática y Sistemas,63,63,INGRESÓ,2025-I,2025-03-20
+103,70882629,Stephanie Liseth,Cutipa Carrasco,Ingeniería en Informática y Sistemas,54,54,INGRESÓ,2025-II,2025-08-18
+104,75791039,Cristian,Cárdenas Fuentes,Ingeniería en Conservación de Suelos y Agua,93,93,INGRESÓ,2025-II,2025-09-03
+105,73543918,Rosa,Huamán Pérez,Ingeniería en Industrias Alimentarias,11,11,NO INGRESÓ,2024-II,2024-08-21
+106,71209226,Nadia Fatima,Apaza Vásquez,Contabilidad,8,8,NO INGRESÓ,2026-II,2026-08-28
+107,74857259,Ronal,Castillo Aguilar,Ingeniería en Informática y Sistemas,76,76,INGRESÓ,2024-I,2024-03-06
+108,77309439,Wilmer Rodrigo,Torres Moreno,Zootecnia,100,100,INGRESÓ,2026-II,2026-08-20
+109,75861544,Héctor Alejandro,Flores Jiménez,Contabilidad,9,9,NO INGRESÓ,2025-I,2025-03-04
+110,72972018,Fatima Liseth,Huanca Blanco,Turismo,97,97,INGRESÓ,2024-II,2024-08-29
+111,72532644,Jhon,Espinoza Romero,Ingeniería Ambiental,48,48,NO INGRESÓ,2026-I,2026-03-21
+112,70630944,Evelyn,Cruz Sánchez,Ingeniería en Informática y Sistemas,5,5,NO INGRESÓ,2026-I,2026-03-21
+113,79590807,Ana,Martínez Sánchez,Agronomía,18,18,NO INGRESÓ,2026-I,2026-03-17
+114,70656695,Sofía,Ramírez Iglesias,Administración,64,64,INGRESÓ,2025-II,2025-09-03
+115,75614484,Karina Valeria,Lazo Benítez,Ingeniería en Informática y Sistemas,30,30,NO INGRESÓ,2025-I,2025-03-06
+116,79776746,Miguel,Lazo Carrasco,Agronomía,16,16,NO INGRESÓ,2026-II,2026-08-26
+117,78831414,Ana,Lazo González,Ingeniería en Informática y Sistemas,50,50,NO INGRESÓ,2024-I,2024-03-01
+118,72599548,Karina,Apaza González,Ingeniería en Informática y Sistemas,90,90,INGRESÓ,2024-II,2024-08-22
+119,77342941,Evelyn Carmen,Soto Hidalgo,Ingeniería en Informática y Sistemas,81,81,INGRESÓ,2026-I,2026-03-15
+120,73255051,Víctor Erick,Pilco Castro,Contabilidad,93,93,INGRESÓ,2026-II,2026-08-30
+121,74194357,Diego,Condori González,Ingeniería en Informática y Sistemas,15,15,NO INGRESÓ,2025-II,2025-09-05
+122,77538325,Iván José,Mamani Navarro,Desarrollo Rural,18,18,NO INGRESÓ,2026-I,2026-03-03
+123,73955699,Fernando,Cárdenas Álvarez,Economía,10,10,NO INGRESÓ,2025-I,2025-03-04
+124,70642620,David,Chávez González,Administración,97,97,INGRESÓ,2024-I,2024-03-25
+125,79207407,Stephanie Liseth,Huamán Gutiérrez,Turismo,38,38,NO INGRESÓ,2026-I,2026-03-25
+126,71053729,Ana,León Cano,Ingeniería en Informática y Sistemas,56,56,INGRESÓ,2024-I,2024-03-21
+127,79574148,Daniela,Medina Moreno,Ingeniería en Recursos Naturales Renovables,71,71,INGRESÓ,2026-II,2026-08-05
+128,76262974,Héctor,Martínez Moran,Economía,8,8,NO INGRESÓ,2026-I,2026-03-26
+129,70743829,Rubén César,Lazo González,Administración,79,79,INGRESÓ,2026-II,2026-08-30
+130,74923149,Iván José,Cruz Alonso,Ingeniería en Informática y Sistemas,37,37,NO INGRESÓ,2024-II,2024-08-21
+131,75989032,Daniela Valeria,Condori Núñez,Turismo Rural y Comunitario,14,14,NO INGRESÓ,2026-I,2026-03-09
+132,73134272,Rodrigo,Salazar Serrano,Ingeniería Ambiental,30,30,NO INGRESÓ,2025-II,2025-09-03
+133,75389033,Sandra,Quispe Núñez,Ingeniería en Informática y Sistemas,66,66,INGRESÓ,2026-II,2026-08-20
+134,77297090,Lorena,Martínez Vásquez,Economía,37,37,NO INGRESÓ,2025-II,2025-08-26
+135,70583829,Miguel,Rojas Sánchez,Ingeniería en Informática y Sistemas,55,55,INGRESÓ,2026-II,2026-08-24
+136,71289923,Pablo,Ventura Sánchez,Zootecnia,91,91,INGRESÓ,2024-I,2024-03-11
+137,74391883,Nadia Fatima,Salazar Fuentes,Ingeniería en Industrias Alimentarias,36,36,NO INGRESÓ,2024-I,2024-03-20
+138,77467726,Nadia Rocío,Vega Iglesias,Ingeniería Mecánica Eléctrica,76,76,INGRESÓ,2025-II,2025-08-05
+139,76064832,Alejandro,Soto Iglesias,Ingeniería en Recursos Naturales Renovables,17,17,NO INGRESÓ,2025-I,2025-03-22
+140,71446455,Claudia,Cruz González,Ingeniería en Informática y Sistemas,60,60,INGRESÓ,2025-II,2025-09-03
+141,77815384,Xiomara,Sánchez Sánchez,Agronomía,93,93,INGRESÓ,2026-I,2026-03-29
+142,72083077,Valeria,Cárdenas Benítez,Ingeniería en Conservación de Suelos y Agua,51,51,INGRESÓ,2026-I,2026-03-06
+143,74204459,Mónica,Coila Carrasco,Ingeniería en Informática y Sistemas,74,74,INGRESÓ,2024-II,2024-08-20
+144,75664316,Ronal,Chávez Hidalgo,Turismo Rural y Comunitario,3,3,NO INGRESÓ,2026-I,2026-03-03
+145,78355692,Stephanie Fatima,Ortega Cabrera,Ingeniería Mecánica Eléctrica,33,33,NO INGRESÓ,2026-I,2026-03-16
+146,77375356,Brenda,López Hidalgo,Ingeniería Ambiental,73,73,INGRESÓ,2026-II,2026-08-22
+147,76216632,Claudia,Castillo González,Ingeniería en Recursos Naturales Renovables,53,53,INGRESÓ,2026-II,2026-08-16
+148,74165284,Stephanie Liseth,Salazar Aguilar,Desarrollo Rural,34,34,NO INGRESÓ,2025-II,2025-08-21
+149,70388833,Rodrigo,Pilco Muñoz,Ingeniería en Informática y Sistemas,36,36,NO INGRESÓ,2025-II,2025-08-16
+150,74794062,Mónica,Huanca Castro,Ingeniería en Recursos Naturales Renovables,42,42,NO INGRESÓ,2024-I,2024-03-05
+151,76082139,Rocío,Villanueva Jiménez,Zootecnia,48,48,NO INGRESÓ,2025-II,2025-09-02
+152,71622046,Edwin,Flores González,Administración,9,9,NO INGRESÓ,2025-I,2025-03-21
+153,77948107,Rosa Cinthia,Pérez Serrano,Ingeniería Forestal,88,88,INGRESÓ,2026-I,2026-03-11
+154,78511333,Kevin,Campos Serrano,Turismo,0,0,NO INGRESÓ,2025-II,2025-08-31
+155,77962302,Evelyn,Soto Cabrera,Contabilidad,78,78,INGRESÓ,2026-II,2026-08-04
+156,74063384,Ricardo,Salazar Gutiérrez,Ingeniería en Informática y Sistemas,53,53,INGRESÓ,2026-I,2026-03-01
+157,71044906,Nadia Fatima,León Castro,Ingeniería en Industrias Alimentarias,65,65,INGRESÓ,2024-II,2024-08-31
+158,78123194,Patricia,Medina Muñoz,Ingeniería en Informática y Sistemas,41,41,NO INGRESÓ,2024-II,2024-09-05
+159,78049765,Wilmer,Morales Romero,Contabilidad,17,17,NO INGRESÓ,2025-I,2025-03-06
+160,74872986,Sandra,Medina Gutiérrez,Ingeniería en Informática y Sistemas,49,49,NO INGRESÓ,2026-I,2026-03-30
+161,72303058,Nadia Fatima,Puma Navarro,Ingeniería en Informática y Sistemas,75,75,INGRESÓ,2026-II,2026-08-04
+162,71686863,Edwin Cristian,Lazo Castro,Agronomía,16,16,NO INGRESÓ,2024-II,2024-09-05
+163,70992583,Stephanie Liseth,Cutipa Núñez,Turismo Rural y Comunitario,100,100,INGRESÓ,2025-II,2025-09-04
+164,76660463,Miguel Ángel,Quispe Alonso,Ingeniería en Industrias Alimentarias,7,7,NO INGRESÓ,2024-I,2024-03-29
+165,79115069,Jhon,Coila Cano,Ingeniería Forestal,31,31,NO INGRESÓ,2026-I,2026-03-09
+166,75655803,Fatima,Quispe Castro,Ingeniería en Industrias Alimentarias,73,73,INGRESÓ,2025-I,2025-03-16
+167,72359075,Héctor Alejandro,Torres Iglesias,Ingeniería Forestal,54,54,INGRESÓ,2025-II,2025-08-17
+168,74388133,Jorge,Paredes Castro,Agronomía,13,13,NO INGRESÓ,2025-I,2025-03-18
+169,74949909,Mónica,Pilco Fuentes,Economía,63,63,INGRESÓ,2024-II,2024-08-09
+170,79018050,Wilmer,Villanueva Castro,Desarrollo Rural,57,57,INGRESÓ,2026-II,2026-08-06
+171,79608339,Carmen,López Jiménez,Ingeniería Forestal,60,60,INGRESÓ,2026-II,2026-09-03
+172,70933413,Rodrigo,Cárdenas Sánchez,Ingeniería Ambiental,74,74,INGRESÓ,2024-II,2024-08-04
+173,79702453,Ricardo,García Lozano,Ingeniería en Informática y Sistemas,9,9,NO INGRESÓ,2025-I,2025-03-19
+174,74816582,Miguel Ángel,Mendoza Alonso,Ingeniería Forestal,46,46,NO INGRESÓ,2024-I,2024-03-12
+175,75834610,Yaneth,Herrera González,Ingeniería en Informática y Sistemas,5,5,NO INGRESÓ,2025-II,2025-08-15
+176,73853123,Valeria,Herrera Moran,Administración,26,26,NO INGRESÓ,2025-I,2025-03-05
+177,74037710,Héctor Alejandro,Ortega Cabrera,Ingeniería en Informática y Sistemas,66,66,INGRESÓ,2026-II,2026-08-29
+178,70946973,Patricia Mariana,Apaza Lozano,Ingeniería en Informática y Sistemas,100,100,INGRESÓ,2024-I,2024-03-27
+179,72403511,Jhon,Ccopa Pérez,Desarrollo Rural,28,28,NO INGRESÓ,2026-I,2026-03-10
+180,79325626,César,Vargas Martínez,Ingeniería en Conservación de Suelos y Agua,68,68,INGRESÓ,2026-I,2026-03-26
+181,74042775,Paola Evelyn,Herrera Castro,Ingeniería Mecánica Eléctrica,1,1,NO INGRESÓ,2025-II,2025-08-30
+182,75540893,Víctor Erick,Ccallo Lozano,Agronomía,71,71,INGRESÓ,2025-II,2025-08-06
+183,71221118,Daniela,Rojas Alonso,Ingeniería en Informática y Sistemas,36,36,NO INGRESÓ,2024-II,2024-08-14
+184,74070038,Xiomara María,Flores Castro,Agronomía,30,30,NO INGRESÓ,2024-I,2024-03-30
+185,76033835,Claudia,Pilco Muñoz,Ingeniería Ambiental,100,100,INGRESÓ,2025-I,2025-02-28
+186,72448176,Raúl,Martínez Molina,Ingeniería en Informática y Sistemas,26,26,NO INGRESÓ,2025-I,2025-03-01
+187,74317226,Javier Fernando,Huanca Serrano,Ingeniería en Industrias Alimentarias,19,19,NO INGRESÓ,2025-II,2025-08-30
+188,78790328,Cinthia,Quispe Benítez,Ingeniería en Informática y Sistemas,91,91,INGRESÓ,2025-I,2025-03-21
+189,76261268,Rosa,Huamán Cano,Ingeniería en Informática y Sistemas,59,59,INGRESÓ,2026-II,2026-08-02
+190,70287605,Fatima,Herrera Núñez,Ingeniería Ambiental,9,9,NO INGRESÓ,2025-II,2025-08-07
+191,76658817,Sandra,Medina Navarro,Ingeniería en Informática y Sistemas,84,84,INGRESÓ,2024-II,2024-08-16
+192,71568678,Wilmer Rodrigo,Huanca Alonso,Ingeniería Ambiental,82,82,INGRESÓ,2026-II,2026-08-04
+193,78861040,Xiomara,Lazo Delgado,Desarrollo Rural,42,42,NO INGRESÓ,2024-II,2024-08-31
+194,73009069,Javier Fernando,Paredes Alonso,Ingeniería Mecánica Eléctrica,33,33,NO INGRESÓ,2024-I,2024-03-31
+195,79507579,Kevin,Mamani Moreno,Turismo,100,100,INGRESÓ,2026-II,2026-08-25
+196,77333124,Pablo,López Delgado,Economía,99,99,INGRESÓ,2026-II,2026-08-26
+197,79278433,Cinthia,Apaza Vásquez,Turismo,15,15,NO INGRESÓ,2026-II,2026-08-25
+198,76375341,Juan,Puma Gutiérrez,Ingeniería en Industrias Alimentarias,54,54,INGRESÓ,2025-I,2025-03-07
+199,72223098,Marco,Puma Delgado,Ingeniería en Informática y Sistemas,64,64,INGRESÓ,2024-I,2024-03-18
+200,76463219,Flor,Rojas Romero,Ingeniería en Informática y Sistemas,13,13,NO INGRESÓ,2024-I,2024-03-25
+201,76387623,Ronal,Ramos Hidalgo,Ingeniería en Informática y Sistemas,70,70,INGRESÓ,2026-I,2026-03-09
+202,74222820,Cinthia,Sánchez Álvarez,Turismo,9,9,NO INGRESÓ,2024-II,2024-08-30
+203,77385715,Edwin,Salazar Serrano,Contabilidad,42,42,NO INGRESÓ,2024-I,2024-03-10
+204,78237735,Jessica,Cutipa Núñez,Desarrollo Rural,29,29,NO INGRESÓ,2026-II,2026-08-25
+205,79229132,Karina,Campos Iglesias,Ingeniería en Informática y Sistemas,44,44,NO INGRESÓ,2025-II,2025-08-29
+206,72335038,Raúl,Vargas Muñoz,Agronomía,22,22,NO INGRESÓ,2024-I,2024-03-22
+207,78965197,Cinthia,Campos Fernández,Ingeniería Ambiental,85,85,INGRESÓ,2025-II,2025-08-24
+208,72790696,José,Ccopa Vásquez,Agronomía,86,86,INGRESÓ,2026-I,2026-03-31
+209,77478923,Liseth Lorena,Cárdenas Molina,Administración,13,13,NO INGRESÓ,2025-II,2025-08-23
+210,75232651,Carmen,Chávez Vásquez,Economía,60,60,INGRESÓ,2025-I,2025-03-08
+211,70378915,Kevin,Martínez Fuentes,Turismo Rural y Comunitario,72,72,INGRESÓ,2026-II,2026-08-16
+212,73094587,Lorena,Apaza Fernández,Ingeniería en Informática y Sistemas,90,90,INGRESÓ,2024-II,2024-08-02
+213,74669851,Rosa,Huamán Lozano,Ingeniería en Industrias Alimentarias,20,20,NO INGRESÓ,2024-II,2024-09-04
+214,76520284,Evelyn Carmen,Morales Romero,Zootecnia,53,53,INGRESÓ,2024-II,2024-08-23
+215,72247270,Rubén César,Campos Carrasco,Economía,24,24,NO INGRESÓ,2026-II,2026-08-08
+216,77097413,Miguel,Paredes Moran,Ingeniería en Informática y Sistemas,35,35,NO INGRESÓ,2024-II,2024-09-01
+217,78130388,Rubén,Medina Castro,Ingeniería en Informática y Sistemas,91,91,INGRESÓ,2025-I,2025-03-10
+218,73699871,Juan,Paredes Cabrera,Administración,35,35,NO INGRESÓ,2026-II,2026-09-04
+219,79608547,Héctor,Villanueva Fuentes,Ingeniería en Informática y Sistemas,74,74,INGRESÓ,2025-II,2025-08-29
+220,70540736,Lucía,Ccopa Pérez,Ingeniería en Conservación de Suelos y Agua,19,19,NO INGRESÓ,2025-II,2025-08-29
+221,72784709,Brenda,Medina Martínez,Zootecnia,70,70,INGRESÓ,2024-II,2024-08-04
+222,79608908,Pablo Rubén,Coila Núñez,Contabilidad,100,100,INGRESÓ,2025-I,2025-03-01
+223,74188889,Miguel,Soto González,Ingeniería en Informática y Sistemas,91,91,INGRESÓ,2024-I,2024-03-25
+224,71266952,Edwin Cristian,Salazar Sánchez,Agronomía,89,89,INGRESÓ,2024-II,2024-09-02
+225,77691502,Rocío,García Carrasco,Agronomía,73,73,INGRESÓ,2025-I,2025-03-22
+226,79182347,Jhon,Coila Serrano,Zootecnia,0,0,NO INGRESÓ,2025-II,2025-08-04
+227,70011340,Andrea,Vega Cano,Turismo,93,93,INGRESÓ,2025-II,2025-08-09
+228,70868846,Flor,Ventura Hidalgo,Administración,90,90,INGRESÓ,2025-I,2025-03-10
+229,78714828,Nadia,Campos Molina,Agronomía,45,45,NO INGRESÓ,2024-I,2024-03-23
+230,71718442,Sebastián,Salazar Carrasco,Ingeniería en Informática y Sistemas,41,41,NO INGRESÓ,2025-II,2025-08-09
+231,72753418,Juan,Ramos Castro,Ingeniería Forestal,82,82,INGRESÓ,2024-II,2024-08-27
+232,75897789,Fatima Liseth,Flores Moran,Ingeniería Mecánica Eléctrica,32,32,NO INGRESÓ,2024-II,2024-08-16
+233,75060836,Edwin,Coila Cabrera,Ingeniería en Informática y Sistemas,84,84,INGRESÓ,2024-II,2024-08-19
+234,78863176,Patricia Mariana,Espinoza Blanco,Turismo Rural y Comunitario,19,19,NO INGRESÓ,2024-II,2024-08-21
+235,70280001,Andrea,Mendoza Blanco,Zootecnia,12,12,NO INGRESÓ,2026-I,2026-03-07
+236,76749095,Iván,Ortega Martínez,Ingeniería en Informática y Sistemas,34,34,NO INGRESÓ,2025-II,2025-08-06
+237,75203780,Héctor Jorge,Castillo Blanco,Agronomía,18,18,NO INGRESÓ,2024-II,2024-08-16
+238,72003921,Evelyn,Reyes Iglesias,Ingeniería en Informática y Sistemas,61,61,INGRESÓ,2024-I,2024-03-06
+239,72129542,Erick,Mamani Álvarez,Ingeniería en Industrias Alimentarias,1,1,NO INGRESÓ,2026-I,2026-03-25
+240,78323974,Xiomara María,Paredes Blanco,Ingeniería en Conservación de Suelos y Agua,69,69,INGRESÓ,2025-II,2025-09-01
+241,73831990,Stephanie Fatima,Vargas Fuentes,Ingeniería en Industrias Alimentarias,25,25,NO INGRESÓ,2024-II,2024-08-01
+242,73766741,Patricia Diana,Martínez Aguilar,Administración,6,6,NO INGRESÓ,2025-I,2025-03-05
+243,76726402,Diego,Apaza Alonso,Ingeniería en Informática y Sistemas,38,38,NO INGRESÓ,2024-I,2024-03-25
+244,74069884,Evelyn,Paredes Pérez,Ingeniería Ambiental,65,65,INGRESÓ,2026-I,2026-03-24
+245,70160974,Rosa,Apaza Vásquez,Turismo Rural y Comunitario,18,18,NO INGRESÓ,2024-II,2024-08-20
+246,70736524,Nadia,Puma Carrasco,Turismo,86,86,INGRESÓ,2024-II,2024-08-30
+247,77297801,Fernando,Sánchez Benítez,Agronomía,37,37,NO INGRESÓ,2024-I,2024-03-10
+248,73919346,Jhon,Vega Navarro,Ingeniería en Informática y Sistemas,28,28,NO INGRESÓ,2025-II,2025-08-07
+249,77581910,Patricia,Medina Lozano,Administración,22,22,NO INGRESÓ,2025-II,2025-08-06
+250,72488460,Carlos,Huamán Romero,Ingeniería en Informática y Sistemas,57,57,INGRESÓ,2025-I,2025-03-09
+251,79327356,Rosa,Castillo Sánchez,Ingeniería en Industrias Alimentarias,18,18,NO INGRESÓ,2025-I,2025-03-11
+252,73324120,Fatima Liseth,Apaza González,Ingeniería Mecánica Eléctrica,5,5,NO INGRESÓ,2024-II,2024-08-17
+253,75562484,Ana,Pérez Carrasco,Ingeniería en Informática y Sistemas,80,80,INGRESÓ,2024-I,2024-03-06
+254,75938182,Daniela Valeria,Ruiz Iglesias,Ingeniería en Informática y Sistemas,50,50,NO INGRESÓ,2026-II,2026-08-18
+255,76912082,César,Coila Muñoz,Turismo,30,30,NO INGRESÓ,2024-I,2024-03-03
+256,76417252,Mariana,Ccopa Cabrera,Ingeniería en Industrias Alimentarias,96,96,INGRESÓ,2025-II,2025-09-04
+257,73674549,Diego,Rodríguez Romero,Ingeniería en Informática y Sistemas,55,55,INGRESÓ,2026-I,2026-03-26
+258,74471581,José,Ccopa Moreno,Ingeniería en Recursos Naturales Renovables,50,50,NO INGRESÓ,2026-I,2026-03-19
+259,79924771,Ana,Soto Vásquez,Ingeniería en Informática y Sistemas,68,68,INGRESÓ,2024-II,2024-08-13
+260,70334336,Liseth Lorena,Rojas Molina,Ingeniería en Recursos Naturales Renovables,9,9,NO INGRESÓ,2024-II,2024-08-13
+261,72478196,Jhon,López Cabrera,Zootecnia,47,47,NO INGRESÓ,2024-II,2024-09-03
+262,75062779,Ronal,Torres Serrano,Economía,74,74,INGRESÓ,2025-I,2025-03-22
+263,73745298,Patricia,Soto Vásquez,Agronomía,100,100,INGRESÓ,2026-II,2026-08-20
+264,79520780,Xiomara María,Paredes Fernández,Ingeniería en Informática y Sistemas,73,73,INGRESÓ,2024-II,2024-08-07
+265,75632941,Sofía,Mamani Carrasco,Ingeniería en Conservación de Suelos y Agua,87,87,INGRESÓ,2026-II,2026-08-16
+266,77040612,Carlos,Salazar Sánchez,Turismo,45,45,NO INGRESÓ,2025-I,2025-03-25
+267,72728923,Milagros,Paredes Molina,Ingeniería en Recursos Naturales Renovables,31,31,NO INGRESÓ,2025-II,2025-08-02
+268,79177913,Karina Valeria,Mamani Blanco,Turismo Rural y Comunitario,70,70,INGRESÓ,2024-I,2024-03-20
+269,72635764,Andrea,Rojas Martínez,Ingeniería en Informática y Sistemas,58,58,INGRESÓ,2026-II,2026-08-13
+270,73985398,Víctor,Coila Pérez,Ingeniería en Informática y Sistemas,3,3,NO INGRESÓ,2026-II,2026-08-10
+271,73349987,Xiomara,Rojas Castro,Ingeniería en Informática y Sistemas,3,3,NO INGRESÓ,2025-II,2025-08-19
+272,71529023,Cinthia,Reyes Muñoz,Agronomía,57,57,INGRESÓ,2024-I,2024-03-12
+273,79466486,Fatima,Apaza Navarro,Ingeniería en Informática y Sistemas,73,73,INGRESÓ,2025-II,2025-08-23
+274,78984440,Karina Valeria,Ramos Aguilar,Agronomía,36,36,NO INGRESÓ,2026-I,2026-03-16
+275,72017994,Mariana,Paredes Gutiérrez,Turismo,29,29,NO INGRESÓ,2026-II,2026-08-11
+276,72480985,Daniela Valeria,Ruiz Jiménez,Ingeniería Mecánica Eléctrica,15,15,NO INGRESÓ,2024-II,2024-08-05
+277,79857890,Iván,Cruz Castro,Ingeniería Ambiental,10,10,NO INGRESÓ,2025-II,2025-08-27
+278,74799841,José,Torres Delgado,Ingeniería Mecánica Eléctrica,51,51,INGRESÓ,2026-I,2026-03-09
+279,76739741,Raúl Javier,Castillo Gutiérrez,Ingeniería en Informática y Sistemas,99,99,INGRESÓ,2026-I,2026-03-02
+280,74703436,Wilmer Rodrigo,Pilco Pérez,Turismo Rural y Comunitario,37,37,NO INGRESÓ,2025-I,2025-03-01
+281,73153037,Jorge,Ortega Carrasco,Ingeniería Ambiental,55,55,INGRESÓ,2025-II,2025-09-03
+282,72275826,Pablo Rubén,Cárdenas Fernández,Ingeniería en Industrias Alimentarias,15,15,NO INGRESÓ,2026-I,2026-03-07
+283,76179919,Carmen Daniela,Condori Navarro,Turismo,26,26,NO INGRESÓ,2024-II,2024-08-02
+284,75775539,Cinthia,Campos Vásquez,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2026-I,2026-03-10
+285,73468370,Cristian,Apaza Molina,Administración,67,67,INGRESÓ,2024-II,2024-08-01
+286,74620085,Liseth,Ccallo Pérez,Ingeniería Ambiental,32,32,NO INGRESÓ,2026-II,2026-08-30
+287,70123271,Fernando,Campos Delgado,Ingeniería en Conservación de Suelos y Agua,79,79,INGRESÓ,2025-I,2025-03-06
+288,75012883,Carmen Daniela,Puma Muñoz,Ingeniería en Informática y Sistemas,82,82,INGRESÓ,2024-I,2024-03-26
+289,74352450,César,Morales Núñez,Turismo,6,6,NO INGRESÓ,2025-I,2025-03-20
+290,76014583,Wilmer,Apaza Castro,Ingeniería Forestal,9,9,NO INGRESÓ,2026-I,2026-03-10
+291,71498202,Lucía,Quispe Serrano,Economía,94,94,INGRESÓ,2026-II,2026-08-27
+292,70900549,Evelyn Carmen,Flores Castro,Turismo Rural y Comunitario,18,18,NO INGRESÓ,2025-I,2025-03-25
+293,73360419,Rosa Cinthia,Chávez González,Contabilidad,38,38,NO INGRESÓ,2026-II,2026-08-10
+294,70973306,César,Quispe Romero,Ingeniería en Informática y Sistemas,70,70,INGRESÓ,2024-II,2024-08-11
+295,77204299,Miguel,León Martínez,Ingeniería Ambiental,10,10,NO INGRESÓ,2025-II,2025-08-01
+296,70300582,Carmen Daniela,Ramos Jiménez,Agronomía,35,35,NO INGRESÓ,2026-II,2026-08-23
+297,74879280,Juan,Martínez Pérez,Ingeniería en Conservación de Suelos y Agua,47,47,NO INGRESÓ,2025-II,2025-08-09
+298,73832222,Patricia Diana,Castillo Cabrera,Economía,67,67,INGRESÓ,2025-II,2025-08-02
+299,78971338,Paola,Salazar Muñoz,Zootecnia,8,8,NO INGRESÓ,2024-I,2024-03-21
+300,72569046,Patricia,Ccallo Castro,Ingeniería en Informática y Sistemas,83,83,INGRESÓ,2024-I,2024-03-14
+301,78582968,Nadia,Ortega Delgado,Ingeniería en Industrias Alimentarias,100,100,INGRESÓ,2026-I,2026-03-04
+302,76004931,Ricardo,Ramos Jiménez,Ingeniería en Industrias Alimentarias,64,64,INGRESÓ,2024-II,2024-08-03
+303,71493219,Sebastián,García Castro,Turismo,93,93,INGRESÓ,2024-II,2024-08-06
+304,74966428,César,Apaza Cano,Economía,11,11,NO INGRESÓ,2026-II,2026-08-12
+305,70769891,Jorge,Flores Delgado,Ingeniería en Informática y Sistemas,39,39,NO INGRESÓ,2025-I,2025-03-07
+306,71909784,Claudia,Lazo Iglesias,Ingeniería Ambiental,48,48,NO INGRESÓ,2026-I,2026-03-27
+307,72223175,David,Mamani Fuentes,Agronomía,60,60,INGRESÓ,2025-II,2025-08-07
+308,76016291,Diego,León Moran,Zootecnia,11,11,NO INGRESÓ,2025-II,2025-09-01
+309,75675742,Carmen Daniela,García Molina,Ingeniería en Recursos Naturales Renovables,64,64,INGRESÓ,2025-II,2025-08-16
+310,70195368,Wilmer Rodrigo,Villanueva Benítez,Agronomía,14,14,NO INGRESÓ,2026-II,2026-09-01
+311,79235783,Fatima,López Molina,Agronomía,57,57,INGRESÓ,2025-II,2025-08-06
+312,78344540,Lorena,Cutipa Fuentes,Ingeniería en Industrias Alimentarias,58,58,INGRESÓ,2026-I,2026-03-13
+313,78528492,Stephanie Fatima,León Pérez,Zootecnia,12,12,NO INGRESÓ,2026-I,2026-03-12
+314,77592234,Daniela,Mendoza Álvarez,Ingeniería en Informática y Sistemas,45,45,NO INGRESÓ,2025-II,2025-08-22
+315,78261472,José,Martínez Hidalgo,Ingeniería en Informática y Sistemas,83,83,INGRESÓ,2025-I,2025-03-05
+316,71808009,Alex,Condori Serrano,Ingeniería en Industrias Alimentarias,64,64,INGRESÓ,2024-I,2024-03-25
+317,79281597,César Alex,García Benítez,Turismo,82,82,INGRESÓ,2026-I,2026-03-23
+318,77024028,Daniela,Cutipa Moran,Desarrollo Rural,37,37,NO INGRESÓ,2024-II,2024-08-26
+319,79190659,Rubén César,Soto Pérez,Desarrollo Rural,87,87,INGRESÓ,2025-II,2025-08-14
+320,78453929,Brenda,Huanca Iglesias,Ingeniería en Conservación de Suelos y Agua,81,81,INGRESÓ,2026-II,2026-08-23
+321,77086467,Víctor,Herrera Núñez,Turismo Rural y Comunitario,27,27,NO INGRESÓ,2026-I,2026-03-13
+322,72456660,Andrea,Coila Muñoz,Ingeniería Mecánica Eléctrica,65,65,INGRESÓ,2024-I,2024-03-25
+323,79416557,Stephanie,Villanueva Molina,Contabilidad,53,53,INGRESÓ,2025-II,2025-08-04
+324,77433377,Rosa,Ccallo Jiménez,Ingeniería Mecánica Eléctrica,37,37,NO INGRESÓ,2026-II,2026-08-13
+325,76328336,Stephanie,Cárdenas Fuentes,Ingeniería en Informática y Sistemas,22,22,NO INGRESÓ,2026-II,2026-08-09
+326,72578714,Liliana,Chávez Alonso,Turismo Rural y Comunitario,81,81,INGRESÓ,2025-I,2025-03-12
+327,78474848,Sebastián,Quispe Blanco,Ingeniería en Informática y Sistemas,31,31,NO INGRESÓ,2024-I,2024-03-12
+328,79417633,Karina,León Castro,Turismo Rural y Comunitario,53,53,INGRESÓ,2026-II,2026-08-23
+329,76398370,Carlos,Vargas Romero,Turismo Rural y Comunitario,66,66,INGRESÓ,2026-II,2026-08-17
+330,78167227,Pablo,Cárdenas Sánchez,Ingeniería en Informática y Sistemas,3,3,NO INGRESÓ,2024-I,2024-03-17
+331,73536326,Javier,García Blanco,Agronomía,23,23,NO INGRESÓ,2024-II,2024-08-07
+332,72579573,Raúl,Huanca Blanco,Ingeniería en Informática y Sistemas,6,6,NO INGRESÓ,2026-II,2026-08-06
+333,76510106,Sebastián,Ccallo Aguilar,Ingeniería Ambiental,0,0,NO INGRESÓ,2025-I,2025-03-07
+334,71217848,Edwin,Sánchez Alonso,Contabilidad,98,98,INGRESÓ,2024-I,2024-03-10
+335,70517059,Lorena,Salazar Fernández,Ingeniería Forestal,58,58,INGRESÓ,2026-I,2026-03-24
+336,70187069,Evelyn,Vargas Álvarez,Zootecnia,37,37,NO INGRESÓ,2026-I,2026-03-02
+337,73552356,Kevin,Huamán Vásquez,Ingeniería Forestal,34,34,NO INGRESÓ,2025-II,2025-08-12
+338,79208193,Fatima Liseth,Paredes Benítez,Ingeniería en Recursos Naturales Renovables,10,10,NO INGRESÓ,2025-I,2025-03-18
+339,73934808,Jhon,Medina González,Ingeniería en Informática y Sistemas,58,58,INGRESÓ,2024-II,2024-08-21
+340,75307189,Miguel,Paredes Álvarez,Desarrollo Rural,31,31,NO INGRESÓ,2026-I,2026-03-11
+341,75562703,Ricardo,Ventura González,Turismo,91,91,INGRESÓ,2026-II,2026-08-23
+342,79036511,Flor,Puma González,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2026-I,2026-03-29
+343,70614990,Jessica,Campos Lozano,Zootecnia,40,40,NO INGRESÓ,2026-II,2026-08-24
+344,76656950,César Alex,Cárdenas Carrasco,Economía,88,88,INGRESÓ,2026-I,2026-03-28
+345,78111841,Stephanie Fatima,Paredes Gutiérrez,Turismo Rural y Comunitario,66,66,INGRESÓ,2026-I,2026-03-25
+346,76511121,Liseth Lorena,Ramos Álvarez,Ingeniería Ambiental,83,83,INGRESÓ,2025-I,2025-02-26
+347,76319298,Erick,Ccallo Iglesias,Agronomía,38,38,NO INGRESÓ,2026-II,2026-09-03
+348,78088465,Rubén,Medina Muñoz,Turismo Rural y Comunitario,24,24,NO INGRESÓ,2024-II,2024-08-29
+349,71985251,Jhon Carlos,Mamani Álvarez,Agronomía,4,4,NO INGRESÓ,2026-I,2026-03-24
+350,74088109,Xiomara,Ortega Cabrera,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2025-II,2025-09-02
+351,79455717,Paola Evelyn,Ramos Fernández,Agronomía,56,56,INGRESÓ,2024-II,2024-08-14
+352,79775180,Wilmer Rodrigo,Ortega Gutiérrez,Desarrollo Rural,89,89,INGRESÓ,2025-II,2025-08-11
+353,71821504,Edwin Cristian,Salazar González,Ingeniería en Informática y Sistemas,26,26,NO INGRESÓ,2025-II,2025-08-07
+354,71563468,Javier,Cárdenas Fuentes,Ingeniería Forestal,100,100,INGRESÓ,2026-I,2026-03-29
+355,73850140,Carlos,Soto Martínez,Turismo,65,65,INGRESÓ,2025-II,2025-08-23
+356,71406225,Erick,Mendoza Molina,Contabilidad,19,19,NO INGRESÓ,2026-II,2026-08-17
+357,76291957,José,Ramos Castro,Agronomía,21,21,NO INGRESÓ,2026-II,2026-08-24
+358,74623138,Javier Fernando,Ruiz Álvarez,Turismo,75,75,INGRESÓ,2026-II,2026-08-27
+359,79691378,Cinthia,Ccallo Pérez,Contabilidad,83,83,INGRESÓ,2025-II,2025-08-09
+360,78528589,Andrea,Torres Lozano,Ingeniería en Conservación de Suelos y Agua,57,57,INGRESÓ,2024-II,2024-08-11
+361,71478755,Héctor,Rojas Martínez,Ingeniería en Informática y Sistemas,86,86,INGRESÓ,2024-I,2024-03-03
+362,70964069,César,Ramos Núñez,Desarrollo Rural,2,2,NO INGRESÓ,2025-II,2025-08-29
+363,72843451,Cristian,Martínez Molina,Agronomía,10,10,NO INGRESÓ,2026-II,2026-08-01
+364,78686281,Fernando,Castillo Jiménez,Ingeniería en Informática y Sistemas,34,34,NO INGRESÓ,2025-I,2025-03-14
+365,73263591,Ricardo,Puma Molina,Ingeniería Ambiental,18,18,NO INGRESÓ,2026-I,2026-03-09
+366,79024521,Jhon,Flores Muñoz,Ingeniería Mecánica Eléctrica,39,39,NO INGRESÓ,2024-I,2024-03-31
+367,79845315,Alex,Vargas Cano,Turismo,2,2,NO INGRESÓ,2024-II,2024-08-17
+368,78665502,Héctor Jorge,Ortega Vásquez,Ingeniería en Conservación de Suelos y Agua,3,3,NO INGRESÓ,2024-II,2024-08-19
+369,75265911,Miguel Ángel,Quispe Castro,Contabilidad,87,87,INGRESÓ,2026-II,2026-08-12
+370,73469169,Xiomara María,Ccopa Muñoz,Economía,100,100,INGRESÓ,2024-II,2024-08-10
+371,78091518,Edwin,García Alonso,Administración,66,66,INGRESÓ,2024-I,2024-03-29
+372,73726098,Mariana,Puma Fernández,Ingeniería en Industrias Alimentarias,48,48,NO INGRESÓ,2025-II,2025-09-03
+373,77670476,Milagros,Vargas Iglesias,Turismo,0,0,NO INGRESÓ,2026-I,2026-03-23
+374,73139896,Carmen Daniela,León Muñoz,Ingeniería Forestal,77,77,INGRESÓ,2024-II,2024-08-31
+375,76720828,Xiomara María,Ventura Álvarez,Economía,2,2,NO INGRESÓ,2024-II,2024-08-15
+376,77935405,Cristian,Chávez Gutiérrez,Desarrollo Rural,11,11,NO INGRESÓ,2024-II,2024-09-01
+377,74210645,David,Morales Pérez,Zootecnia,94,94,INGRESÓ,2026-II,2026-08-07
+378,75614605,César,Torres Sánchez,Administración,0,0,NO INGRESÓ,2024-II,2024-08-23
+379,74774942,Cristian,Paredes Iglesias,Contabilidad,100,100,INGRESÓ,2025-I,2025-03-21
+380,75660436,Daniela Valeria,Chávez Hidalgo,Ingeniería Ambiental,11,11,NO INGRESÓ,2024-I,2024-03-03
+381,74550787,Stephanie Liseth,Rojas Fernández,Ingeniería Mecánica Eléctrica,15,15,NO INGRESÓ,2025-I,2025-03-10
+382,73532803,Stephanie Liseth,Soto Carrasco,Ingeniería en Informática y Sistemas,61,61,INGRESÓ,2024-I,2024-03-03
+383,72605071,Juan,Torres Muñoz,Ingeniería en Informática y Sistemas,30,30,NO INGRESÓ,2024-I,2024-03-08
+384,70589802,Wilmer Rodrigo,Mamani Cabrera,Agronomía,62,62,INGRESÓ,2025-II,2025-08-30
+385,79912498,Brenda,Herrera Iglesias,Zootecnia,45,45,NO INGRESÓ,2026-I,2026-03-30
+386,72612506,Pablo,Ortega Muñoz,Economía,40,40,NO INGRESÓ,2024-II,2024-08-23
+387,70153219,Marco,Mendoza Pérez,Ingeniería en Industrias Alimentarias,34,34,NO INGRESÓ,2024-I,2024-03-26
+388,76538471,Jessica,Ccopa Hidalgo,Desarrollo Rural,50,50,NO INGRESÓ,2024-II,2024-08-06
+389,74776085,David,Soto Navarro,Agronomía,7,7,NO INGRESÓ,2026-I,2026-03-07
+390,73150584,Lorena,Puma Muñoz,Economía,6,6,NO INGRESÓ,2025-I,2025-03-14
+391,71513254,Patricia Mariana,García Molina,Ingeniería en Informática y Sistemas,54,54,INGRESÓ,2024-I,2024-03-11
+392,71345920,David,Martínez Serrano,Desarrollo Rural,90,90,INGRESÓ,2025-II,2025-08-18
+393,70211652,Evelyn Carmen,Ccallo Moran,Ingeniería en Informática y Sistemas,48,48,NO INGRESÓ,2026-I,2026-03-25
+394,77932696,Carmen,Ramos Lozano,Administración,76,76,INGRESÓ,2024-I,2024-03-06
+395,73334029,Erick,Mendoza Pérez,Economía,39,39,NO INGRESÓ,2026-II,2026-08-08
+396,74078362,Rocío,Flores Fernández,Ingeniería en Informática y Sistemas,80,80,INGRESÓ,2025-I,2025-03-19
+397,71007511,Yaneth,León Serrano,Ingeniería en Informática y Sistemas,68,68,INGRESÓ,2024-I,2024-03-05
+398,70358241,David,Vega Jiménez,Agronomía,0,0,NO INGRESÓ,2026-I,2026-03-09
+399,79120439,Héctor,Condori Iglesias,Contabilidad,74,74,INGRESÓ,2025-II,2025-08-18
+400,79086640,Lorena,Coila Muñoz,Economía,23,23,NO INGRESÓ,2026-I,2026-03-24
+401,79042189,Sebastián,Cutipa Blanco,Desarrollo Rural,79,79,INGRESÓ,2026-I,2026-03-25
+402,70734460,Carmen,Torres Blanco,Desarrollo Rural,3,3,NO INGRESÓ,2025-I,2025-03-24
+403,78821818,Daniela Valeria,Salazar Muñoz,Zootecnia,35,35,NO INGRESÓ,2025-II,2025-08-24
+404,77852729,Xiomara,Morales Carrasco,Turismo Rural y Comunitario,100,100,INGRESÓ,2024-I,2024-03-18
+405,78875496,Carlos,León Navarro,Ingeniería en Informática y Sistemas,33,33,NO INGRESÓ,2025-II,2025-08-05
+406,78828037,Karina Valeria,Condori Jiménez,Agronomía,12,12,NO INGRESÓ,2024-I,2024-03-24
+407,72798595,Yaneth,Ruiz Delgado,Ingeniería en Industrias Alimentarias,16,16,NO INGRESÓ,2026-I,2026-03-22
+408,76236418,Sofía,Villanueva Romero,Ingeniería Ambiental,33,33,NO INGRESÓ,2026-I,2026-03-20
+409,77590070,Stephanie,Ccallo Álvarez,Ingeniería Ambiental,43,43,NO INGRESÓ,2024-II,2024-08-03
+410,73604128,Rosa,Pilco Molina,Turismo Rural y Comunitario,70,70,INGRESÓ,2026-I,2026-03-30
+411,72619042,Luis Fernando,Cruz Vásquez,Ingeniería en Informática y Sistemas,38,38,NO INGRESÓ,2026-I,2026-03-08
+412,78095563,Cristian,Sánchez Romero,Ingeniería en Informática y Sistemas,85,85,INGRESÓ,2024-I,2024-03-02
+413,77286418,Fatima Liseth,Lazo Vásquez,Ingeniería en Recursos Naturales Renovables,74,74,INGRESÓ,2025-II,2025-08-01
+414,75483324,Sofía,Herrera Gutiérrez,Ingeniería Forestal,81,81,INGRESÓ,2025-II,2025-08-04
+415,73725978,Ronal,Cárdenas Carrasco,Ingeniería Ambiental,50,50,NO INGRESÓ,2025-II,2025-08-09
+416,78419194,Erick,Ramírez Fernández,Ingeniería Forestal,63,63,INGRESÓ,2026-I,2026-03-16
+417,74065372,Rubén César,Ramos Moreno,Ingeniería en Informática y Sistemas,14,14,NO INGRESÓ,2025-II,2025-08-06
+418,75114011,Carmen Daniela,Rojas Cabrera,Ingeniería en Informática y Sistemas,65,65,INGRESÓ,2025-II,2025-08-10
+419,70914996,Lucía,Ramírez Fuentes,Contabilidad,8,8,NO INGRESÓ,2024-II,2024-08-19
+420,73419219,Sofía,Huamán Lozano,Ingeniería en Conservación de Suelos y Agua,100,100,INGRESÓ,2024-I,2024-03-20
+421,74285846,Rubén César,Reyes Alonso,Ingeniería en Informática y Sistemas,7,7,NO INGRESÓ,2026-II,2026-08-18
+422,71810117,Yaneth,Reyes Álvarez,Ingeniería en Informática y Sistemas,58,58,INGRESÓ,2024-I,2024-03-13
+423,73127564,Edwin,Herrera Carrasco,Ingeniería en Informática y Sistemas,24,24,NO INGRESÓ,2024-I,2024-03-02
+424,75904121,Andrea,Rodríguez Vásquez,Administración,35,35,NO INGRESÓ,2025-I,2025-03-13
+425,73784649,Sandra,Rodríguez Navarro,Ingeniería en Informática y Sistemas,84,84,INGRESÓ,2026-II,2026-08-06
+426,79611642,Sebastián,Ortega Moreno,Ingeniería en Informática y Sistemas,76,76,INGRESÓ,2026-II,2026-08-29
+427,75184132,Ana,Condori González,Agronomía,80,80,INGRESÓ,2026-II,2026-08-10
+428,75328403,Stephanie,Flores Iglesias,Desarrollo Rural,58,58,INGRESÓ,2024-II,2024-08-21
+429,72549416,Mónica,Espinoza Navarro,Ingeniería en Industrias Alimentarias,0,0,NO INGRESÓ,2025-I,2025-03-02
+430,73874066,Edwin,Apaza Molina,Agronomía,100,100,INGRESÓ,2026-I,2026-03-23
+431,76500504,César,Ventura Iglesias,Ingeniería Forestal,27,27,NO INGRESÓ,2026-I,2026-03-07
+432,73431982,Sebastián,Reyes Jiménez,Ingeniería en Informática y Sistemas,50,50,NO INGRESÓ,2024-I,2024-03-23
+433,76612751,Daniela,Salazar Romero,Zootecnia,63,63,INGRESÓ,2024-II,2024-08-29
+434,79356669,Javier Fernando,Castillo Alonso,Contabilidad,34,34,NO INGRESÓ,2024-I,2024-03-07
+435,70915141,Jhon Carlos,Ruiz Núñez,Agronomía,76,76,INGRESÓ,2025-I,2025-03-23
+436,76594565,Rubén César,Soto González,Ingeniería Ambiental,63,63,INGRESÓ,2026-II,2026-08-12
+437,72751363,Juan,Ccallo Romero,Ingeniería en Industrias Alimentarias,87,87,INGRESÓ,2026-II,2026-08-08
+438,76353173,Stephanie,Cárdenas Hidalgo,Zootecnia,44,44,NO INGRESÓ,2025-I,2025-03-26
+439,77039412,Jhon Carlos,Quispe Benítez,Contabilidad,80,80,INGRESÓ,2026-II,2026-08-19
+440,77694746,Iván José,Ccallo Castro,Ingeniería Ambiental,38,38,NO INGRESÓ,2024-II,2024-09-01
+441,74105605,Flor,Rojas Castro,Ingeniería Mecánica Eléctrica,23,23,NO INGRESÓ,2026-II,2026-08-04
+442,75555122,Rosa Cinthia,Reyes Pérez,Turismo Rural y Comunitario,18,18,NO INGRESÓ,2026-II,2026-08-27
+443,77639301,Edwin,Paredes Iglesias,Ingeniería en Industrias Alimentarias,96,96,INGRESÓ,2025-I,2025-02-27
+444,74912917,Marco,Ruiz Blanco,Ingeniería en Recursos Naturales Renovables,65,65,INGRESÓ,2025-I,2025-03-07
+445,78114518,José,Paredes Carrasco,Ingeniería en Industrias Alimentarias,24,24,NO INGRESÓ,2024-II,2024-08-21
+446,78262853,Stephanie Fatima,Morales Muñoz,Desarrollo Rural,5,5,NO INGRESÓ,2026-I,2026-03-07
+447,76946457,Wilmer Rodrigo,Huamán Aguilar,Ingeniería en Informática y Sistemas,75,75,INGRESÓ,2025-II,2025-08-01
+448,70102865,Stephanie Liseth,Cárdenas Romero,Ingeniería en Informática y Sistemas,84,84,INGRESÓ,2025-I,2025-03-09
+449,77960796,Wilmer Rodrigo,Lazo Castro,Ingeniería en Industrias Alimentarias,76,76,INGRESÓ,2024-I,2024-03-05
+450,78742158,Ricardo,Ortega Benítez,Contabilidad,68,68,INGRESÓ,2026-I,2026-03-18
+451,72504920,Rodrigo,Medina Blanco,Economía,79,79,INGRESÓ,2026-I,2026-03-13
+452,75276424,Edwin,Flores Pérez,Ingeniería en Industrias Alimentarias,71,71,INGRESÓ,2024-II,2024-08-06
+453,72936226,Karina,Ramos Pérez,Ingeniería en Informática y Sistemas,20,20,NO INGRESÓ,2025-I,2025-03-26
+454,78111313,Miguel,Condori Serrano,Ingeniería en Industrias Alimentarias,94,94,INGRESÓ,2024-I,2024-03-05
+455,76502651,Pablo Rubén,Martínez Cano,Ingeniería en Industrias Alimentarias,0,0,NO INGRESÓ,2026-I,2026-03-10
+456,78733844,Rodrigo,Martínez Delgado,Ingeniería en Industrias Alimentarias,87,87,INGRESÓ,2026-I,2026-03-19
+457,77400692,Stephanie Liseth,Herrera Romero,Agronomía,33,33,NO INGRESÓ,2024-II,2024-08-11
+458,74547499,Javier Fernando,Medina Romero,Ingeniería en Informática y Sistemas,10,10,NO INGRESÓ,2026-I,2026-03-06
+459,71777158,Luis Fernando,Mendoza Benítez,Economía,16,16,NO INGRESÓ,2025-I,2025-03-09
+460,75241884,Alex,León Vásquez,Economía,90,90,INGRESÓ,2026-I,2026-03-30
+461,71631802,Liliana,Soto Cano,Ingeniería Ambiental,27,27,NO INGRESÓ,2026-I,2026-03-08
+462,75448586,Andrea,Soto Serrano,Ingeniería en Recursos Naturales Renovables,10,10,NO INGRESÓ,2026-I,2026-03-16
+463,78521981,Héctor Jorge,Rojas González,Ingeniería en Informática y Sistemas,81,81,INGRESÓ,2025-II,2025-09-05
+464,79193059,Raúl,Ccopa Moreno,Ingeniería en Informática y Sistemas,53,53,INGRESÓ,2025-I,2025-02-27
+465,79135645,Raúl,Paredes Serrano,Agronomía,11,11,NO INGRESÓ,2026-II,2026-09-01
+466,76808088,Patricia Mariana,Quispe Pérez,Ingeniería en Informática y Sistemas,55,55,INGRESÓ,2025-II,2025-08-21
+467,72461642,Mónica,Campos Castro,Agronomía,72,72,INGRESÓ,2024-I,2024-03-13
+468,77293509,Evelyn,Paredes Pérez,Ingeniería en Industrias Alimentarias,80,80,INGRESÓ,2024-II,2024-08-01
+469,70014148,Carlos,Ventura Benítez,Ingeniería en Industrias Alimentarias,2,2,NO INGRESÓ,2025-II,2025-08-19
+470,76401599,Wilmer,Salazar Fernández,Ingeniería Forestal,9,9,NO INGRESÓ,2026-II,2026-08-31
+471,72106365,Raúl,Chávez Núñez,Ingeniería en Informática y Sistemas,86,86,INGRESÓ,2025-II,2025-08-10
+472,77650891,Flor,Pérez Aguilar,Turismo,71,71,INGRESÓ,2026-II,2026-08-30
+473,79696199,Karina Valeria,Rojas Castro,Ingeniería Forestal,75,75,INGRESÓ,2025-II,2025-08-27
+474,79735294,Wilmer,Ventura Fuentes,Ingeniería en Recursos Naturales Renovables,93,93,INGRESÓ,2024-I,2024-03-24
+475,74114298,Patricia Diana,León Carrasco,Ingeniería en Recursos Naturales Renovables,0,0,NO INGRESÓ,2025-I,2025-03-16
+476,77063478,Iván,Mendoza Serrano,Administración,13,13,NO INGRESÓ,2026-I,2026-03-06
+477,77938316,Ronal,Ccallo Benítez,Zootecnia,100,100,INGRESÓ,2026-I,2026-03-26
+478,72223631,Nadia Rocío,Puma Muñoz,Zootecnia,100,100,INGRESÓ,2025-I,2025-02-25
+479,72942713,Víctor,Vega Álvarez,Contabilidad,28,28,NO INGRESÓ,2024-II,2024-09-01
+480,78320631,Paola Evelyn,Rojas Gutiérrez,Ingeniería en Industrias Alimentarias,75,75,INGRESÓ,2024-I,2024-03-08
+481,74435820,Sandra,Medina Benítez,Ingeniería en Industrias Alimentarias,65,65,INGRESÓ,2026-II,2026-08-11
+482,76371999,Liliana,Herrera Molina,Agronomía,17,17,NO INGRESÓ,2025-I,2025-03-05
+483,78896176,Lorena,Salazar Romero,Agronomía,71,71,INGRESÓ,2025-II,2025-09-04
+484,74480989,Erick,Lazo Navarro,Ingeniería Mecánica Eléctrica,100,100,INGRESÓ,2025-II,2025-08-30
+485,73018500,Cristian,Ramos Serrano,Economía,2,2,NO INGRESÓ,2024-II,2024-08-05
+486,73239337,Liseth,Coila Muñoz,Ingeniería en Informática y Sistemas,81,81,INGRESÓ,2026-I,2026-03-31
+487,72179482,Wilmer,Flores Carrasco,Contabilidad,87,87,INGRESÓ,2024-II,2024-08-08
+488,77163592,Xiomara,Cruz Navarro,Agronomía,100,100,INGRESÓ,2025-I,2025-03-02
+489,72985161,Paola,Ccallo Muñoz,Ingeniería Ambiental,41,41,NO INGRESÓ,2024-I,2024-03-20
+490,77408511,Valeria,Huamán Delgado,Ingeniería en Industrias Alimentarias,15,15,NO INGRESÓ,2025-II,2025-08-05
+491,70634776,César Alex,Chávez Castro,Agronomía,35,35,NO INGRESÓ,2025-I,2025-03-19
+492,77315833,Lucía,Morales Castro,Ingeniería en Recursos Naturales Renovables,42,42,NO INGRESÓ,2026-I,2026-03-01
+493,76721201,Claudia,Lazo Pérez,Ingeniería en Informática y Sistemas,49,49,NO INGRESÓ,2025-II,2025-09-04
+494,76445196,Víctor Erick,Quispe Alonso,Agronomía,72,72,INGRESÓ,2025-II,2025-08-07
+495,70598917,Stephanie,Condori González,Ingeniería en Informática y Sistemas,0,0,NO INGRESÓ,2025-II,2025-08-25
+496,70621473,Sandra,Vega Cabrera,Administración,23,23,NO INGRESÓ,2026-II,2026-08-26
+497,79719808,Víctor,Herrera Gutiérrez,Economía,58,58,INGRESÓ,2026-II,2026-08-10
+498,70241008,Sebastián,Soto González,Ingeniería en Informática y Sistemas,60,60,INGRESÓ,2025-II,2025-08-07
+499,71058811,Carmen,Morales Molina,Turismo,85,85,INGRESÓ,2026-I,2026-03-26
+500,73577436,Patricia,Pérez Romero,Ingeniería en Industrias Alimentarias,14,14,NO INGRESÓ,2025-I,2025-02-27

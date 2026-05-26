@@ -13,6 +13,8 @@ from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
+from sistema_admisi_n_unas.states.feedback_state import FeedbackState
+from sistema_admisi_n_unas.states.resultados_state import ResultadosState
 
 from .components.charts import (
     grafico_distribucion_colegios,
@@ -471,6 +473,8 @@ def retroalimentacion_page() -> rx.Component:
     )
 
 
+
+
 app = rx.App(
     theme=rx.theme(appearance="light"),
     head_components=[
@@ -499,5 +503,13 @@ app.add_page(
     on_load=PostulantesState.cargar_datos,
 )
 app.add_page(examen_page, route="/examen")
-app.add_page(resultados_page, route="/resultados")
-app.add_page(retroalimentacion_page, route="/retroalimentacion")
+app.add_page(
+    resultados_page,
+    route="/resultados",
+    on_load=ResultadosState.cargar_resultados,
+)
+app.add_page(
+    retroalimentacion_page,
+    route="/retroalimentacion",
+    on_load=FeedbackState.cargar_datos,
+)

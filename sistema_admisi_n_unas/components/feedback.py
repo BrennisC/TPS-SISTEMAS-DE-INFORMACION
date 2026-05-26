@@ -1,6 +1,7 @@
 import reflex as rx
-from sistema_admisi_n_unas.states.feedback_state import FeedbackState, Apelacion
+
 from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS
+from sistema_admisi_n_unas.states.feedback_state import Apelacion, FeedbackState
 
 
 def stat_card_fb(label: str, value: str, color: str, icon: str) -> rx.Component:
@@ -36,9 +37,7 @@ def error_chart() -> rx.Component:
                 rx.el.span(
                     class_name="w-3 h-3 inline-block mr-2 rounded-full bg-red-500"
                 ),
-                rx.el.span(
-                    "% Error", class_name="text-sm font-medium text-gray-600"
-                ),
+                rx.el.span("% Error", class_name="text-sm font-medium text-gray-600"),
                 class_name="flex items-center",
             ),
             class_name="flex items-center justify-between mb-6",
@@ -149,9 +148,7 @@ def apelacion_row(a: Apelacion) -> rx.Component:
             class_name="px-6 py-4",
         ),
         rx.el.td(
-            rx.el.span(
-                a["fecha"], class_name="text-xs text-gray-500 font-medium"
-            ),
+            rx.el.span(a["fecha"], class_name="text-xs text-gray-500 font-medium"),
             class_name="px-6 py-4",
         ),
         rx.el.td(estado_apelacion_badge(a["estado"]), class_name="px-6 py-4"),
@@ -225,6 +222,166 @@ def feedback_view() -> rx.Component:
             ),
             class_name="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6",
         ),
+        rx.el.div(
+            rx.el.div(
+                rx.el.div(
+                    rx.el.div(
+                        rx.icon(
+                            "file-plus",
+                            class_name="h-5 w-5 text-[#228B22]",
+                        ),
+                        class_name="p-2.5 rounded-xl bg-green-50 w-fit",
+                    ),
+                    rx.el.div(
+                        rx.el.h3(
+                            "Registro de Apelaciones",
+                            class_name="text-lg font-bold text-[#003366]",
+                        ),
+                        rx.el.p(
+                            "Registra un nuevo reclamo para revisión",
+                            class_name="text-sm text-gray-500",
+                        ),
+                        class_name="flex flex-col",
+                    ),
+                    class_name="flex items-start gap-4 mb-6",
+                ),
+                rx.el.form(
+                    rx.el.div(
+                        rx.el.label(
+                            "Postulante",
+                            rx.el.span(" *", class_name="text-red-500"),
+                            class_name="block text-sm font-semibold text-gray-700 mb-2",
+                        ),
+                        rx.el.div(
+                            rx.icon(
+                                "user",
+                                class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+                            ),
+                            rx.el.input(
+                                placeholder="Ej: María Fernanda Quispe",
+                                default_value=FeedbackState.f_postulante,
+                                on_change=FeedbackState.set_postulante.debounce(300),
+                                class_name="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all",
+                            ),
+                            class_name="relative",
+                        ),
+                        rx.cond(
+                            FeedbackState.err_postulante != "",
+                            rx.el.div(
+                                rx.icon("circle-alert", class_name="h-3.5 w-3.5"),
+                                rx.el.span(FeedbackState.err_postulante),
+                                class_name="flex items-center gap-1.5 mt-1.5 text-xs text-red-600 font-medium",
+                            ),
+                            rx.fragment(),
+                        ),
+                        class_name="flex flex-col",
+                    ),
+                    rx.el.div(
+                        rx.el.label(
+                            "DNI",
+                            rx.el.span(" *", class_name="text-red-500"),
+                            class_name="block text-sm font-semibold text-gray-700 mb-2",
+                        ),
+                        rx.el.div(
+                            rx.icon(
+                                "id-card",
+                                class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+                            ),
+                            rx.el.input(
+                                placeholder="8 dígitos",
+                                default_value=FeedbackState.f_dni,
+                                on_change=FeedbackState.set_dni.debounce(300),
+                                class_name="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all",
+                            ),
+                            class_name="relative",
+                        ),
+                        rx.cond(
+                            FeedbackState.err_dni != "",
+                            rx.el.div(
+                                rx.icon("circle-alert", class_name="h-3.5 w-3.5"),
+                                rx.el.span(FeedbackState.err_dni),
+                                class_name="flex items-center gap-1.5 mt-1.5 text-xs text-red-600 font-medium",
+                            ),
+                            rx.fragment(),
+                        ),
+                        class_name="flex flex-col",
+                    ),
+                    rx.el.div(
+                        rx.el.label(
+                            "Pregunta",
+                            rx.el.span(" *", class_name="text-red-500"),
+                            class_name="block text-sm font-semibold text-gray-700 mb-2",
+                        ),
+                        rx.el.div(
+                            rx.icon(
+                                "file-question",
+                                class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+                            ),
+                            rx.el.input(
+                                placeholder="Ej: Pregunta 22 - Lógica proposicional",
+                                default_value=FeedbackState.f_pregunta,
+                                on_change=FeedbackState.set_pregunta.debounce(300),
+                                class_name="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all",
+                            ),
+                            class_name="relative",
+                        ),
+                        rx.cond(
+                            FeedbackState.err_pregunta != "",
+                            rx.el.div(
+                                rx.icon("circle-alert", class_name="h-3.5 w-3.5"),
+                                rx.el.span(FeedbackState.err_pregunta),
+                                class_name="flex items-center gap-1.5 mt-1.5 text-xs text-red-600 font-medium",
+                            ),
+                            rx.fragment(),
+                        ),
+                        class_name="flex flex-col",
+                    ),
+                    rx.el.div(
+                        rx.el.label(
+                            "Motivo",
+                            rx.el.span(" *", class_name="text-red-500"),
+                            class_name="block text-sm font-semibold text-gray-700 mb-2",
+                        ),
+                        rx.el.textarea(
+                            placeholder="Describe el motivo de la apelación",
+                            default_value=FeedbackState.f_motivo,
+                            on_change=FeedbackState.set_motivo.debounce(300),
+                            rows=4,
+                            class_name="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all",
+                        ),
+                        rx.cond(
+                            FeedbackState.err_motivo != "",
+                            rx.el.div(
+                                rx.icon("circle-alert", class_name="h-3.5 w-3.5"),
+                                rx.el.span(FeedbackState.err_motivo),
+                                class_name="flex items-center gap-1.5 mt-1.5 text-xs text-red-600 font-medium",
+                            ),
+                            rx.fragment(),
+                        ),
+                        class_name="flex flex-col",
+                    ),
+                    rx.el.div(
+                        rx.el.button(
+                            rx.icon("check", class_name="h-4 w-4 mr-2"),
+                            "Registrar apelación",
+                            type="submit",
+                            disabled=~FeedbackState.form_valido,
+                            class_name=rx.cond(
+                                FeedbackState.form_valido,
+                                "flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#228B22] hover:bg-[#1a6b1a] transition-colors shadow-sm",
+                                "flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gray-300 cursor-not-allowed",
+                            ),
+                        ),
+                        class_name="flex items-center justify-end pt-2",
+                    ),
+                    class_name="grid grid-cols-1 md:grid-cols-2 gap-5",
+                    on_submit=FeedbackState.submit_apelacion,
+                    reset_on_submit=False,
+                ),
+                class_name="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm",
+            ),
+            class_name="mb-6",
+        ),
         # Apelaciones section
         rx.el.div(
             rx.el.div(
@@ -296,9 +453,7 @@ def feedback_view() -> rx.Component:
                             ),
                             rx.el.th(
                                 rx.el.div(
-                                    rx.icon(
-                                        "calendar", class_name="h-3.5 w-3.5"
-                                    ),
+                                    rx.icon("calendar", class_name="h-3.5 w-3.5"),
                                     "Fecha",
                                     class_name="flex items-center gap-2",
                                 ),
@@ -316,12 +471,46 @@ def feedback_view() -> rx.Component:
                     ),
                     rx.el.tbody(
                         rx.foreach(
-                            FeedbackState.apelaciones_filtradas, apelacion_row
+                            FeedbackState.paginated_apelaciones,
+                            apelacion_row,
                         ),
                     ),
                     class_name="table-auto w-full",
                 ),
                 class_name="overflow-x-auto bg-white rounded-2xl border border-gray-200 shadow-sm",
+            ),
+            rx.el.div(
+                rx.el.div(
+                    rx.el.button(
+                        rx.icon("chevron-left", class_name="h-4 w-4"),
+                        "Anterior",
+                        on_click=FeedbackState.prev_page,
+                        disabled=FeedbackState.current_page == 1,
+                        class_name=rx.cond(
+                            FeedbackState.current_page == 1,
+                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                        ),
+                    ),
+                    rx.el.span(
+                        f"Página {FeedbackState.current_page} de {FeedbackState.total_pages}",
+                        class_name="text-sm font-medium text-gray-600",
+                    ),
+                    rx.el.button(
+                        "Siguiente",
+                        rx.icon("chevron-right", class_name="h-4 w-4"),
+                        on_click=FeedbackState.next_page,
+                        disabled=FeedbackState.current_page
+                        == FeedbackState.total_pages,
+                        class_name=rx.cond(
+                            FeedbackState.current_page == FeedbackState.total_pages,
+                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                        ),
+                    ),
+                    class_name="flex items-center justify-center gap-4",
+                ),
+                class_name="mt-4",
             ),
             class_name="",
         ),

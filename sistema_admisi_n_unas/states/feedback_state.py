@@ -1,6 +1,14 @@
 import reflex as rx
 from typing import TypedDict
 
+from datetime import datetime
+
+from sistema_admisi_n_unas.utils.csv_loader import (
+    append_apelacion,
+    cargar_apelaciones,
+    cargar_preguntas_error,
+)
+
 
 class PreguntaError(TypedDict):
     id: int
@@ -142,6 +150,22 @@ class FeedbackState(rx.State):
     preguntas_error: list[PreguntaError] = PREGUNTAS_ERROR_DEMO
     apelaciones: list[Apelacion] = APELACIONES_DEMO
     filter_estado: str = "Todas"
+    current_page: int = 1
+    page_size: int = 10
+
+    f_postulante: str = ""
+    f_dni: str = ""
+    f_pregunta: str = ""
+    f_motivo: str = ""
+
+    @rx.event
+    def cargar_datos(self):
+        try:
+            self.preguntas_error = cargar_preguntas_error()
+            self.apelaciones = cargar_apelaciones()
+        except Exception as exc:
+            print(f"Error al leer retroalimentacion desde CSV: {exc}")
+            return
 
     @rx.var
     def total_apelaciones(self) -> int:
@@ -171,9 +195,132 @@ class FeedbackState(rx.State):
             a for a in self.apelaciones if a["estado"] == self.filter_estado
         ]
 
+    @rx.var
+    def total_pages(self) -> int:
+        total = len(self.apelaciones_filtradas)
+        if total == 0:
+            return 1
+        return (total + self.page_size - 1) // self.page_size
+
+    @rx.var
+    def paginated_apelaciones(self) -> list[Apelacion]:
+        page = min(max(self.current_page, 1), self.total_pages)
+        start = (page - 1) * self.page_size
+        end = start + self.page_size
+        return self.apelaciones_filtradas[start:end]
+
     @rx.event
     def set_filter_estado(self, v: str):
         self.filter_estado = v
+        self.current_page = 1
+
+    @rx.var
+    def err_postulante(self) -> str:
+        if self.f_postulante == "":
+            return ""
+        if len(self.f_postulante.strip()) < 4:
+            return "Mínimo 4 caracteres"
+        return ""
+
+    @rx.var
+    def err_dni(self) -> str:
+        if self.f_dni == "":
+            return ""
+        if not self.f_dni.isdigit():
+            return "El DNI debe contener solo números"
+        if len(self.f_dni) != 8:
+            return "El DNI debe tener 8 dígitos"
+        return ""
+
+    @rx.var
+    def err_pregunta(self) -> str:
+        if self.f_pregunta == "":
+            return ""
+        if len(self.f_pregunta.strip()) < 6:
+            return "Mínimo 6 caracteres"
+        return ""
+
+    @rx.var
+    def err_motivo(self) -> str:
+        if self.f_motivo == "":
+            return ""
+        if len(self.f_motivo.strip()) < 10:
+            return "Mínimo 10 caracteres"
+        return ""
+
+    @rx.var
+    def form_valido(self) -> bool:
+        return (
+            len(self.f_postulante.strip()) >= 4
+            and self.f_dni.isdigit()
+            and len(self.f_dni) == 8
+            and len(self.f_pregunta.strip()) >= 6
+            and len(self.f_motivo.strip()) >= 10
+            and self.err_dni == ""
+        )
+
+    @rx.event
+    def set_postulante(self, v: str):
+        self.f_postulante = v
+
+    @rx.event
+    def set_dni(self, v: str):
+        self.f_dni = v[:8]
+
+    @rx.event
+    def set_pregunta(self, v: str):
+        self.f_pregunta = v
+
+    @rx.event
+    def set_motivo(self, v: str):
+        self.f_motivo = v
+
+    @rx.event
+    def submit_apelacion(self):
+        if not self.form_valido:
+            return rx.toast(
+                "Completa todos los campos correctamente",
+                duration=3000,
+            )
+
+        nuevo_id = max((a["id"] for a in self.apelaciones), default=0) + 1
+        fecha = datetime.now().strftime("%Y-%m-%d")
+        apelacion: Apelacion = {
+            "id": nuevo_id,
+            "postulante": self.f_postulante.strip().title(),
+            "dni": self.f_dni.strip(),
+            "pregunta": self.f_pregunta.strip(),
+            "motivo": self.f_motivo.strip(),
+            "fecha": fecha,
+            "estado": "Pendiente",
+        }
+        self.apelaciones.append(apelacion)
+        append_apelacion(apelacion)
+        self.f_postulante = ""
+        self.f_dni = ""
+        self.f_pregunta = ""
+        self.f_motivo = ""
+        self.current_page = self.total_pages
+        return rx.toast("Apelación registrada", duration=3000)
+
+    @rx.event
+    def set_page(self, page: int):
+        if page < 1:
+            self.current_page = 1
+        elif page > self.total_pages:
+            self.current_page = self.total_pages
+        else:
+            self.current_page = page
+
+    @rx.event
+    def next_page(self):
+        if self.current_page < self.total_pages:
+            self.current_page += 1
+
+    @rx.event
+    def prev_page(self):
+        if self.current_page > 1:
+            self.current_page -= 1
 
     @rx.event
     def resolver_apelacion(self, aid: int):

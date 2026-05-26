@@ -1,6 +1,8 @@
 import reflex as rx
 from typing import TypedDict
 
+from sistema_admisi_n_unas.utils.csv_loader import cargar_resultados
+
 
 class Resultado(TypedDict):
     id: int
@@ -12,6 +14,8 @@ class Resultado(TypedDict):
     correctas: int
     condicion: str
     ranking: int
+    convocatoria: str
+    fecha: str
 
 
 RESULTADOS_DEMO: list[Resultado] = [
@@ -158,12 +162,59 @@ class ResultadosState(rx.State):
     filter_carrera: str = "Todas"
     search_query: str = ""
     carreras: list[str] = CARRERAS_RES
+    filter_condicion: str = "Todas"
+    current_page: int = 1
+    page_size: int = 15
+
+    @staticmethod
+    def _normalizar_condicion(estado: str, puntaje: float) -> str:
+        estado_norm = estado.strip().lower()
+        if "no" in estado_norm and "ingres" in estado_norm:
+            return "NO INGRESÓ"
+        if "ingres" in estado_norm:
+            return "INGRESÓ"
+        return "INGRESÓ" if puntaje >= 51 else "NO INGRESÓ"
+
+    @rx.event
+    def cargar_resultados(self):
+        try:
+            datos = cargar_resultados()
+        except Exception as exc:
+            print(f"Error al leer resultados desde CSV: {exc}")
+            return
+
+        if not datos:
+            return
+
+        resultados: list[Resultado] = []
+        for row in datos:
+            puntaje = float(row.get("puntaje", 0) or 0)
+            resultados.append(
+                {
+                    "id": int(row.get("id", 0) or 0),
+                    "nombres": row.get("nombres", ""),
+                    "apellidos": row.get("apellidos", ""),
+                    "dni": row.get("dni", ""),
+                    "carrera": row.get("carrera", ""),
+                    "puntaje": puntaje,
+                    "correctas": int(row.get("correctas", 0) or 0),
+                    "condicion": self._normalizar_condicion(
+                        row.get("estado", ""), puntaje
+                    ),
+                    "ranking": 0,
+                }
+            )
+
+        self.resultados = resultados
+        self.carreras = sorted({r["carrera"] for r in resultados if r["carrera"]})
 
     @rx.var
     def ranking_ordenado(self) -> list[Resultado]:
         result = list(self.resultados)
         if self.filter_carrera != "Todas":
             result = [r for r in result if r["carrera"] == self.filter_carrera]
+        if self.filter_condicion != "Todas":
+            result = [r for r in result if r["condicion"] == self.filter_condicion]
         if self.search_query.strip():
             q = self.search_query.lower().strip()
             result = [
@@ -180,6 +231,20 @@ class ResultadosState(rx.State):
         for i, r in enumerate(result):
             ranked.append({**r, "ranking": i + 1})
         return ranked
+
+    @rx.var
+    def total_pages(self) -> int:
+        total = len(self.ranking_ordenado)
+        if total == 0:
+            return 1
+        return (total + self.page_size - 1) // self.page_size
+
+    @rx.var
+    def paginated_resultados(self) -> list[Resultado]:
+        page = min(max(self.current_page, 1), self.total_pages)
+        start = (page - 1) * self.page_size
+        end = start + self.page_size
+        return self.ranking_ordenado[start:end]
 
     @rx.var
     def total_ingresantes(self) -> int:
@@ -206,21 +271,49 @@ class ResultadosState(rx.State):
     @rx.event
     def set_filter_carrera(self, v: str):
         self.filter_carrera = v
+        self.current_page = 1
 
     @rx.event
     def set_search_query(self, v: str):
         self.search_query = v
+        self.current_page = 1
+
+    @rx.event
+    def set_filter_condicion(self, v: str):
+        self.filter_condicion = v
+        self.current_page = 1
+
+    @rx.event
+    def set_page(self, page: int):
+        if page < 1:
+            self.current_page = 1
+        elif page > self.total_pages:
+            self.current_page = self.total_pages
+        else:
+            self.current_page = page
+
+    @rx.event
+    def next_page(self):
+        if self.current_page < self.total_pages:
+            self.current_page += 1
+
+    @rx.event
+    def prev_page(self):
+        if self.current_page > 1:
+            self.current_page -= 1
 
     @rx.event
     def exportar_pdf(self):
+        count = len(self.ranking_ordenado)
         return rx.toast(
-            f"Exportando ranking de {ResultadosState.ranking_ordenado.length()} postulantes a PDF...",
+            f"Exportando ranking de {count} postulantes a PDF...",
             duration=3000,
         )
 
     @rx.event
     def exportar_excel(self):
+        count = len(self.ranking_ordenado)
         return rx.toast(
-            f"Exportando ranking de {ResultadosState.ranking_ordenado.length()} postulantes a Excel...",
+            f"Exportando ranking de {count} postulantes a Excel...",
             duration=3000,
         )
