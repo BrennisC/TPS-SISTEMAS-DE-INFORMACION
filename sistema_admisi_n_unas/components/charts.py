@@ -297,7 +297,7 @@ def grafico_distribucion_puntajes():
         # Header
         rx.el.div(
             rx.el.h3(
-                "Distribución de Puntajes (Rangos)",
+                "Distribución de Puntajes (0-20)",
                 class_name="text-sm font-bold text-gray-700 mb-4",
             ),
             rx.el.div(
@@ -442,12 +442,14 @@ def grafico_top_carreras_puntaje():
                 class_name="opacity-20",
             ),
             rx.recharts.x_axis(
+                type_="number",
                 axis_line=False,
                 tick_line=False,
                 custom_attrs={"fontSize": "11px"},
             ),
             rx.recharts.y_axis(
                 data_key="carrera",
+                type_="category",
                 custom_attrs={"fontSize": "10px", "fontWeight": "500"},
                 width=120,
             ),

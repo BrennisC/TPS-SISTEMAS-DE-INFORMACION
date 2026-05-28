@@ -144,18 +144,20 @@ class DashboardState(rx.State):
 
         # 7. Distribución de puntajes por rangos
         rangos = [
-            ("0-20", 0, 20),
-            ("21-40", 21, 40),
-            ("41-60", 41, 60),
-            ("61-80", 61, 80),
-            ("81-100", 81, 100),
+            ("0-5", 0, 5),
+            ("6-10", 6, 10),
+            ("11-15", 11, 15),
+            ("16-20", 16, 20),
         ]
         mix_rangos = []
         for etiqueta, minimo, maximo in rangos:
             cantidad = sum(
                 1
                 for p in lista_postulantes
-                if p["puntaje"] > 0 and minimo <= p["puntaje"] <= maximo
+                if p["puntaje"] > 0
+                and minimo
+                <= (p["puntaje"] / 5 if p["puntaje"] > 20 else p["puntaje"])
+                <= maximo
             )
             mix_rangos.append({"rango": etiqueta, "cantidad": cantidad})
 

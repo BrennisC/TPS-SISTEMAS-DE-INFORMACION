@@ -1,4 +1,5 @@
 import reflex as rx
+
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 
@@ -47,11 +48,10 @@ def sidebar() -> rx.Component:
                 rx.el.a(
                     rx.el.div(
                         rx.el.div(
-                            rx.icon(
-                                "graduation-cap",
-                                class_name="h-8 w-8 text-white",
+                            rx.image(
+                                "./admision.jpg",
+                                class_name="h-8 w-8 rounded-xl",
                             ),
-                            class_name="p-2 rounded-xl bg-[#003366]",
                         ),
                         rx.el.div(
                             rx.el.h2(
