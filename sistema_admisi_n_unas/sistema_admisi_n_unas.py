@@ -7,13 +7,15 @@ from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
 from sistema_admisi_n_unas.components.login_form import login_form
 from sistema_admisi_n_unas.components.page_layout import page_header
 from sistema_admisi_n_unas.components.postulantes_table import postulantes_table
+from sistema_admisi_n_unas.components.recaudacion import recaudacion_view
 from sistema_admisi_n_unas.components.resultados import resultados_view
 from sistema_admisi_n_unas.components.sidebar import mobile_sidebar, sidebar
 from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
-from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 from sistema_admisi_n_unas.states.feedback_state import FeedbackState
+from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
+from sistema_admisi_n_unas.states.recaudacion_state import RecaudacionState
 from sistema_admisi_n_unas.states.resultados_state import ResultadosState
 
 from .components.charts import (
@@ -221,11 +223,11 @@ def login_view() -> rx.Component:
 def login_page() -> rx.Component:
     return rx.el.div(
         rx.el.main(
-        rx.el.div(
-            login_view(),
-            class_name="flex items-center justify-center min-h-screen bg-gray-50 p-6",
-        ),
-        class_name="flex-1",
+            rx.el.div(
+                login_view(),
+                class_name="flex items-center justify-center min-h-screen bg-gray-50 p-6",
+            ),
+            class_name="flex-1",
         ),
         class_name="flex min-h-screen bg-white font-['Inter']",
     )
@@ -238,106 +240,106 @@ def require_auth(content: rx.Component) -> rx.Component:
 def index() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    dashboard_header(),
-                    # 1. FILA SUPERIOR: Cards de control con datos reales del CSV
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
                     rx.el.div(
-                        stats_card(
-                            "Total Postulantes",
-                            f"{DashboardState.total_postulantes}",
-                            "Registrados en CSV",
-                            "users",
-                            "#228B22",
-                        ),
-                        stats_card(
-                            "Total Ingresantes",
-                            f"{DashboardState.admitted_count}",
-                            "Vacantes validadas",
-                            "user-check",
-                            "#228B22",
-                        ),
-                        stats_card(
-                            "Total Recaudado",
-                            f"S/. {DashboardState.total_recaudado:,.2f}",
-                            f"Estatal: {DashboardState.total_estatal} | Priv.: {DashboardState.total_privado}",
-                            "circle-dollar-sign",
-                            "#228B22",
-                        ),
-                        stats_card(
-                            "Carrera Más Demandada",
-                            f"{DashboardState.top_career}",
-                            "Mayor N° de registros",
-                            "graduation-cap",
-                            "#003366",
-                        ),
-                        class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
-                    ),
-                    # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
-                    rx.el.div(
+                        dashboard_header(),
+                        # 1. FILA SUPERIOR: Cards de control con datos reales del CSV
                         rx.el.div(
-                            rx.el.h3(
-                                "Rendimiento General del Examen",
-                                class_name="text-sm font-bold text-gray-700 mb-4",
+                            stats_card(
+                                "Total Postulantes",
+                                f"{DashboardState.total_postulantes}",
+                                "Registrados en CSV",
+                                "users",
+                                "#228B22",
                             ),
-                            rx.el.div(
-                                rx.el.h1(
-                                    rx.cond(
-                                        DashboardState.general_avg > 0,
-                                        f"{DashboardState.general_avg:.2f}",
-                                        "0.00",
-                                    ),
-                                    class_name="text-4xl font-extrabold text-gray-900",
-                                ),
-                                rx.el.p(
-                                    "Promedio General Real (Data CSV)",
-                                    class_name="text-xs text-gray-500 mt-1",
-                                ),
-                                class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
+                            stats_card(
+                                "Total Ingresantes",
+                                f"{DashboardState.admitted_count}",
+                                "Vacantes validadas",
+                                "user-check",
+                                "#228B22",
                             ),
-                            class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+                            stats_card(
+                                "Total Recaudado",
+                                f"S/. {DashboardState.total_recaudado:,.2f}",
+                                f"Estatal: {DashboardState.total_estatal} | Priv.: {DashboardState.total_privado}",
+                                "circle-dollar-sign",
+                                "#228B22",
+                            ),
+                            stats_card(
+                                "Carrera Más Demandada",
+                                f"{DashboardState.top_career}",
+                                "Mayor N° de registros",
+                                "graduation-cap",
+                                "#003366",
+                            ),
+                            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
                         ),
-                        grafico_postulantes_vs_ingresantes(),
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
+                        rx.el.div(
+                            rx.el.div(
+                                rx.el.h3(
+                                    "Rendimiento General del Examen",
+                                    class_name="text-sm font-bold text-gray-700 mb-4",
+                                ),
+                                rx.el.div(
+                                    rx.el.h1(
+                                        rx.cond(
+                                            DashboardState.general_avg > 0,
+                                            f"{DashboardState.general_avg:.2f}",
+                                            "0.00",
+                                        ),
+                                        class_name="text-4xl font-extrabold text-gray-900",
+                                    ),
+                                    rx.el.p(
+                                        "Promedio General Real (Data CSV)",
+                                        class_name="text-xs text-gray-500 mt-1",
+                                    ),
+                                    class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
+                                ),
+                                class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+                            ),
+                            grafico_postulantes_vs_ingresantes(),
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        ),
+                        # 3. TERCERA FILA (¡AÑADIDA!): Evolución de Años + Gráfico de Torta de Colegios
+                        rx.el.div(
+                            grafico_evolucion_historica(),
+                            grafico_distribucion_colegios(),
+                            recent_activity(),  # Mantiene tu componente lateral original
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        ),
+                        # 4. CUARTA FILA: Áreas Analíticas + Top Errores Fijos
+                        rx.el.div(
+                            grafico_rendimiento_areas(),
+                            panel_preguntas_errores(),
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        ),
+                        # 5. QUINTA FILA: Análisis de puntajes
+                        rx.el.div(
+                            grafico_distribucion_puntajes(),
+                            grafico_promedio_convocatoria(),
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        ),
+                        rx.el.div(
+                            grafico_top_carreras_puntaje(),
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+                        ),
+                        # 6. SEXTA FILA: Tabla de alumnos del CSV
+                        rx.el.div(
+                            tabla_ultimos_registrados(),
+                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
+                        ),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    # 3. TERCERA FILA (¡AÑADIDA!): Evolución de Años + Gráfico de Torta de Colegios
-                    rx.el.div(
-                        grafico_evolucion_historica(),
-                        grafico_distribucion_colegios(),
-                        recent_activity(),  # Mantiene tu componente lateral original
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                    ),
-                    # 4. CUARTA FILA: Áreas Analíticas + Top Errores Fijos
-                    rx.el.div(
-                        grafico_rendimiento_areas(),
-                        panel_preguntas_errores(),
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                    ),
-                    # 5. QUINTA FILA: Análisis de puntajes
-                    rx.el.div(
-                        grafico_distribucion_puntajes(),
-                        grafico_promedio_convocatoria(),
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                    ),
-                    rx.el.div(
-                        grafico_top_carreras_puntaje(),
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                    ),
-                    # 6. SEXTA FILA: Tabla de alumnos del CSV
-                    rx.el.div(
-                        tabla_ultimos_registrados(),
-                        class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
-                    ),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/40 p-6 md:p-8 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/40 p-6 md:p-8 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
@@ -346,24 +348,24 @@ def index() -> rx.Component:
 def inscripcion_page() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    page_header(
-                        "Inscripción de Postulantes",
-                        "Registra un nuevo postulante en el proceso de admisión 2024-II",
-                        "user-plus",
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Inscripción de Postulantes",
+                            "Registra un nuevo postulante en el proceso de admisión 2024-II",
+                            "user-plus",
+                        ),
+                        inscripcion_form(),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    inscripcion_form(),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
@@ -372,24 +374,24 @@ def inscripcion_page() -> rx.Component:
 def postulantes_page() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    page_header(
-                        "Gestión de Postulantes",
-                        "Administra y consulta a todos los postulantes registrados",
-                        "users",
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Gestión de Postulantes",
+                            "Administra y consulta a todos los postulantes registrados",
+                            "users",
+                        ),
+                        postulantes_table(),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    postulantes_table(),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
@@ -398,24 +400,24 @@ def postulantes_page() -> rx.Component:
 def examen_page() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    page_header(
-                        "Simulador de Examen",
-                        "Practica con un examen de admisión simulado",
-                        "file-pen",
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Simulador de Examen",
+                            "Practica con un examen de admisión simulado",
+                            "file-pen",
+                        ),
+                        examen_view(),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    examen_view(),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
@@ -424,24 +426,24 @@ def examen_page() -> rx.Component:
 def resultados_page() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    page_header(
-                        "Ranking de Resultados",
-                        "Consulta el ranking ordenado de postulantes según puntaje",
-                        "trophy",
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Ranking de Resultados",
+                            "Consulta el ranking ordenado de postulantes según puntaje",
+                            "trophy",
+                        ),
+                        resultados_view(),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    resultados_view(),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
@@ -450,29 +452,53 @@ def resultados_page() -> rx.Component:
 def retroalimentacion_page() -> rx.Component:
     return require_auth(
         rx.el.div(
-        mobile_sidebar(),
-        sidebar(),
-        rx.el.div(
-            mobile_header(),
-            rx.el.main(
-                rx.el.div(
-                    page_header(
-                        "Retroalimentación y Apelaciones",
-                        "Análisis de errores frecuentes y gestión de reclamos",
-                        "message-square",
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Retroalimentación y Apelaciones",
+                            "Análisis de errores frecuentes y gestión de reclamos",
+                            "message-square",
+                        ),
+                        feedback_view(),
+                        class_name="max-w-7xl mx-auto",
                     ),
-                    feedback_view(),
-                    class_name="max-w-7xl mx-auto",
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
                 ),
-                class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                class_name="flex-1 flex flex-col",
             ),
-            class_name="flex-1 flex flex-col",
-        ),
             class_name="flex min-h-screen bg-white font-['Inter']",
         )
     )
 
 
+def recaudacion_page() -> rx.Component:
+    return require_auth(
+        rx.el.div(
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Dashboard de Recaudación",
+                            "Análisis de monto recaudado por examen, año y carrera",
+                            "wallet",
+                        ),
+                        recaudacion_view(),
+                        class_name="max-w-full",
+                    ),
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                ),
+                class_name="flex-1 flex flex-col",
+            ),
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
+    )
 
 
 app = rx.App(
@@ -512,4 +538,9 @@ app.add_page(
     retroalimentacion_page,
     route="/retroalimentacion",
     on_load=FeedbackState.cargar_datos,
+)
+app.add_page(
+    recaudacion_page,
+    route="/recaudacion",
+    on_load=RecaudacionState.cargar_datos_recaudacion,
 )

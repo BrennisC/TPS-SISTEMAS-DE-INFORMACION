@@ -25,6 +25,7 @@ class DashboardState(rx.State):
         {"label": "Inscripción", "icon": "user-plus", "href": "/inscripcion"},
         {"label": "Examen", "icon": "file-pen", "href": "/examen"},
         {"label": "Resultados", "icon": "trophy", "href": "/resultados"},
+        {"label": "Recaudación", "icon": "wallet", "href": "/recaudacion"},
         {
             "label": "Retroalimentación",
             "icon": "message-square",
@@ -169,7 +170,9 @@ class DashboardState(rx.State):
                 for p in lista_postulantes
                 if p["convocatoria"] == conv and p["puntaje"] > 0
             ]
-            avg_conv = (sum(puntajes_conv) / len(puntajes_conv)) if puntajes_conv else 0.0
+            avg_conv = (
+                (sum(puntajes_conv) / len(puntajes_conv)) if puntajes_conv else 0.0
+            )
             mix_promedios_conv.append(
                 {"convocatoria": conv, "avg_score": round(avg_conv, 2)}
             )
