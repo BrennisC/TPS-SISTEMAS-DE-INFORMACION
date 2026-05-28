@@ -18,6 +18,7 @@ class Postulante(TypedDict):
     voucher: str
     fecha: str
     estado: str
+    convocatoria: str
 
 
 CARRERAS: list[str] = [
@@ -59,6 +60,7 @@ class PostulantesState(rx.State):
 
     search_query: str = ""
     filter_carrera: str = "Todas"
+    filter_convocatoria: str = "Todas"
     current_page: int = 1
     page_size: int = 10
 
@@ -200,10 +202,21 @@ class PostulantesState(rx.State):
         return max(counts.items(), key=lambda item: item[1])[0]
 
     @rx.var
+    def convocatorias_disponibles(self) -> list[str]:
+        """Obtiene todas las convocatorias únicas del CSV"""
+        convocatorias = set()
+        for p in self.postulantes:
+            if "convocatoria" in p:
+                convocatorias.add(p["convocatoria"])
+        return sorted(list(convocatorias), reverse=True)
+
+    @rx.var
     def filtered_postulantes(self) -> list[Postulante]:
         result = self.postulantes
         if self.filter_carrera != "Todas":
             result = [p for p in result if p["carrera"] == self.filter_carrera]
+        if self.filter_convocatoria != "Todas":
+            result = [p for p in result if p.get("convocatoria") == self.filter_convocatoria]
         if self.search_query.strip():
             q = self.search_query.lower().strip()
             result = [
@@ -262,6 +275,11 @@ class PostulantesState(rx.State):
     @rx.event
     def set_filter_carrera(self, v: str):
         self.filter_carrera = v
+        self.current_page = 1
+
+    @rx.event
+    def set_filter_convocatoria(self, v: str):
+        self.filter_convocatoria = v
         self.current_page = 1
 
     @rx.event

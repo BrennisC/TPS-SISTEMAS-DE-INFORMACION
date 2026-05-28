@@ -80,6 +80,13 @@ def table_row(p: Postulante) -> rx.Component:
             ),
             class_name="px-6 py-4",
         ),
+        rx.el.td(
+            rx.el.span(
+                p["convocatoria"],
+                class_name="text-sm font-semibold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md",
+            ),
+            class_name="px-6 py-4",
+        ),
         rx.el.td(colegio_badge(p["tipo_colegio"]), class_name="px-6 py-4"),
         rx.el.td(
             rx.el.span(
@@ -141,7 +148,7 @@ def empty_state() -> rx.Component:
                 ),
                 class_name="flex flex-col items-center justify-center py-16",
             ),
-            col_span=8,
+            col_span=9,
         ),
     )
 
@@ -175,6 +182,27 @@ def filters_bar() -> rx.Component:
                 value=PostulantesState.filter_carrera,
                 on_change=PostulantesState.set_filter_carrera,
                 class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[220px]",
+            ),
+            rx.icon(
+                "chevron-down",
+                class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+            ),
+            class_name="relative",
+        ),
+        rx.el.div(
+            rx.icon(
+                "calendar",
+                class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+            ),
+            rx.el.select(
+                rx.el.option("Todos los exámenes", value="Todas"),
+                rx.foreach(
+                    PostulantesState.convocatorias_disponibles,
+                    lambda conv: rx.el.option(conv, value=conv),
+                ),
+                value=PostulantesState.filter_convocatoria,
+                on_change=PostulantesState.set_filter_convocatoria,
+                class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[180px]",
             ),
             rx.icon(
                 "chevron-down",
@@ -244,6 +272,17 @@ def postulantes_table() -> rx.Component:
                                         class_name="h-3.5 w-3.5",
                                     ),
                                     "Carrera",
+                                    class_name="flex items-center gap-2",
+                                ),
+                                class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
+                            ),
+                            rx.el.th(
+                                rx.el.div(
+                                    rx.icon(
+                                        "calendar",
+                                        class_name="h-3.5 w-3.5",
+                                    ),
+                                    "Examen",
                                     class_name="flex items-center gap-2",
                                 ),
                                 class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",

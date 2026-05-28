@@ -1,286 +1,286 @@
 id,convocatoria,nombres,apellidos,dni,facultad,carrera,tipo_colegio,costo,voucher,fecha,puntaje,estado
 1,2024-II,Víctor Erick,Huanca Aguilar,73698379,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2024B00001,2024-08-11,17.8,Ingresante
-2,2025-I,Sofía,Torres Carrasco,76374122,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00001,2025-03-22,1.0,No Ingresante
+2,2025-I,Sofía,Torres Carrasco,76374122,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00001,2025-03-22,1.0,No Ingresante
 3,2026-I,Flor,Villanueva Núñez,76067228,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2026A00001,2026-03-22,5.8,No Ingresante
 4,2024-I,Fernando,Puma Cano,76120868,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00001,2024-03-22,6.8,No Ingresante
 5,2024-II,Fernando,Puma Blanco,73539704,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024B00002,2024-09-01,10.0,No Ingresante
-6,2024-I,Miguel,Espinoza Hidalgo,77082668,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024A00002,2024-03-20,11.8,Ingresante
+6,2024-I,Miguel,Espinoza Hidalgo,77082668,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024A00002,2024-03-20,11.8,Ingresante
 7,2026-I,Pablo Rubén,Flores Navarro,75707197,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00002,2026-03-15,0.0,Ingresante
 8,2026-I,Héctor,Rodríguez Fuentes,76089806,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2026A00003,2026-03-02,6.0,Ingresante
-9,2024-I,Flor,Herrera González,72154051,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00003,2024-03-17,15.4,Ingresante
-10,2024-II,Wilmer,Condori Pérez,76693979,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2024B00003,2024-09-03,11.4,Ingresante
+9,2024-I,Flor,Herrera González,72154051,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00003,2024-03-17,15.4,Ingresante
+10,2024-II,Wilmer,Condori Pérez,76693979,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2024B00003,2024-09-03,11.4,Ingresante
 11,2024-II,Nadia Fatima,Apaza Molina,70120642,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00004,2024-08-05,0.8,Ingresante
-12,2024-I,César Alex,Huamán González,79580513,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024A00004,2024-03-26,10.4,Ingresante
+12,2024-I,César Alex,Huamán González,79580513,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024A00004,2024-03-26,10.4,Ingresante
 13,2024-I,Raúl,Cruz Benítez,71651177,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00005,2024-03-08,4.8,No Ingresante
 14,2025-II,Patricia Mariana,Ccopa Blanco,77434500,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2025B00001,2025-09-04,0.2,Ingresante
-15,2024-II,Karina,Castillo Benítez,72762152,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024B00005,2024-08-30,7.2,No Ingresante
+15,2024-II,Karina,Castillo Benítez,72762152,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024B00005,2024-08-30,7.2,No Ingresante
 16,2025-II,Diego,López Carrasco,73117625,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00002,2025-08-26,3.0,Ingresante
-17,2026-I,Daniela,Ramírez Aguilar,79792396,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2026A00004,2026-03-07,17.0,Ingresante
+17,2026-I,Daniela,Ramírez Aguilar,79792396,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2026A00004,2026-03-07,17.0,Ingresante
 18,2024-II,Daniela Valeria,Pilco Cano,75304573,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2024B00006,2024-08-30,15.8,No Ingresante
-19,2024-I,Stephanie Liseth,Pérez Vásquez,71154126,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2024A00006,2024-03-06,11.2,Ingresante
-20,2024-I,Raúl Javier,Rojas Lozano,75752576,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00007,2024-03-09,1.2,No Ingresante
+19,2024-I,Stephanie Liseth,Pérez Vásquez,71154126,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2024A00006,2024-03-06,11.2,Ingresante
+20,2024-I,Raúl Javier,Rojas Lozano,75752576,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00007,2024-03-09,1.2,No Ingresante
 21,2025-II,Héctor Jorge,Pérez Muñoz,72710895,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025B00003,2025-08-08,1.8,Ingresante
-22,2024-II,Javier,Ortega Gutiérrez,73971793,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024B00007,2024-08-02,4.4,No Ingresante
-23,2025-I,Víctor,Ccopa Navarro,72670896,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025A00002,2025-03-24,0.8,Ingresante
-24,2024-II,Claudia,Pilco Molina,73740036,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00008,2024-08-22,7.0,Ingresante
+22,2024-II,Javier,Ortega Gutiérrez,73971793,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024B00007,2024-08-02,4.4,No Ingresante
+23,2025-I,Víctor,Ccopa Navarro,72670896,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025A00002,2025-03-24,0.8,Ingresante
+24,2024-II,Claudia,Pilco Molina,73740036,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00008,2024-08-22,7.0,Ingresante
 25,2025-I,Yaneth,Herrera Serrano,70463060,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00003,2025-03-15,6.6,No Ingresante
-26,2026-I,Sofía,Ruiz Fuentes,76462506,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00005,2026-03-02,18.0,Ingresante
-27,2026-I,Jorge,Reyes Jiménez,76110622,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2026A00006,2026-03-22,3.0,No Ingresante
-28,2025-I,Jhon,Castillo Núñez,79301497,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00004,2025-03-18,19.0,No Ingresante
-29,2026-I,Ricardo,García Pérez,74813613,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00007,2026-03-15,11.2,Ingresante
+26,2026-I,Sofía,Ruiz Fuentes,76462506,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00005,2026-03-02,18.0,Ingresante
+27,2026-I,Jorge,Reyes Jiménez,76110622,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2026A00006,2026-03-22,3.0,No Ingresante
+28,2025-I,Jhon,Castillo Núñez,79301497,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00004,2025-03-18,19.0,No Ingresante
+29,2026-I,Ricardo,García Pérez,74813613,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00007,2026-03-15,11.2,Ingresante
 30,2026-I,Ana,Mamani Carrasco,74761145,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2026A00008,2026-03-27,19.2,Ingresante
-31,2025-I,Rosa Cinthia,Martínez Moreno,77971465,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025A00005,2025-03-10,16.0,Ingresante
-32,2024-II,Jhon Carlos,Cruz Romero,77425149,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024B00009,2024-08-11,19.0,No Ingresante
-33,2025-II,Daniela Valeria,Puma Muñoz,74013879,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025B00004,2025-08-16,6.8,No Ingresante
-34,2026-I,Karina Valeria,Soto Gutiérrez,73589533,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00009,2026-03-18,11.8,Ingresante
-35,2024-II,Marco,Campos Cabrera,79658481,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2024B00010,2024-08-20,19.2,Ingresante
-36,2025-II,David,Rojas Molina,78191131,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00005,2025-08-02,9.8,Ingresante
-37,2025-II,Carmen Daniela,Huamán Cano,75483562,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2025B00006,2025-08-27,6.4,No Ingresante
+31,2025-I,Rosa Cinthia,Martínez Moreno,77971465,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025A00005,2025-03-10,16.0,Ingresante
+32,2024-II,Jhon Carlos,Cruz Romero,77425149,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024B00009,2024-08-11,19.0,No Ingresante
+33,2025-II,Daniela Valeria,Puma Muñoz,74013879,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025B00004,2025-08-16,6.8,No Ingresante
+34,2026-I,Karina Valeria,Soto Gutiérrez,73589533,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00009,2026-03-18,11.8,Ingresante
+35,2024-II,Marco,Campos Cabrera,79658481,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2024B00010,2024-08-20,19.2,Ingresante
+36,2025-II,David,Rojas Molina,78191131,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00005,2025-08-02,9.8,Ingresante
+37,2025-II,Carmen Daniela,Huamán Cano,75483562,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2025B00006,2025-08-27,6.4,No Ingresante
 38,2025-II,Claudia,Apaza Blanco,70675419,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025B00007,2025-08-02,15.8,Ingresante
 39,2024-II,Liseth Lorena,Cruz Muñoz,76189034,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00011,2024-08-20,2.6,No Ingresante
 40,2025-I,Fernando,Castillo Jiménez,71275009,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2025A00006,2025-03-19,19.6,Ingresante
-41,2025-II,Héctor Jorge,Espinoza Cano,72566765,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025B00008,2025-08-30,11.0,Ingresante
-42,2026-I,Sandra,Ramírez Navarro,77563202,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2026A00010,2026-03-11,0.6,No Ingresante
+41,2025-II,Héctor Jorge,Espinoza Cano,72566765,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025B00008,2025-08-30,11.0,Ingresante
+42,2026-I,Sandra,Ramírez Navarro,77563202,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2026A00010,2026-03-11,0.6,No Ingresante
 43,2025-I,Fatima Liseth,Ccallo Serrano,74691890,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2025A00007,2025-03-13,4.8,No Ingresante
-44,2024-II,Cinthia,Villanueva Vásquez,77138769,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2024B00012,2024-08-30,6.8,No Ingresante
-45,2024-II,Nadia Rocío,Herrera Iglesias,73213524,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00013,2024-09-03,15.2,Ingresante
-46,2024-I,Héctor Jorge,Quispe Pérez,70237370,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00008,2024-03-02,1.2,No Ingresante
+44,2024-II,Cinthia,Villanueva Vásquez,77138769,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2024B00012,2024-08-30,6.8,No Ingresante
+45,2024-II,Nadia Rocío,Herrera Iglesias,73213524,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00013,2024-09-03,15.2,Ingresante
+46,2024-I,Héctor Jorge,Quispe Pérez,70237370,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00008,2024-03-02,1.2,No Ingresante
 47,2024-I,Carmen,Sánchez Fernández,78250138,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00009,2024-03-05,14.4,No Ingresante
-48,2024-I,Iván José,Ortega Molina,78767312,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024A00010,2024-03-28,15.0,No Ingresante
+48,2024-I,Iván José,Ortega Molina,78767312,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024A00010,2024-03-28,15.0,No Ingresante
 49,2025-I,Pablo Rubén,Torres Lozano,73540415,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2025A00008,2025-03-04,4.4,No Ingresante
-50,2024-II,Daniela,Mendoza Núñez,70547605,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2024B00014,2024-08-30,1.8,No Ingresante
-51,2025-I,Víctor,Condori Martínez,71925626,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2025A00009,2025-03-23,3.6,No Ingresante
-52,2024-II,Ricardo,Paredes Núñez,77367772,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00015,2024-08-18,12.8,Ingresante
-53,2025-II,Karina Valeria,Cutipa Muñoz,70433940,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00009,2025-08-03,19.4,Ingresante
-54,2025-II,Erick,Quispe Martínez,78249789,Otras Escuelas,Turismo,Privado,240.0,V-2025B00010,2025-08-27,8.4,No Ingresante
-55,2024-I,Wilmer,Morales Núñez,76718473,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2024A00011,2024-03-03,8.0,No Ingresante
-56,2024-I,Iván,García Cano,76933143,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00012,2024-03-21,11.2,Ingresante
+50,2024-II,Daniela,Mendoza Núñez,70547605,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2024B00014,2024-08-30,1.8,No Ingresante
+51,2025-I,Víctor,Condori Martínez,71925626,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2025A00009,2025-03-23,3.6,No Ingresante
+52,2024-II,Ricardo,Paredes Núñez,77367772,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00015,2024-08-18,12.8,Ingresante
+53,2025-II,Karina Valeria,Cutipa Muñoz,70433940,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00009,2025-08-03,19.4,Ingresante
+54,2025-II,Erick,Quispe Martínez,78249789,Otras Escuelas,Turismo,Estatal,240.0,V-2025B00010,2025-08-27,8.4,No Ingresante
+55,2024-I,Wilmer,Morales Núñez,76718473,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2024A00011,2024-03-03,8.0,No Ingresante
+56,2024-I,Iván,García Cano,76933143,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00012,2024-03-21,11.2,Ingresante
 57,2024-II,Stephanie Liseth,Vega Muñoz,72037191,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00016,2024-08-20,14.0,Ingresante
-58,2025-II,Liliana,Flores Cano,71970754,Fac. Agronomía,Agronomía,Privado,240.0,V-2025B00011,2025-08-19,13.0,Ingresante
+58,2025-II,Liliana,Flores Cano,71970754,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025B00011,2025-08-19,13.0,Ingresante
 59,2025-II,Sebastián,Cruz Gutiérrez,76435505,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00012,2025-08-18,19.6,Ingresante
 60,2025-II,Fatima,García Núñez,75008935,Otras Escuelas,Turismo,Estatal,220.0,V-2025B00013,2025-08-29,13.6,Ingresante
-61,2025-I,Alex,Cutipa Jiménez,74006492,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025A00010,2025-02-26,8.0,No Ingresante
-62,2025-II,Evelyn Carmen,Huanca Gutiérrez,71255409,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025B00014,2025-08-26,16.6,Ingresante
+61,2025-I,Alex,Cutipa Jiménez,74006492,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025A00010,2025-02-26,8.0,No Ingresante
+62,2025-II,Evelyn Carmen,Huanca Gutiérrez,71255409,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025B00014,2025-08-26,16.6,Ingresante
 63,2025-I,Fernando,Cutipa Muñoz,79076742,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00011,2025-03-17,17.4,No Ingresante
 64,2024-II,José,Espinoza Delgado,77443690,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00017,2024-08-03,8.2,No Ingresante
 65,2025-I,Liseth,Ramos Aguilar,79494697,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025A00012,2025-03-02,2.0,No Ingresante
-66,2025-II,Miguel Ángel,Campos Gutiérrez,73895475,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025B00015,2025-08-17,17.0,Ingresante
-67,2025-II,Diego,Sánchez Sánchez,75797629,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2025B00016,2025-08-17,11.6,Ingresante
-68,2024-II,José,Ccopa Moran,79595270,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024B00018,2024-08-02,16.8,Ingresante
-69,2024-I,Jorge,López Muñoz,74801541,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00013,2024-03-08,16.2,Ingresante
-70,2025-I,Víctor,Vargas González,71630140,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2025A00013,2025-03-22,11.2,Ingresante
-71,2025-I,Raúl Javier,Cutipa Aguilar,72946751,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00014,2025-03-23,4.2,No Ingresante
+66,2025-II,Miguel Ángel,Campos Gutiérrez,73895475,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025B00015,2025-08-17,17.0,Ingresante
+67,2025-II,Diego,Sánchez Sánchez,75797629,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2025B00016,2025-08-17,11.6,Ingresante
+68,2024-II,José,Ccopa Moran,79595270,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024B00018,2024-08-02,16.8,Ingresante
+69,2024-I,Jorge,López Muñoz,74801541,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00013,2024-03-08,16.2,Ingresante
+70,2025-I,Víctor,Vargas González,71630140,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2025A00013,2025-03-22,11.2,Ingresante
+71,2025-I,Raúl Javier,Cutipa Aguilar,72946751,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00014,2025-03-23,4.2,No Ingresante
 72,2025-II,Wilmer Rodrigo,Lazo Fuentes,77857296,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2025B00017,2025-08-26,14.2,Ingresante
-73,2025-II,Lorena,Ventura Muñoz,79807290,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025B00018,2025-08-07,17.2,Ingresante
-74,2024-I,Jhon,León Molina,71060605,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00014,2024-03-21,10.4,Ingresante
-75,2024-I,Héctor,Flores Delgado,73939290,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024A00015,2024-03-15,9.4,No Ingresante
+73,2025-II,Lorena,Ventura Muñoz,79807290,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025B00018,2025-08-07,17.2,Ingresante
+74,2024-I,Jhon,León Molina,71060605,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00014,2024-03-21,10.4,Ingresante
+75,2024-I,Héctor,Flores Delgado,73939290,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024A00015,2024-03-15,9.4,No Ingresante
 76,2025-II,Carmen Daniela,Torres Álvarez,79134621,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2025B00019,2025-08-26,7.0,No Ingresante
 77,2024-I,Juan,Reyes Lozano,70358318,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00016,2024-03-05,20.0,Ingresante
-78,2024-I,Ronal,Huamán Molina,75512314,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00017,2024-03-28,3.6,Ingresante
-79,2026-I,Daniela Valeria,Rodríguez González,70249314,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2026A00011,2026-03-01,4.4,No Ingresante
-80,2024-II,Jorge,Sánchez Castro,77520810,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024B00019,2024-09-02,5.6,Ingresante
+78,2024-I,Ronal,Huamán Molina,75512314,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00017,2024-03-28,3.6,Ingresante
+79,2026-I,Daniela Valeria,Rodríguez González,70249314,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2026A00011,2026-03-01,4.4,No Ingresante
+80,2024-II,Jorge,Sánchez Castro,77520810,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024B00019,2024-09-02,5.6,Ingresante
 81,2024-I,Víctor,Ramos Pérez,77684678,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00018,2024-03-16,10.2,Ingresante
-82,2024-I,Flor,Ramírez Romero,72488628,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00019,2024-03-13,15.2,Ingresante
-83,2025-II,David,Soto Fuentes,79249870,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025B00020,2025-08-29,5.8,No Ingresante
-84,2025-II,Sofía,Ruiz Romero,74276341,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025B00021,2025-08-05,2.2,No Ingresante
+82,2024-I,Flor,Ramírez Romero,72488628,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00019,2024-03-13,15.2,Ingresante
+83,2025-II,David,Soto Fuentes,79249870,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025B00020,2025-08-29,5.8,No Ingresante
+84,2025-II,Sofía,Ruiz Romero,74276341,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025B00021,2025-08-05,2.2,No Ingresante
 85,2024-I,Claudia,Pérez Benítez,79839251,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024A00020,2024-03-14,9.0,No Ingresante
 86,2025-II,Kevin,Rojas Pérez,75899644,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00022,2025-08-31,5.6,No Ingresante
-87,2025-I,Marco,Puma Molina,77199311,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2025A00015,2025-02-25,4.6,No Ingresante
+87,2025-I,Marco,Puma Molina,77199311,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2025A00015,2025-02-25,4.6,No Ingresante
 88,2025-I,Diego,Chávez Fernández,71167449,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00016,2025-03-20,13.4,Ingresante
 89,2025-II,Stephanie Liseth,Cutipa Carrasco,70882629,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00023,2025-08-18,11.2,Ingresante
-90,2025-II,Cristian,Cárdenas Fuentes,75791039,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025B00024,2025-09-03,17.0,Ingresante
-91,2024-II,Rosa,Huamán Pérez,73543918,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024B00020,2024-08-21,3.0,No Ingresante
-92,2024-I,Ronal,Castillo Aguilar,74857259,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00021,2024-03-06,15.8,Ingresante
+90,2025-II,Cristian,Cárdenas Fuentes,75791039,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025B00024,2025-09-03,17.0,Ingresante
+91,2024-II,Rosa,Huamán Pérez,73543918,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024B00020,2024-08-21,3.0,No Ingresante
+92,2024-I,Ronal,Castillo Aguilar,74857259,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00021,2024-03-06,15.8,Ingresante
 93,2025-I,Héctor Alejandro,Flores Jiménez,75861544,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2025A00017,2025-03-04,2.6,No Ingresante
-94,2024-II,Fatima Liseth,Huanca Blanco,72972018,Otras Escuelas,Turismo,Privado,240.0,V-2024B00021,2024-08-29,17.4,No Ingresante
-95,2026-I,Jhon,Espinoza Romero,72532644,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2026A00012,2026-03-21,7.6,No Ingresante
+94,2024-II,Fatima Liseth,Huanca Blanco,72972018,Otras Escuelas,Turismo,Estatal,240.0,V-2024B00021,2024-08-29,17.4,No Ingresante
+95,2026-I,Jhon,Espinoza Romero,72532644,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2026A00012,2026-03-21,7.6,No Ingresante
 96,2026-I,Evelyn,Cruz Sánchez,70630944,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00013,2026-03-21,2.2,No Ingresante
-97,2026-I,Ana,Martínez Sánchez,79590807,Fac. Agronomía,Agronomía,Privado,240.0,V-2026A00014,2026-03-17,3.8,Ingresante
-98,2025-II,Sofía,Ramírez Iglesias,70656695,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2025B00025,2025-09-03,13.2,Ingresante
-99,2025-I,Karina Valeria,Lazo Benítez,75614484,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00018,2025-03-06,6.4,No Ingresante
-100,2024-I,Ana,Lazo González,78831414,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00022,2024-03-01,9.2,Ingresante
+97,2026-I,Ana,Martínez Sánchez,79590807,Fac. Agronomía,Agronomía,Estatal,240.0,V-2026A00014,2026-03-17,3.8,Ingresante
+98,2025-II,Sofía,Ramírez Iglesias,70656695,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2025B00025,2025-09-03,13.2,Ingresante
+99,2025-I,Karina Valeria,Lazo Benítez,75614484,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00018,2025-03-06,6.4,No Ingresante
+100,2024-I,Ana,Lazo González,78831414,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00022,2024-03-01,9.2,Ingresante
 101,2024-II,Karina,Apaza González,72599548,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00022,2024-08-22,19.6,Ingresante
 102,2026-I,Evelyn Carmen,Soto Hidalgo,77342941,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00015,2026-03-15,15.6,Ingresante
-103,2025-II,Diego,Condori González,74194357,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00026,2025-09-05,2.6,No Ingresante
-104,2026-I,Iván José,Mamani Navarro,77538325,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00016,2026-03-03,5.6,No Ingresante
-105,2025-I,Fernando,Cárdenas Álvarez,73955699,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025A00019,2025-03-04,0.6,No Ingresante
+103,2025-II,Diego,Condori González,74194357,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00026,2025-09-05,2.6,No Ingresante
+104,2026-I,Iván José,Mamani Navarro,77538325,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00016,2026-03-03,5.6,No Ingresante
+105,2025-I,Fernando,Cárdenas Álvarez,73955699,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025A00019,2025-03-04,0.6,No Ingresante
 106,2024-I,David,Chávez González,70642620,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2024A00023,2024-03-25,18.0,Ingresante
 107,2026-I,Stephanie Liseth,Huamán Gutiérrez,79207407,Otras Escuelas,Turismo,Estatal,220.0,V-2026A00017,2026-03-25,7.2,No Ingresante
 108,2024-I,Ana,León Cano,71053729,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00024,2024-03-21,13.0,Ingresante
-109,2026-I,Héctor,Martínez Moran,76262974,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2026A00018,2026-03-26,1.6,No Ingresante
+109,2026-I,Héctor,Martínez Moran,76262974,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2026A00018,2026-03-26,1.6,No Ingresante
 110,2024-II,Iván José,Cruz Alonso,74923149,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00023,2024-08-21,7.8,No Ingresante
-111,2026-I,Daniela Valeria,Condori Núñez,75989032,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2026A00019,2026-03-09,3.0,No Ingresante
-112,2025-II,Rodrigo,Salazar Serrano,73134272,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2025B00027,2025-09-03,6.8,No Ingresante
+111,2026-I,Daniela Valeria,Condori Núñez,75989032,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2026A00019,2026-03-09,3.0,No Ingresante
+112,2025-II,Rodrigo,Salazar Serrano,73134272,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2025B00027,2025-09-03,6.8,No Ingresante
 113,2025-II,Lorena,Martínez Vásquez,77297090,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2025B00028,2025-08-26,9.2,Ingresante
-114,2024-I,Pablo,Ventura Sánchez,71289923,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024A00025,2024-03-11,16.6,Ingresante
+114,2024-I,Pablo,Ventura Sánchez,71289923,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024A00025,2024-03-11,16.6,Ingresante
 115,2024-I,Nadia Fatima,Salazar Fuentes,74391883,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024A00026,2024-03-20,7.2,No Ingresante
-116,2025-II,Nadia Rocío,Vega Iglesias,77467726,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2025B00029,2025-08-05,14.0,Ingresante
+116,2025-II,Nadia Rocío,Vega Iglesias,77467726,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2025B00029,2025-08-05,14.0,Ingresante
 117,2025-I,Alejandro,Soto Iglesias,76064832,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2025A00020,2025-03-22,3.4,No Ingresante
-118,2025-II,Claudia,Cruz González,71446455,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00030,2025-09-03,10.4,No Ingresante
+118,2025-II,Claudia,Cruz González,71446455,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00030,2025-09-03,10.4,No Ingresante
 119,2026-I,Xiomara,Sánchez Sánchez,77815384,Fac. Agronomía,Agronomía,Estatal,220.0,V-2026A00020,2026-03-29,19.8,Ingresante
 120,2026-I,Valeria,Cárdenas Benítez,72083077,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2026A00021,2026-03-06,8.2,Ingresante
 121,2024-II,Mónica,Coila Carrasco,74204459,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00024,2024-08-20,15.6,Ingresante
 122,2026-I,Ronal,Chávez Hidalgo,75664316,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2026A00022,2026-03-03,1.0,Ingresante
-123,2026-I,Stephanie Fatima,Ortega Cabrera,78355692,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2026A00023,2026-03-16,6.2,No Ingresante
-124,2025-II,Stephanie Liseth,Salazar Aguilar,74165284,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2025B00031,2025-08-21,4.8,No Ingresante
-125,2025-II,Rodrigo,Pilco Muñoz,70388833,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00032,2025-08-16,5.4,No Ingresante
-126,2024-I,Mónica,Huanca Castro,74794062,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2024A00027,2024-03-05,6.6,No Ingresante
-127,2025-II,Rocío,Villanueva Jiménez,76082139,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025B00033,2025-09-02,11.4,Ingresante
-128,2025-I,Edwin,Flores González,71622046,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2025A00021,2025-03-21,3.6,No Ingresante
+123,2026-I,Stephanie Fatima,Ortega Cabrera,78355692,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2026A00023,2026-03-16,6.2,No Ingresante
+124,2025-II,Stephanie Liseth,Salazar Aguilar,74165284,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2025B00031,2025-08-21,4.8,No Ingresante
+125,2025-II,Rodrigo,Pilco Muñoz,70388833,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00032,2025-08-16,5.4,No Ingresante
+126,2024-I,Mónica,Huanca Castro,74794062,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2024A00027,2024-03-05,6.6,No Ingresante
+127,2025-II,Rocío,Villanueva Jiménez,76082139,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025B00033,2025-09-02,11.4,Ingresante
+128,2025-I,Edwin,Flores González,71622046,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2025A00021,2025-03-21,3.6,No Ingresante
 129,2026-I,Rosa Cinthia,Pérez Serrano,77948107,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00024,2026-03-11,15.6,Ingresante
-130,2025-II,Kevin,Campos Serrano,78511333,Otras Escuelas,Turismo,Privado,240.0,V-2025B00034,2025-08-31,0.4,No Ingresante
+130,2025-II,Kevin,Campos Serrano,78511333,Otras Escuelas,Turismo,Estatal,240.0,V-2025B00034,2025-08-31,0.4,No Ingresante
 131,2026-I,Ricardo,Salazar Gutiérrez,74063384,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00025,2026-03-01,11.2,Ingresante
-132,2024-II,Nadia Fatima,León Castro,71044906,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024B00025,2024-08-31,13.4,Ingresante
-133,2024-II,Patricia,Medina Muñoz,78123194,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00026,2024-09-05,7.6,No Ingresante
-134,2025-I,Wilmer,Morales Romero,78049765,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025A00022,2025-03-06,3.0,No Ingresante
-135,2026-I,Sandra,Medina Gutiérrez,74872986,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00026,2026-03-30,11.2,Ingresante
+132,2024-II,Nadia Fatima,León Castro,71044906,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024B00025,2024-08-31,13.4,Ingresante
+133,2024-II,Patricia,Medina Muñoz,78123194,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00026,2024-09-05,7.6,No Ingresante
+134,2025-I,Wilmer,Morales Romero,78049765,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025A00022,2025-03-06,3.0,No Ingresante
+135,2026-I,Sandra,Medina Gutiérrez,74872986,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00026,2026-03-30,11.2,Ingresante
 136,2024-II,Edwin Cristian,Lazo Castro,71686863,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00027,2024-09-05,4.0,No Ingresante
 137,2025-II,Stephanie Liseth,Cutipa Núñez,70992583,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2025B00035,2025-09-04,18.8,Ingresante
-138,2024-I,Miguel Ángel,Quispe Alonso,76660463,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00028,2024-03-29,0.8,No Ingresante
-139,2026-I,Jhon,Coila Cano,79115069,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2026A00027,2026-03-09,4.8,No Ingresante
+138,2024-I,Miguel Ángel,Quispe Alonso,76660463,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00028,2024-03-29,0.8,No Ingresante
+139,2026-I,Jhon,Coila Cano,79115069,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2026A00027,2026-03-09,4.8,No Ingresante
 140,2025-I,Fatima,Quispe Castro,75655803,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025A00023,2025-03-16,16.2,No Ingresante
 141,2025-II,Héctor Alejandro,Torres Iglesias,72359075,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2025B00036,2025-08-17,9.8,Ingresante
 142,2025-I,Jorge,Paredes Castro,74388133,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025A00024,2025-03-18,3.0,No Ingresante
 143,2024-II,Mónica,Pilco Fuentes,74949909,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2024B00028,2024-08-09,12.2,Ingresante
-144,2024-II,Rodrigo,Cárdenas Sánchez,70933413,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2024B00029,2024-08-04,14.2,Ingresante
-145,2025-I,Ricardo,García Lozano,79702453,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00025,2025-03-19,1.6,No Ingresante
-146,2024-I,Miguel Ángel,Mendoza Alonso,74816582,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2024A00029,2024-03-12,9.6,Ingresante
+144,2024-II,Rodrigo,Cárdenas Sánchez,70933413,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2024B00029,2024-08-04,14.2,Ingresante
+145,2025-I,Ricardo,García Lozano,79702453,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00025,2025-03-19,1.6,No Ingresante
+146,2024-I,Miguel Ángel,Mendoza Alonso,74816582,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2024A00029,2024-03-12,9.6,Ingresante
 147,2025-II,Yaneth,Herrera González,75834610,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00037,2025-08-15,0.0,No Ingresante
 148,2025-I,Valeria,Herrera Moran,73853123,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2025A00026,2025-03-05,4.8,Ingresante
 149,2024-I,Patricia Mariana,Apaza Lozano,70946973,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00030,2024-03-27,18.6,Ingresante
-150,2026-I,Jhon,Ccopa Pérez,72403511,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00028,2026-03-10,7.0,No Ingresante
-151,2026-I,César,Vargas Martínez,79325626,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2026A00029,2026-03-26,13.4,Ingresante
+150,2026-I,Jhon,Ccopa Pérez,72403511,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00028,2026-03-10,7.0,No Ingresante
+151,2026-I,César,Vargas Martínez,79325626,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2026A00029,2026-03-26,13.4,Ingresante
 152,2025-II,Paola Evelyn,Herrera Castro,74042775,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2025B00038,2025-08-30,1.4,No Ingresante
-153,2025-II,Víctor Erick,Ccallo Lozano,75540893,Fac. Agronomía,Agronomía,Privado,240.0,V-2025B00039,2025-08-06,13.6,Ingresante
-154,2024-II,Daniela,Rojas Alonso,71221118,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00030,2024-08-14,8.4,No Ingresante
-155,2024-I,Xiomara María,Flores Castro,74070038,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00031,2024-03-30,6.0,No Ingresante
-156,2025-I,Claudia,Pilco Muñoz,76033835,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2025A00027,2025-02-28,18.4,Ingresante
-157,2025-I,Raúl,Martínez Molina,72448176,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00028,2025-03-01,5.0,No Ingresante
-158,2025-II,Javier Fernando,Huanca Serrano,74317226,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025B00040,2025-08-30,4.2,No Ingresante
+153,2025-II,Víctor Erick,Ccallo Lozano,75540893,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025B00039,2025-08-06,13.6,Ingresante
+154,2024-II,Daniela,Rojas Alonso,71221118,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00030,2024-08-14,8.4,No Ingresante
+155,2024-I,Xiomara María,Flores Castro,74070038,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00031,2024-03-30,6.0,No Ingresante
+156,2025-I,Claudia,Pilco Muñoz,76033835,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2025A00027,2025-02-28,18.4,Ingresante
+157,2025-I,Raúl,Martínez Molina,72448176,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00028,2025-03-01,5.0,No Ingresante
+158,2025-II,Javier Fernando,Huanca Serrano,74317226,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025B00040,2025-08-30,4.2,No Ingresante
 159,2025-I,Cinthia,Quispe Benítez,78790328,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00029,2025-03-21,0.0,No Ingresante
 160,2025-II,Fatima,Herrera Núñez,70287605,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2025B00041,2025-08-07,2.4,No Ingresante
-161,2024-II,Sandra,Medina Navarro,76658817,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00031,2024-08-16,17.8,Ingresante
+161,2024-II,Sandra,Medina Navarro,76658817,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00031,2024-08-16,17.8,Ingresante
 162,2024-II,Xiomara,Lazo Delgado,78861040,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2024B00032,2024-08-31,6.8,No Ingresante
 163,2024-I,Javier Fernando,Paredes Alonso,73009069,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024A00032,2024-03-31,5.2,No Ingresante
-164,2025-I,Juan,Puma Gutiérrez,76375341,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025A00030,2025-03-07,9.2,Ingresante
-165,2024-I,Marco,Puma Delgado,72223098,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00033,2024-03-18,14.2,Ingresante
-166,2024-I,Flor,Rojas Romero,76463219,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00034,2024-03-25,2.0,No Ingresante
-167,2026-I,Ronal,Ramos Hidalgo,76387623,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00030,2026-03-09,12.6,Ingresante
+164,2025-I,Juan,Puma Gutiérrez,76375341,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025A00030,2025-03-07,9.2,Ingresante
+165,2024-I,Marco,Puma Delgado,72223098,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00033,2024-03-18,14.2,Ingresante
+166,2024-I,Flor,Rojas Romero,76463219,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00034,2024-03-25,2.0,No Ingresante
+167,2026-I,Ronal,Ramos Hidalgo,76387623,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00030,2026-03-09,12.6,Ingresante
 168,2024-II,Cinthia,Sánchez Álvarez,74222820,Otras Escuelas,Turismo,Estatal,220.0,V-2024B00033,2024-08-30,2.6,No Ingresante
 169,2024-I,Edwin,Salazar Serrano,77385715,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024A00035,2024-03-10,8.2,No Ingresante
 170,2025-II,Karina,Campos Iglesias,79229132,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00042,2025-08-29,7.4,No Ingresante
-171,2024-I,Raúl,Vargas Muñoz,72335038,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00036,2024-03-22,3.8,No Ingresante
+171,2024-I,Raúl,Vargas Muñoz,72335038,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00036,2024-03-22,3.8,No Ingresante
 172,2025-II,Cinthia,Campos Fernández,78965197,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2025B00043,2025-08-24,17.8,No Ingresante
-173,2026-I,José,Ccopa Vásquez,72790696,Fac. Agronomía,Agronomía,Privado,240.0,V-2026A00031,2026-03-31,19.2,Ingresante
+173,2026-I,José,Ccopa Vásquez,72790696,Fac. Agronomía,Agronomía,Estatal,240.0,V-2026A00031,2026-03-31,19.2,Ingresante
 174,2025-II,Liseth Lorena,Cárdenas Molina,77478923,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2025B00044,2025-08-23,0.6,No Ingresante
-175,2025-I,Carmen,Chávez Vásquez,75232651,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025A00031,2025-03-08,12.0,Ingresante
-176,2024-II,Lorena,Apaza Fernández,73094587,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00034,2024-08-02,18.8,Ingresante
+175,2025-I,Carmen,Chávez Vásquez,75232651,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025A00031,2025-03-08,12.0,Ingresante
+176,2024-II,Lorena,Apaza Fernández,73094587,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00034,2024-08-02,18.8,Ingresante
 177,2024-II,Rosa,Huamán Lozano,74669851,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024B00035,2024-09-04,4.6,No Ingresante
-178,2024-II,Evelyn Carmen,Morales Romero,76520284,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024B00036,2024-08-23,11.6,Ingresante
+178,2024-II,Evelyn Carmen,Morales Romero,76520284,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024B00036,2024-08-23,11.6,Ingresante
 179,2024-II,Miguel,Paredes Moran,77097413,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00037,2024-09-01,7.2,No Ingresante
-180,2025-I,Rubén,Medina Castro,78130388,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00032,2025-03-10,17.4,Ingresante
+180,2025-I,Rubén,Medina Castro,78130388,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00032,2025-03-10,17.4,Ingresante
 181,2025-II,Héctor,Villanueva Fuentes,79608547,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00045,2025-08-29,13.8,Ingresante
 182,2025-II,Lucía,Ccopa Pérez,70540736,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2025B00046,2025-08-29,3.0,No Ingresante
 183,2024-II,Brenda,Medina Martínez,72784709,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024B00038,2024-08-04,14.4,Ingresante
 184,2025-I,Pablo Rubén,Coila Núñez,79608908,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2025A00033,2025-03-01,19.2,Ingresante
 185,2024-I,Miguel,Soto González,74188889,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00037,2024-03-25,17.2,Ingresante
-186,2024-II,Edwin Cristian,Salazar Sánchez,71266952,Fac. Agronomía,Agronomía,Privado,240.0,V-2024B00039,2024-09-02,19.0,Ingresante
+186,2024-II,Edwin Cristian,Salazar Sánchez,71266952,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024B00039,2024-09-02,19.0,Ingresante
 187,2025-I,Rocío,García Carrasco,77691502,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025A00034,2025-03-22,13.6,Ingresante
-188,2025-II,Jhon,Coila Serrano,79182347,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025B00047,2025-08-04,1.0,No Ingresante
+188,2025-II,Jhon,Coila Serrano,79182347,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025B00047,2025-08-04,1.0,No Ingresante
 189,2025-II,Andrea,Vega Cano,70011340,Otras Escuelas,Turismo,Estatal,220.0,V-2025B00048,2025-08-09,16.6,Ingresante
 190,2025-I,Flor,Ventura Hidalgo,70868846,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2025A00035,2025-03-10,16.6,Ingresante
 191,2024-I,Nadia,Campos Molina,78714828,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00038,2024-03-23,8.6,No Ingresante
-192,2025-II,Sebastián,Salazar Carrasco,71718442,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00049,2025-08-09,9.6,No Ingresante
+192,2025-II,Sebastián,Salazar Carrasco,71718442,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00049,2025-08-09,9.6,No Ingresante
 193,2024-II,Juan,Ramos Castro,72753418,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2024B00040,2024-08-27,15.6,Ingresante
 194,2024-II,Fatima Liseth,Flores Moran,75897789,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024B00041,2024-08-16,7.0,No Ingresante
-195,2024-II,Edwin,Coila Cabrera,75060836,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00042,2024-08-19,16.4,Ingresante
-196,2024-II,Patricia Mariana,Espinoza Blanco,78863176,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2024B00043,2024-08-21,3.2,No Ingresante
-197,2026-I,Andrea,Mendoza Blanco,70280001,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2026A00032,2026-03-07,1.0,Ingresante
-198,2025-II,Iván,Ortega Martínez,76749095,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00050,2025-08-06,7.8,No Ingresante
+195,2024-II,Edwin,Coila Cabrera,75060836,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00042,2024-08-19,16.4,Ingresante
+196,2024-II,Patricia Mariana,Espinoza Blanco,78863176,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2024B00043,2024-08-21,3.2,No Ingresante
+197,2026-I,Andrea,Mendoza Blanco,70280001,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2026A00032,2026-03-07,1.0,Ingresante
+198,2025-II,Iván,Ortega Martínez,76749095,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00050,2025-08-06,7.8,No Ingresante
 199,2024-II,Héctor Jorge,Castillo Blanco,75203780,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00044,2024-08-16,2.2,Ingresante
 200,2024-I,Evelyn,Reyes Iglesias,72003921,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00039,2024-03-06,12.6,No Ingresante
 201,2026-I,Erick,Mamani Álvarez,72129542,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00033,2026-03-25,0.6,No Ingresante
 202,2025-II,Xiomara María,Paredes Blanco,78323974,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2025B00051,2025-09-01,14.4,Ingresante
 203,2024-II,Stephanie Fatima,Vargas Fuentes,73831990,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024B00045,2024-08-01,6.2,No Ingresante
-204,2025-I,Patricia Diana,Martínez Aguilar,73766741,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2025A00036,2025-03-05,1.8,No Ingresante
-205,2024-I,Diego,Apaza Alonso,76726402,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00040,2024-03-25,7.8,No Ingresante
+204,2025-I,Patricia Diana,Martínez Aguilar,73766741,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2025A00036,2025-03-05,1.8,No Ingresante
+205,2024-I,Diego,Apaza Alonso,76726402,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00040,2024-03-25,7.8,No Ingresante
 206,2026-I,Evelyn,Paredes Pérez,74069884,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2026A00034,2026-03-24,13.8,Ingresante
-207,2024-II,Rosa,Apaza Vásquez,70160974,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2024B00046,2024-08-20,2.6,No Ingresante
-208,2024-II,Nadia,Puma Carrasco,70736524,Otras Escuelas,Turismo,Privado,240.0,V-2024B00047,2024-08-30,19.0,Ingresante
+207,2024-II,Rosa,Apaza Vásquez,70160974,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2024B00046,2024-08-20,2.6,No Ingresante
+208,2024-II,Nadia,Puma Carrasco,70736524,Otras Escuelas,Turismo,Estatal,240.0,V-2024B00047,2024-08-30,19.0,Ingresante
 209,2024-I,Fernando,Sánchez Benítez,77297801,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00041,2024-03-10,6.6,Ingresante
 210,2025-II,Jhon,Vega Navarro,73919346,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00052,2025-08-07,3.8,No Ingresante
 211,2025-II,Patricia,Medina Lozano,77581910,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2025B00053,2025-08-06,4.0,No Ingresante
-212,2025-I,Carlos,Huamán Romero,72488460,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00037,2025-03-09,13.0,Ingresante
+212,2025-I,Carlos,Huamán Romero,72488460,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00037,2025-03-09,13.0,Ingresante
 213,2025-I,Rosa,Castillo Sánchez,79327356,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025A00038,2025-03-11,2.6,No Ingresante
 214,2024-II,Fatima Liseth,Apaza González,73324120,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024B00048,2024-08-17,1.8,No Ingresante
 215,2024-I,Ana,Pérez Carrasco,75562484,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00042,2024-03-06,14.6,Ingresante
 216,2024-I,César,Coila Muñoz,76912082,Otras Escuelas,Turismo,Estatal,220.0,V-2024A00043,2024-03-03,7.0,No Ingresante
-217,2025-II,Mariana,Ccopa Cabrera,76417252,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025B00054,2025-09-04,20.0,Ingresante
+217,2025-II,Mariana,Ccopa Cabrera,76417252,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025B00054,2025-09-04,20.0,Ingresante
 218,2026-I,Diego,Rodríguez Romero,73674549,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00035,2026-03-26,12.0,Ingresante
 219,2026-I,José,Ccopa Moreno,74471581,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2026A00036,2026-03-19,9.8,Ingresante
 220,2024-II,Ana,Soto Vásquez,79924771,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00049,2024-08-13,12.6,Ingresante
-221,2024-II,Liseth Lorena,Rojas Molina,70334336,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2024B00050,2024-08-13,3.2,No Ingresante
+221,2024-II,Liseth Lorena,Rojas Molina,70334336,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2024B00050,2024-08-13,3.2,No Ingresante
 222,2024-II,Jhon,López Cabrera,72478196,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024B00051,2024-09-03,9.2,No Ingresante
-223,2025-I,Ronal,Torres Serrano,75062779,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025A00039,2025-03-22,16.2,No Ingresante
+223,2025-I,Ronal,Torres Serrano,75062779,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025A00039,2025-03-22,16.2,No Ingresante
 224,2024-II,Xiomara María,Paredes Fernández,79520780,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00052,2024-08-07,12.6,Ingresante
-225,2025-I,Carlos,Salazar Sánchez,77040612,Otras Escuelas,Turismo,Privado,240.0,V-2025A00040,2025-03-25,9.6,Ingresante
-226,2025-II,Milagros,Paredes Molina,72728923,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2025B00055,2025-08-02,8.0,No Ingresante
-227,2024-I,Karina Valeria,Mamani Blanco,79177913,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2024A00044,2024-03-20,15.6,No Ingresante
+225,2025-I,Carlos,Salazar Sánchez,77040612,Otras Escuelas,Turismo,Estatal,240.0,V-2025A00040,2025-03-25,9.6,Ingresante
+226,2025-II,Milagros,Paredes Molina,72728923,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2025B00055,2025-08-02,8.0,No Ingresante
+227,2024-I,Karina Valeria,Mamani Blanco,79177913,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2024A00044,2024-03-20,15.6,No Ingresante
 228,2025-II,Xiomara,Rojas Castro,73349987,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00056,2025-08-19,2.0,No Ingresante
 229,2024-I,Cinthia,Reyes Muñoz,71529023,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00045,2024-03-12,9.6,Ingresante
 230,2025-II,Fatima,Apaza Navarro,79466486,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00057,2025-08-23,13.8,Ingresante
 231,2026-I,Karina Valeria,Ramos Aguilar,78984440,Fac. Agronomía,Agronomía,Estatal,220.0,V-2026A00037,2026-03-16,7.6,No Ingresante
-232,2024-II,Daniela Valeria,Ruiz Jiménez,72480985,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2024B00053,2024-08-05,2.2,No Ingresante
+232,2024-II,Daniela Valeria,Ruiz Jiménez,72480985,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2024B00053,2024-08-05,2.2,No Ingresante
 233,2025-II,Iván,Cruz Castro,79857890,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2025B00058,2025-08-27,3.8,No Ingresante
-234,2026-I,José,Torres Delgado,74799841,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2026A00038,2026-03-09,9.8,No Ingresante
+234,2026-I,José,Torres Delgado,74799841,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2026A00038,2026-03-09,9.8,No Ingresante
 235,2026-I,Raúl Javier,Castillo Gutiérrez,76739741,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00039,2026-03-02,19.0,Ingresante
 236,2025-I,Wilmer Rodrigo,Pilco Pérez,74703436,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2025A00041,2025-03-01,7.6,Ingresante
-237,2025-II,Jorge,Ortega Carrasco,73153037,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2025B00059,2025-09-03,9.4,No Ingresante
+237,2025-II,Jorge,Ortega Carrasco,73153037,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2025B00059,2025-09-03,9.4,No Ingresante
 238,2026-I,Pablo Rubén,Cárdenas Fernández,72275826,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00040,2026-03-07,5.0,No Ingresante
 239,2024-II,Carmen Daniela,Condori Navarro,76179919,Otras Escuelas,Turismo,Estatal,220.0,V-2024B00054,2024-08-02,6.0,No Ingresante
 240,2026-I,Cinthia,Campos Vásquez,75775539,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00041,2026-03-10,0.6,No Ingresante
 241,2024-II,Cristian,Apaza Molina,73468370,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2024B00055,2024-08-01,12.0,No Ingresante
-242,2025-I,Fernando,Campos Delgado,70123271,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025A00042,2025-03-06,17.4,Ingresante
+242,2025-I,Fernando,Campos Delgado,70123271,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025A00042,2025-03-06,17.4,Ingresante
 243,2024-I,Carmen Daniela,Puma Muñoz,75012883,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00046,2024-03-26,15.2,Ingresante
-244,2025-I,César,Morales Núñez,74352450,Otras Escuelas,Turismo,Privado,240.0,V-2025A00043,2025-03-20,0.8,No Ingresante
+244,2025-I,César,Morales Núñez,74352450,Otras Escuelas,Turismo,Estatal,240.0,V-2025A00043,2025-03-20,0.8,No Ingresante
 245,2026-I,Wilmer,Apaza Castro,76014583,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00042,2026-03-10,2.4,No Ingresante
-246,2025-I,Evelyn Carmen,Flores Castro,70900549,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2025A00044,2025-03-25,4.8,No Ingresante
+246,2025-I,Evelyn Carmen,Flores Castro,70900549,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2025A00044,2025-03-25,4.8,No Ingresante
 247,2024-II,César,Quispe Romero,70973306,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00056,2024-08-11,14.6,Ingresante
-248,2025-II,Miguel,León Martínez,77204299,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2025B00060,2025-08-01,0.8,No Ingresante
-249,2025-II,Juan,Martínez Pérez,74879280,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2025B00061,2025-08-09,8.6,Ingresante
+248,2025-II,Miguel,León Martínez,77204299,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2025B00060,2025-08-01,0.8,No Ingresante
+249,2025-II,Juan,Martínez Pérez,74879280,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2025B00061,2025-08-09,8.6,Ingresante
 250,2025-II,Patricia Diana,Castillo Cabrera,73832222,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2025B00062,2025-08-02,15.0,Ingresante
 251,2024-I,Paola,Salazar Muñoz,78971338,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024A00047,2024-03-21,0.4,No Ingresante
-252,2024-I,Patricia,Ccallo Castro,72569046,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00048,2024-03-14,16.8,Ingresante
-253,2026-I,Nadia,Ortega Delgado,78582968,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2026A00043,2026-03-04,20.0,Ingresante
+252,2024-I,Patricia,Ccallo Castro,72569046,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00048,2024-03-14,16.8,Ingresante
+253,2026-I,Nadia,Ortega Delgado,78582968,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2026A00043,2026-03-04,20.0,Ingresante
 254,2024-II,Ricardo,Ramos Jiménez,76004931,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024B00057,2024-08-03,14.0,Ingresante
 255,2024-II,Sebastián,García Castro,71493219,Otras Escuelas,Turismo,Estatal,220.0,V-2024B00058,2024-08-06,19.8,Ingresante
 256,2025-I,Jorge,Flores Delgado,70769891,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00045,2025-03-07,9.0,No Ingresante
-257,2026-I,Claudia,Lazo Iglesias,71909784,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2026A00044,2026-03-27,9.8,No Ingresante
+257,2026-I,Claudia,Lazo Iglesias,71909784,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2026A00044,2026-03-27,9.8,No Ingresante
 258,2025-II,David,Mamani Fuentes,72223175,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025B00063,2025-08-07,10.6,No Ingresante
-259,2025-II,Diego,León Moran,76016291,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025B00064,2025-09-01,2.8,Ingresante
-260,2025-II,Carmen Daniela,García Molina,75675742,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2025B00065,2025-08-16,12.2,Ingresante
+259,2025-II,Diego,León Moran,76016291,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025B00064,2025-09-01,2.8,Ingresante
+260,2025-II,Carmen Daniela,García Molina,75675742,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2025B00065,2025-08-16,12.2,Ingresante
 261,2025-II,Fatima,López Molina,79235783,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025B00066,2025-08-06,11.6,Ingresante
 262,2026-I,Lorena,Cutipa Fuentes,78344540,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00045,2026-03-13,10.4,Ingresante
-263,2026-I,Stephanie Fatima,León Pérez,78528492,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2026A00046,2026-03-12,1.2,No Ingresante
+263,2026-I,Stephanie Fatima,León Pérez,78528492,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2026A00046,2026-03-12,1.2,No Ingresante
 264,2025-II,Daniela,Mendoza Álvarez,77592234,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00067,2025-08-22,9.0,No Ingresante
 265,2025-I,José,Martínez Hidalgo,78261472,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00046,2025-03-05,15.6,Ingresante
 266,2024-I,Alex,Condori Serrano,71808009,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024A00049,2024-03-25,11.4,Ingresante
 267,2026-I,César Alex,García Benítez,79281597,Otras Escuelas,Turismo,Estatal,220.0,V-2026A00047,2026-03-23,14.8,Ingresante
-268,2024-II,Daniela,Cutipa Moran,77024028,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024B00059,2024-08-26,8.6,Ingresante
+268,2024-II,Daniela,Cutipa Moran,77024028,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024B00059,2024-08-26,8.6,Ingresante
 269,2025-II,Rubén César,Soto Pérez,79190659,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2025B00068,2025-08-14,15.8,Ingresante
 270,2026-I,Víctor,Herrera Núñez,77086467,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2026A00048,2026-03-13,3.6,No Ingresante
 271,2024-I,Andrea,Coila Muñoz,72456660,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024A00050,2024-03-25,13.8,Ingresante
-272,2025-II,Stephanie,Villanueva Molina,79416557,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025B00069,2025-08-04,9.6,Ingresante
-273,2025-I,Liliana,Chávez Alonso,72578714,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2025A00047,2025-03-12,14.6,Ingresante
+272,2025-II,Stephanie,Villanueva Molina,79416557,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025B00069,2025-08-04,9.6,Ingresante
+273,2025-I,Liliana,Chávez Alonso,72578714,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2025A00047,2025-03-12,14.6,Ingresante
 274,2024-I,Sebastián,Quispe Blanco,78474848,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00051,2024-03-12,5.6,Ingresante
-275,2024-I,Pablo,Cárdenas Sánchez,78167227,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00052,2024-03-17,2.0,Ingresante
-276,2024-II,Javier,García Blanco,73536326,Fac. Agronomía,Agronomía,Privado,240.0,V-2024B00060,2024-08-07,5.2,No Ingresante
-277,2025-I,Sebastián,Ccallo Aguilar,76510106,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2025A00048,2025-03-07,0.4,No Ingresante
+275,2024-I,Pablo,Cárdenas Sánchez,78167227,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00052,2024-03-17,2.0,Ingresante
+276,2024-II,Javier,García Blanco,73536326,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024B00060,2024-08-07,5.2,No Ingresante
+277,2025-I,Sebastián,Ccallo Aguilar,76510106,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2025A00048,2025-03-07,0.4,No Ingresante
 278,2024-I,Edwin,Sánchez Alonso,71217848,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024A00053,2024-03-10,20.0,Ingresante
 279,2026-I,Lorena,Salazar Fernández,70517059,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00049,2026-03-24,10.0,No Ingresante
 280,2026-I,Evelyn,Vargas Álvarez,70187069,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2026A00050,2026-03-02,0.0,No Ingresante
 281,2025-II,Kevin,Huamán Vásquez,73552356,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2025B00070,2025-08-12,5.6,No Ingresante
-282,2025-I,Fatima Liseth,Paredes Benítez,79208193,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2025A00049,2025-03-18,1.6,No Ingresante
+282,2025-I,Fatima Liseth,Paredes Benítez,79208193,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2025A00049,2025-03-18,1.6,No Ingresante
 283,2024-II,Jhon,Medina González,73934808,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024B00061,2024-08-21,12.4,Ingresante
 284,2026-I,Miguel,Paredes Álvarez,75307189,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2026A00051,2026-03-11,6.2,No Ingresante
 285,2026-I,Flor,Puma González,79036511,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00052,2026-03-29,0.4,No Ingresante
@@ -288,71 +288,71 @@ id,convocatoria,nombres,apellidos,dni,facultad,carrera,tipo_colegio,costo,vouche
 287,2026-I,Stephanie Fatima,Paredes Gutiérrez,78111841,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2026A00054,2026-03-25,12.4,Ingresante
 288,2025-I,Liseth Lorena,Ramos Álvarez,76511121,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2025A00050,2025-02-26,16.6,Ingresante
 289,2024-II,Rubén,Medina Muñoz,78088465,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2024B00062,2024-08-29,4.2,No Ingresante
-290,2026-I,Jhon Carlos,Mamani Álvarez,71985251,Fac. Agronomía,Agronomía,Privado,240.0,V-2026A00055,2026-03-24,2.8,No Ingresante
+290,2026-I,Jhon Carlos,Mamani Álvarez,71985251,Fac. Agronomía,Agronomía,Estatal,240.0,V-2026A00055,2026-03-24,2.8,No Ingresante
 291,2025-II,Xiomara,Ortega Cabrera,74088109,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00071,2025-09-02,1.0,Ingresante
 292,2024-II,Paola Evelyn,Ramos Fernández,79455717,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00063,2024-08-14,11.4,Ingresante
-293,2025-II,Wilmer Rodrigo,Ortega Gutiérrez,79775180,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2025B00072,2025-08-11,18.4,Ingresante
+293,2025-II,Wilmer Rodrigo,Ortega Gutiérrez,79775180,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2025B00072,2025-08-11,18.4,Ingresante
 294,2025-II,Edwin Cristian,Salazar González,71821504,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00073,2025-08-07,4.4,No Ingresante
 295,2026-I,Javier,Cárdenas Fuentes,71563468,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00056,2026-03-29,19.8,Ingresante
-296,2025-II,Carlos,Soto Martínez,73850140,Otras Escuelas,Turismo,Privado,240.0,V-2025B00074,2025-08-23,15.0,Ingresante
-297,2025-II,Cinthia,Ccallo Pérez,79691378,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025B00075,2025-08-09,16.8,Ingresante
+296,2025-II,Carlos,Soto Martínez,73850140,Otras Escuelas,Turismo,Estatal,240.0,V-2025B00074,2025-08-23,15.0,Ingresante
+297,2025-II,Cinthia,Ccallo Pérez,79691378,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025B00075,2025-08-09,16.8,Ingresante
 298,2024-II,Andrea,Torres Lozano,78528589,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2024B00064,2024-08-11,9.8,No Ingresante
-299,2024-I,Héctor,Rojas Martínez,71478755,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00054,2024-03-03,15.4,Ingresante
-300,2025-II,César,Ramos Núñez,70964069,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2025B00076,2025-08-29,0.2,No Ingresante
+299,2024-I,Héctor,Rojas Martínez,71478755,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00054,2024-03-03,15.4,Ingresante
+300,2025-II,César,Ramos Núñez,70964069,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2025B00076,2025-08-29,0.2,No Ingresante
 301,2025-I,Fernando,Castillo Jiménez,78686281,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00051,2025-03-14,7.2,No Ingresante
 302,2026-I,Ricardo,Puma Molina,73263591,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2026A00057,2026-03-09,4.4,No Ingresante
-303,2024-I,Jhon,Flores Muñoz,79024521,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2024A00055,2024-03-31,9.6,No Ingresante
+303,2024-I,Jhon,Flores Muñoz,79024521,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2024A00055,2024-03-31,9.6,No Ingresante
 304,2024-II,Alex,Vargas Cano,79845315,Otras Escuelas,Turismo,Estatal,220.0,V-2024B00065,2024-08-17,1.6,No Ingresante
 305,2024-II,Héctor Jorge,Ortega Vásquez,78665502,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2024B00066,2024-08-19,2.2,No Ingresante
-306,2024-II,Xiomara María,Ccopa Muñoz,73469169,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2024B00067,2024-08-10,19.8,Ingresante
-307,2024-I,Edwin,García Alonso,78091518,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024A00056,2024-03-29,14.6,No Ingresante
+306,2024-II,Xiomara María,Ccopa Muñoz,73469169,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2024B00067,2024-08-10,19.8,Ingresante
+307,2024-I,Edwin,García Alonso,78091518,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024A00056,2024-03-29,14.6,No Ingresante
 308,2025-II,Mariana,Puma Fernández,73726098,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025B00077,2025-09-03,10.8,Ingresante
-309,2026-I,Milagros,Vargas Iglesias,77670476,Otras Escuelas,Turismo,Privado,240.0,V-2026A00058,2026-03-23,0.2,No Ingresante
-310,2024-II,Carmen Daniela,León Muñoz,73139896,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2024B00068,2024-08-31,15.6,Ingresante
+309,2026-I,Milagros,Vargas Iglesias,77670476,Otras Escuelas,Turismo,Estatal,240.0,V-2026A00058,2026-03-23,0.2,No Ingresante
+310,2024-II,Carmen Daniela,León Muñoz,73139896,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2024B00068,2024-08-31,15.6,Ingresante
 311,2024-II,Xiomara María,Ventura Álvarez,76720828,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2024B00069,2024-08-15,2.4,No Ingresante
-312,2024-II,Cristian,Chávez Gutiérrez,77935405,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024B00070,2024-09-01,3.4,Ingresante
-313,2024-II,César,Torres Sánchez,75614605,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024B00071,2024-08-23,0.4,No Ingresante
-314,2025-I,Cristian,Paredes Iglesias,74774942,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025A00052,2025-03-21,18.8,Ingresante
+312,2024-II,Cristian,Chávez Gutiérrez,77935405,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024B00070,2024-09-01,3.4,Ingresante
+313,2024-II,César,Torres Sánchez,75614605,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024B00071,2024-08-23,0.4,No Ingresante
+314,2025-I,Cristian,Paredes Iglesias,74774942,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025A00052,2025-03-21,18.8,Ingresante
 315,2024-I,Daniela Valeria,Chávez Hidalgo,75660436,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024A00057,2024-03-03,4.0,No Ingresante
-316,2025-I,Stephanie Liseth,Rojas Fernández,74550787,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2025A00053,2025-03-10,4.2,No Ingresante
+316,2025-I,Stephanie Liseth,Rojas Fernández,74550787,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2025A00053,2025-03-10,4.2,No Ingresante
 317,2024-I,Stephanie Liseth,Soto Carrasco,73532803,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00058,2024-03-03,12.0,Ingresante
-318,2024-I,Juan,Torres Muñoz,72605071,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00059,2024-03-08,6.2,No Ingresante
-319,2025-II,Wilmer Rodrigo,Mamani Cabrera,70589802,Fac. Agronomía,Agronomía,Privado,240.0,V-2025B00078,2025-08-30,13.8,No Ingresante
-320,2026-I,Brenda,Herrera Iglesias,79912498,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2026A00059,2026-03-30,8.8,No Ingresante
+318,2024-I,Juan,Torres Muñoz,72605071,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00059,2024-03-08,6.2,No Ingresante
+319,2025-II,Wilmer Rodrigo,Mamani Cabrera,70589802,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025B00078,2025-08-30,13.8,No Ingresante
+320,2026-I,Brenda,Herrera Iglesias,79912498,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2026A00059,2026-03-30,8.8,No Ingresante
 321,2024-II,Pablo,Ortega Muñoz,72612506,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2024B00072,2024-08-23,7.2,No Ingresante
 322,2024-I,Marco,Mendoza Pérez,70153219,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024A00060,2024-03-26,0.0,No Ingresante
-323,2024-II,Jessica,Ccopa Hidalgo,76538471,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024B00073,2024-08-06,10.8,No Ingresante
-324,2026-I,David,Soto Navarro,74776085,Fac. Agronomía,Agronomía,Privado,240.0,V-2026A00060,2026-03-07,1.6,No Ingresante
+323,2024-II,Jessica,Ccopa Hidalgo,76538471,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024B00073,2024-08-06,10.8,No Ingresante
+324,2026-I,David,Soto Navarro,74776085,Fac. Agronomía,Agronomía,Estatal,240.0,V-2026A00060,2026-03-07,1.6,No Ingresante
 325,2025-I,Lorena,Puma Muñoz,73150584,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2025A00054,2025-03-14,0.4,No Ingresante
 326,2024-I,Patricia Mariana,García Molina,71513254,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00061,2024-03-11,10.6,Ingresante
 327,2025-II,David,Martínez Serrano,71345920,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2025B00079,2025-08-18,19.8,Ingresante
-328,2026-I,Evelyn Carmen,Ccallo Moran,70211652,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00061,2026-03-25,11.2,Ingresante
-329,2024-I,Carmen,Ramos Lozano,77932696,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024A00062,2024-03-06,16.0,Ingresante
-330,2025-I,Rocío,Flores Fernández,74078362,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00055,2025-03-19,15.2,Ingresante
+328,2026-I,Evelyn Carmen,Ccallo Moran,70211652,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00061,2026-03-25,11.2,Ingresante
+329,2024-I,Carmen,Ramos Lozano,77932696,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024A00062,2024-03-06,16.0,Ingresante
+330,2025-I,Rocío,Flores Fernández,74078362,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00055,2025-03-19,15.2,Ingresante
 331,2024-I,Yaneth,León Serrano,71007511,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00063,2024-03-05,12.4,Ingresante
 332,2026-I,David,Vega Jiménez,70358241,Fac. Agronomía,Agronomía,Estatal,220.0,V-2026A00062,2026-03-09,1.0,No Ingresante
-333,2025-II,Héctor,Condori Iglesias,79120439,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025B00080,2025-08-18,15.2,No Ingresante
-334,2026-I,Lorena,Coila Muñoz,79086640,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2026A00063,2026-03-24,4.6,Ingresante
-335,2026-I,Sebastián,Cutipa Blanco,79042189,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00064,2026-03-25,14.0,Ingresante
+333,2025-II,Héctor,Condori Iglesias,79120439,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025B00080,2025-08-18,15.2,No Ingresante
+334,2026-I,Lorena,Coila Muñoz,79086640,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2026A00063,2026-03-24,4.6,Ingresante
+335,2026-I,Sebastián,Cutipa Blanco,79042189,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00064,2026-03-25,14.0,Ingresante
 336,2025-I,Carmen,Torres Blanco,70734460,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2025A00056,2025-03-24,0.8,No Ingresante
 337,2025-II,Daniela Valeria,Salazar Muñoz,78821818,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2025B00081,2025-08-24,5.6,No Ingresante
-338,2024-I,Xiomara,Morales Carrasco,77852729,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2024A00064,2024-03-18,19.0,No Ingresante
-339,2025-II,Carlos,León Navarro,78875496,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00082,2025-08-05,5.4,Ingresante
-340,2024-I,Karina Valeria,Condori Jiménez,78828037,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00065,2024-03-24,2.6,No Ingresante
-341,2026-I,Yaneth,Ruiz Delgado,72798595,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2026A00065,2026-03-22,4.0,No Ingresante
-342,2026-I,Sofía,Villanueva Romero,76236418,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2026A00066,2026-03-20,6.0,No Ingresante
+338,2024-I,Xiomara,Morales Carrasco,77852729,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2024A00064,2024-03-18,19.0,No Ingresante
+339,2025-II,Carlos,León Navarro,78875496,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00082,2025-08-05,5.4,Ingresante
+340,2024-I,Karina Valeria,Condori Jiménez,78828037,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00065,2024-03-24,2.6,No Ingresante
+341,2026-I,Yaneth,Ruiz Delgado,72798595,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2026A00065,2026-03-22,4.0,No Ingresante
+342,2026-I,Sofía,Villanueva Romero,76236418,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2026A00066,2026-03-20,6.0,No Ingresante
 343,2024-II,Stephanie,Ccallo Álvarez,77590070,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024B00074,2024-08-03,7.2,No Ingresante
-344,2026-I,Rosa,Pilco Molina,73604128,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2026A00067,2026-03-30,14.0,Ingresante
+344,2026-I,Rosa,Pilco Molina,73604128,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2026A00067,2026-03-30,14.0,Ingresante
 345,2026-I,Luis Fernando,Cruz Vásquez,72619042,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00068,2026-03-08,6.4,No Ingresante
-346,2024-I,Cristian,Sánchez Romero,78095563,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00066,2024-03-02,18.6,Ingresante
+346,2024-I,Cristian,Sánchez Romero,78095563,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00066,2024-03-02,18.6,Ingresante
 347,2025-II,Fatima Liseth,Lazo Vásquez,77286418,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2025B00083,2025-08-01,16.2,Ingresante
 348,2025-II,Sofía,Herrera Gutiérrez,75483324,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2025B00084,2025-08-04,17.2,Ingresante
 349,2025-II,Ronal,Cárdenas Carrasco,73725978,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2025B00085,2025-08-09,8.6,No Ingresante
 350,2026-I,Erick,Ramírez Fernández,78419194,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00069,2026-03-16,14.2,Ingresante
-351,2025-II,Rubén César,Ramos Moreno,74065372,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00086,2025-08-06,2.8,No Ingresante
-352,2025-II,Carmen Daniela,Rojas Cabrera,75114011,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00087,2025-08-10,11.2,Ingresante
+351,2025-II,Rubén César,Ramos Moreno,74065372,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00086,2025-08-06,2.8,No Ingresante
+352,2025-II,Carmen Daniela,Rojas Cabrera,75114011,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00087,2025-08-10,11.2,Ingresante
 353,2024-II,Lucía,Ramírez Fuentes,70914996,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024B00075,2024-08-19,0.2,No Ingresante
-354,2024-I,Sofía,Huamán Lozano,73419219,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Privado,240.0,V-2024A00067,2024-03-20,18.6,No Ingresante
+354,2024-I,Sofía,Huamán Lozano,73419219,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,240.0,V-2024A00067,2024-03-20,18.6,No Ingresante
 355,2024-I,Yaneth,Reyes Álvarez,71810117,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00068,2024-03-13,13.0,No Ingresante
 356,2024-I,Edwin,Herrera Carrasco,73127564,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00069,2024-03-02,6.2,Ingresante
 357,2025-I,Andrea,Rodríguez Vásquez,75904121,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2025A00057,2025-03-13,7.0,No Ingresante
@@ -360,96 +360,96 @@ id,convocatoria,nombres,apellidos,dni,facultad,carrera,tipo_colegio,costo,vouche
 359,2025-I,Mónica,Espinoza Navarro,72549416,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025A00058,2025-03-02,0.6,No Ingresante
 360,2026-I,Edwin,Apaza Molina,73874066,Fac. Agronomía,Agronomía,Estatal,220.0,V-2026A00070,2026-03-23,19.8,Ingresante
 361,2026-I,César,Ventura Iglesias,76500504,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,220.0,V-2026A00071,2026-03-07,5.6,No Ingresante
-362,2024-I,Sebastián,Reyes Jiménez,73431982,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00070,2024-03-23,8.2,Ingresante
+362,2024-I,Sebastián,Reyes Jiménez,73431982,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00070,2024-03-23,8.2,Ingresante
 363,2024-II,Daniela,Salazar Romero,76612751,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024B00077,2024-08-29,11.6,Ingresante
 364,2024-I,Javier Fernando,Castillo Alonso,79356669,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024A00071,2024-03-07,7.4,No Ingresante
-365,2025-I,Jhon Carlos,Ruiz Núñez,70915141,Fac. Agronomía,Agronomía,Privado,240.0,V-2025A00059,2025-03-23,16.4,Ingresante
+365,2025-I,Jhon Carlos,Ruiz Núñez,70915141,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025A00059,2025-03-23,16.4,Ingresante
 366,2025-I,Stephanie,Cárdenas Hidalgo,76353173,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2025A00060,2025-03-26,8.4,No Ingresante
 367,2024-II,Iván José,Ccallo Castro,77694746,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024B00078,2024-09-01,6.0,No Ingresante
 368,2025-I,Edwin,Paredes Iglesias,77639301,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025A00061,2025-02-27,19.6,Ingresante
-369,2025-I,Marco,Ruiz Blanco,74912917,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2025A00062,2025-03-07,13.4,Ingresante
-370,2024-II,José,Paredes Carrasco,78114518,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024B00079,2024-08-21,6.6,No Ingresante
-371,2026-I,Stephanie Fatima,Morales Muñoz,78262853,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00072,2026-03-07,0.0,No Ingresante
+369,2025-I,Marco,Ruiz Blanco,74912917,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2025A00062,2025-03-07,13.4,Ingresante
+370,2024-II,José,Paredes Carrasco,78114518,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024B00079,2024-08-21,6.6,No Ingresante
+371,2026-I,Stephanie Fatima,Morales Muñoz,78262853,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00072,2026-03-07,0.0,No Ingresante
 372,2025-II,Wilmer Rodrigo,Huamán Aguilar,76946457,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00088,2025-08-01,16.2,Ingresante
-373,2025-I,Stephanie Liseth,Cárdenas Romero,70102865,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00063,2025-03-09,18.4,Ingresante
-374,2024-I,Wilmer Rodrigo,Lazo Castro,77960796,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00072,2024-03-05,16.0,Ingresante
-375,2026-I,Ricardo,Ortega Benítez,78742158,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2026A00073,2026-03-18,13.6,Ingresante
-376,2026-I,Rodrigo,Medina Blanco,72504920,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2026A00074,2026-03-13,16.0,Ingresante
-377,2024-II,Edwin,Flores Pérez,75276424,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024B00080,2024-08-06,12.6,No Ingresante
+373,2025-I,Stephanie Liseth,Cárdenas Romero,70102865,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00063,2025-03-09,18.4,Ingresante
+374,2024-I,Wilmer Rodrigo,Lazo Castro,77960796,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00072,2024-03-05,16.0,Ingresante
+375,2026-I,Ricardo,Ortega Benítez,78742158,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2026A00073,2026-03-18,13.6,Ingresante
+376,2026-I,Rodrigo,Medina Blanco,72504920,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2026A00074,2026-03-13,16.0,Ingresante
+377,2024-II,Edwin,Flores Pérez,75276424,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024B00080,2024-08-06,12.6,No Ingresante
 378,2025-I,Karina,Ramos Pérez,72936226,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025A00064,2025-03-26,2.2,No Ingresante
-379,2024-I,Miguel,Condori Serrano,78111313,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00073,2024-03-05,19.6,No Ingresante
+379,2024-I,Miguel,Condori Serrano,78111313,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00073,2024-03-05,19.6,No Ingresante
 380,2026-I,Pablo Rubén,Martínez Cano,76502651,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00075,2026-03-10,1.0,No Ingresante
 381,2026-I,Rodrigo,Martínez Delgado,78733844,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00076,2026-03-19,19.4,Ingresante
 382,2024-II,Stephanie Liseth,Herrera Romero,77400692,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00081,2024-08-11,7.0,No Ingresante
 383,2026-I,Javier Fernando,Medina Romero,74547499,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00077,2026-03-06,1.8,No Ingresante
-384,2025-I,Luis Fernando,Mendoza Benítez,71777158,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025A00065,2025-03-09,4.4,No Ingresante
+384,2025-I,Luis Fernando,Mendoza Benítez,71777158,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025A00065,2025-03-09,4.4,No Ingresante
 385,2026-I,Alex,León Vásquez,75241884,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2026A00078,2026-03-30,19.2,Ingresante
-386,2026-I,Liliana,Soto Cano,71631802,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2026A00079,2026-03-08,5.6,No Ingresante
+386,2026-I,Liliana,Soto Cano,71631802,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2026A00079,2026-03-08,5.6,No Ingresante
 387,2026-I,Andrea,Soto Serrano,75448586,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2026A00080,2026-03-16,2.8,No Ingresante
-388,2025-II,Héctor Jorge,Rojas González,78521981,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00089,2025-09-05,16.6,Ingresante
-389,2025-I,Raúl,Ccopa Moreno,79193059,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00066,2025-02-27,8.6,No Ingresante
-390,2025-II,Patricia Mariana,Quispe Pérez,76808088,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00090,2025-08-21,12.6,Ingresante
-391,2024-I,Mónica,Campos Castro,72461642,Fac. Agronomía,Agronomía,Privado,240.0,V-2024A00074,2024-03-13,15.6,Ingresante
+388,2025-II,Héctor Jorge,Rojas González,78521981,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00089,2025-09-05,16.6,Ingresante
+389,2025-I,Raúl,Ccopa Moreno,79193059,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00066,2025-02-27,8.6,No Ingresante
+390,2025-II,Patricia Mariana,Quispe Pérez,76808088,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00090,2025-08-21,12.6,Ingresante
+391,2024-I,Mónica,Campos Castro,72461642,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024A00074,2024-03-13,15.6,Ingresante
 392,2024-II,Evelyn,Paredes Pérez,77293509,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024B00082,2024-08-01,15.6,No Ingresante
 393,2025-II,Carlos,Ventura Benítez,70014148,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025B00091,2025-08-19,0.6,No Ingresante
 394,2025-II,Raúl,Chávez Núñez,72106365,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00092,2025-08-10,18.4,No Ingresante
-395,2025-II,Karina Valeria,Rojas Castro,79696199,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2025B00093,2025-08-27,13.8,Ingresante
+395,2025-II,Karina Valeria,Rojas Castro,79696199,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2025B00093,2025-08-27,13.8,Ingresante
 396,2024-I,Wilmer,Ventura Fuentes,79735294,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2024A00075,2024-03-24,18.6,Ingresante
-397,2025-I,Patricia Diana,León Carrasco,74114298,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Privado,240.0,V-2025A00067,2025-03-16,1.2,Ingresante
-398,2026-I,Iván,Mendoza Serrano,77063478,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2026A00081,2026-03-06,0.8,No Ingresante
-399,2026-I,Ronal,Ccallo Benítez,77938316,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2026A00082,2026-03-26,18.8,Ingresante
-400,2025-I,Nadia Rocío,Puma Muñoz,72223631,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025A00068,2025-02-25,18.8,Ingresante
+397,2025-I,Patricia Diana,León Carrasco,74114298,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,240.0,V-2025A00067,2025-03-16,1.2,Ingresante
+398,2026-I,Iván,Mendoza Serrano,77063478,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2026A00081,2026-03-06,0.8,No Ingresante
+399,2026-I,Ronal,Ccallo Benítez,77938316,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2026A00082,2026-03-26,18.8,Ingresante
+400,2025-I,Nadia Rocío,Puma Muñoz,72223631,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025A00068,2025-02-25,18.8,Ingresante
 401,2024-II,Víctor,Vega Álvarez,72942713,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024B00083,2024-09-01,4.6,No Ingresante
-402,2024-I,Paola Evelyn,Rojas Gutiérrez,78320631,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00076,2024-03-08,16.8,Ingresante
-403,2025-I,Liliana,Herrera Molina,76371999,Fac. Agronomía,Agronomía,Privado,240.0,V-2025A00069,2025-03-05,3.6,No Ingresante
+402,2024-I,Paola Evelyn,Rojas Gutiérrez,78320631,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00076,2024-03-08,16.8,Ingresante
+403,2025-I,Liliana,Herrera Molina,76371999,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025A00069,2025-03-05,3.6,No Ingresante
 404,2025-II,Lorena,Salazar Romero,78896176,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025B00094,2025-09-04,16.2,Ingresante
-405,2025-II,Erick,Lazo Navarro,74480989,Otras Escuelas,Ingeniería Mecánica Eléctrica,Privado,240.0,V-2025B00095,2025-08-30,19.6,Ingresante
+405,2025-II,Erick,Lazo Navarro,74480989,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,240.0,V-2025B00095,2025-08-30,19.6,Ingresante
 406,2024-II,Cristian,Ramos Serrano,73018500,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2024B00084,2024-08-05,0.2,No Ingresante
 407,2026-I,Liseth,Coila Muñoz,73239337,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2026A00083,2026-03-31,15.2,Ingresante
 408,2024-II,Wilmer,Flores Carrasco,72179482,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024B00085,2024-08-08,17.8,Ingresante
-409,2025-I,Xiomara,Cruz Navarro,77163592,Fac. Agronomía,Agronomía,Privado,240.0,V-2025A00070,2025-03-02,19.8,Ingresante
+409,2025-I,Xiomara,Cruz Navarro,77163592,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025A00070,2025-03-02,19.8,Ingresante
 410,2024-I,Paola,Ccallo Muñoz,72985161,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024A00077,2024-03-20,10.0,Ingresante
 411,2025-II,Valeria,Huamán Delgado,77408511,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025B00096,2025-08-05,1.8,No Ingresante
 412,2025-I,César Alex,Chávez Castro,70634776,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025A00071,2025-03-19,8.4,Ingresante
 413,2026-I,Lucía,Morales Castro,77315833,Fac. Recursos Naturales Renovables,Ingeniería en Recursos Naturales Renovables,Estatal,220.0,V-2026A00084,2026-03-01,9.8,No Ingresante
-414,2025-II,Claudia,Lazo Pérez,76721201,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00097,2025-09-04,8.6,No Ingresante
-415,2025-II,Víctor Erick,Quispe Alonso,76445196,Fac. Agronomía,Agronomía,Privado,240.0,V-2025B00098,2025-08-07,16.0,Ingresante
-416,2025-II,Stephanie,Condori González,70598917,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00099,2025-08-25,1.6,No Ingresante
-417,2025-II,Sebastián,Soto González,70241008,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00100,2025-08-07,11.6,Ingresante
-418,2026-I,Carmen,Morales Molina,71058811,Otras Escuelas,Turismo,Privado,240.0,V-2026A00085,2026-03-26,18.8,Ingresante
-419,2025-I,Patricia,Pérez Romero,73577436,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025A00072,2025-02-27,3.0,No Ingresante
-420,2025-II,Andrea,Vega Moreno,79764101,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00101,2025-08-11,0.4,Ingresante
+414,2025-II,Claudia,Lazo Pérez,76721201,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00097,2025-09-04,8.6,No Ingresante
+415,2025-II,Víctor Erick,Quispe Alonso,76445196,Fac. Agronomía,Agronomía,Estatal,240.0,V-2025B00098,2025-08-07,16.0,Ingresante
+416,2025-II,Stephanie,Condori González,70598917,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00099,2025-08-25,1.6,No Ingresante
+417,2025-II,Sebastián,Soto González,70241008,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00100,2025-08-07,11.6,Ingresante
+418,2026-I,Carmen,Morales Molina,71058811,Otras Escuelas,Turismo,Estatal,240.0,V-2026A00085,2026-03-26,18.8,Ingresante
+419,2025-I,Patricia,Pérez Romero,73577436,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025A00072,2025-02-27,3.0,No Ingresante
+420,2025-II,Andrea,Vega Moreno,79764101,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00101,2025-08-11,0.4,Ingresante
 421,2024-I,Nadia Rocío,Huanca Núñez,76983050,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00078,2024-03-07,3.6,No Ingresante
-422,2026-I,Paola Evelyn,León Alonso,73019906,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2026A00086,2026-03-12,10.6,Ingresante
+422,2026-I,Paola Evelyn,León Alonso,73019906,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2026A00086,2026-03-12,10.6,Ingresante
 423,2024-II,Carmen,León Álvarez,79055046,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024B00086,2024-08-18,1.2,No Ingresante
 424,2024-II,Héctor,Morales Iglesias,72680321,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00087,2024-08-24,7.2,No Ingresante
 425,2025-I,Lucía,Cruz Alonso,71751895,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2025A00073,2025-03-22,0.6,No Ingresante
 426,2024-I,Patricia Mariana,Campos Romero,77030765,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00079,2024-03-25,2.8,No Ingresante
 427,2024-I,Karina,Salazar Molina,71233623,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,220.0,V-2024A00080,2024-03-29,11.0,Ingresante
-428,2026-I,Nadia,Cruz Jiménez,76016144,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2026A00087,2026-03-05,0.8,No Ingresante
-429,2024-I,Patricia Mariana,Cruz Aguilar,72872281,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2024A00081,2024-03-20,4.0,No Ingresante
+428,2026-I,Nadia,Cruz Jiménez,76016144,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2026A00087,2026-03-05,0.8,No Ingresante
+429,2024-I,Patricia Mariana,Cruz Aguilar,72872281,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2024A00081,2024-03-20,4.0,No Ingresante
 430,2024-I,Iván,Martínez Martínez,78910743,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024A00082,2024-03-15,12.6,Ingresante
 431,2026-I,Raúl,Huamán González,76013049,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2026A00088,2026-03-01,12.2,Ingresante
-432,2024-II,Jorge,Campos Cabrera,77630962,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2024B00088,2024-08-12,9.4,No Ingresante
-433,2024-II,Mariana,Vargas Martínez,74649727,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024B00089,2024-08-29,12.4,Ingresante
+432,2024-II,Jorge,Campos Cabrera,77630962,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2024B00088,2024-08-12,9.4,No Ingresante
+433,2024-II,Mariana,Vargas Martínez,74649727,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024B00089,2024-08-29,12.4,Ingresante
 434,2024-I,Sandra,Herrera Núñez,77582938,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024A00083,2024-03-29,11.6,Ingresante
-435,2025-II,Juan Carlos,Torres Hidalgo,74629550,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025B00102,2025-08-10,5.2,No Ingresante
-436,2024-II,Jhon,Ortega Serrano,75474513,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Privado,240.0,V-2024B00090,2024-08-20,14.4,Ingresante
-437,2025-I,Patricia Mariana,Ventura Núñez,70793880,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00074,2025-03-27,4.2,No Ingresante
-438,2024-II,Jhon Carlos,Soto Gutiérrez,72705405,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2024B00091,2024-08-09,11.2,Ingresante
+435,2025-II,Juan Carlos,Torres Hidalgo,74629550,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025B00102,2025-08-10,5.2,No Ingresante
+436,2024-II,Jhon,Ortega Serrano,75474513,Fac. Recursos Naturales Renovables,Ingeniería Ambiental,Estatal,240.0,V-2024B00090,2024-08-20,14.4,Ingresante
+437,2025-I,Patricia Mariana,Ventura Núñez,70793880,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00074,2025-03-27,4.2,No Ingresante
+438,2024-II,Jhon Carlos,Soto Gutiérrez,72705405,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2024B00091,2024-08-09,11.2,Ingresante
 439,2024-II,Yaneth,Cutipa Vásquez,72482092,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2024B00092,2024-09-04,7.6,No Ingresante
-440,2024-I,Nadia,Cruz Romero,72618139,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2024A00084,2024-03-16,7.4,Ingresante
+440,2024-I,Nadia,Cruz Romero,72618139,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2024A00084,2024-03-16,7.4,Ingresante
 441,2026-I,Jorge,Vega Serrano,71884343,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2026A00089,2026-03-22,14.0,Ingresante
 442,2024-I,Lorena,Medina Carrasco,75475520,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00085,2024-03-26,19.6,Ingresante
-443,2024-I,Yaneth,Reyes Carrasco,78586369,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024A00086,2024-03-20,15.4,Ingresante
-444,2024-I,Miguel,Ruiz Álvarez,76477894,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2024A00087,2024-03-12,7.8,Ingresante
-445,2026-I,Lorena,Ortega Sánchez,74842475,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00090,2026-03-05,15.0,Ingresante
+443,2024-I,Yaneth,Reyes Carrasco,78586369,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024A00086,2024-03-20,15.4,Ingresante
+444,2024-I,Miguel,Ruiz Álvarez,76477894,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2024A00087,2024-03-12,7.8,Ingresante
+445,2026-I,Lorena,Ortega Sánchez,74842475,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00090,2026-03-05,15.0,Ingresante
 446,2024-II,Milagros,Ramos Serrano,71109238,Otras Escuelas,Turismo,Estatal,220.0,V-2024B00093,2024-08-01,10.4,No Ingresante
-447,2025-I,Brenda,Paredes González,73342987,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2025A00075,2025-03-14,12.4,Ingresante
-448,2025-I,Javier,Cruz Molina,70450300,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025A00076,2025-03-06,16.2,Ingresante
+447,2025-I,Brenda,Paredes González,73342987,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2025A00075,2025-03-14,12.4,Ingresante
+448,2025-I,Javier,Cruz Molina,70450300,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025A00076,2025-03-06,16.2,Ingresante
 449,2025-II,Evelyn,Ortega Iglesias,78252486,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2025B00103,2025-08-08,19.4,Ingresante
 450,2024-I,Héctor,Paredes Martínez,74327037,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2024A00088,2024-03-12,13.0,Ingresante
-451,2024-I,Luis Fernando,Chávez Romero,77735034,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2024A00089,2024-03-06,1.2,No Ingresante
+451,2024-I,Luis Fernando,Chávez Romero,77735034,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,240.0,V-2024A00089,2024-03-06,1.2,No Ingresante
 452,2025-II,Carlos,Coila Núñez,78885420,Fac. Agronomía,Agronomía,Estatal,220.0,V-2025B00104,2025-08-12,19.4,Ingresante
 453,2024-II,Ricardo,Vargas Pérez,74554325,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024B00094,2024-09-04,14.8,Ingresante
 454,2024-II,Claudia,Morales Aguilar,75709506,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2024B00095,2024-08-14,3.8,No Ingresante
@@ -459,28 +459,28 @@ id,convocatoria,nombres,apellidos,dni,facultad,carrera,tipo_colegio,costo,vouche
 458,2025-II,Fatima Liseth,Reyes Benítez,77869895,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00105,2025-08-05,7.6,No Ingresante
 459,2024-I,Cristian,Campos Jiménez,73100124,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00090,2024-03-05,19.0,No Ingresante
 460,2026-I,Nadia Fatima,León Moreno,78470971,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2026A00091,2026-03-17,5.4,No Ingresante
-461,2025-I,Rosa,Torres Lozano,78458992,Otras Escuelas,Turismo,Privado,240.0,V-2025A00078,2025-03-19,15.0,Ingresante
-462,2026-I,Brenda,Coila Alonso,71379891,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2026A00092,2026-03-10,11.6,Ingresante
+461,2025-I,Rosa,Torres Lozano,78458992,Otras Escuelas,Turismo,Estatal,240.0,V-2025A00078,2025-03-19,15.0,Ingresante
+462,2026-I,Brenda,Coila Alonso,71379891,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2026A00092,2026-03-10,11.6,Ingresante
 463,2025-I,Sebastián,Villanueva Aguilar,74875279,Otras Escuelas,Turismo,Estatal,220.0,V-2025A00079,2025-03-24,1.6,Ingresante
 464,2025-II,Luis,Vargas Muñoz,71764491,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,220.0,V-2025B00106,2025-08-08,3.6,No Ingresante
-465,2025-II,Pablo Rubén,Campos Navarro,76714837,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2025B00107,2025-09-01,13.0,Ingresante
+465,2025-II,Pablo Rubén,Campos Navarro,76714837,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2025B00107,2025-09-01,13.0,Ingresante
 466,2025-II,Patricia Mariana,Apaza González,70498677,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00108,2025-09-01,17.2,Ingresante
-467,2024-II,Nadia,Pilco Delgado,71283746,Fac. Agronomía,Agronomía,Privado,240.0,V-2024B00098,2024-08-13,7.4,No Ingresante
-468,2025-II,David,Herrera Cabrera,70530135,Otras Escuelas,Ingeniería Civil,Privado,240.0,V-2025B00109,2025-08-29,8.0,Ingresante
-469,2025-II,Nadia Fatima,Reyes Pérez,72753883,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Privado,240.0,V-2025B00110,2025-08-25,12.4,Ingresante
+467,2024-II,Nadia,Pilco Delgado,71283746,Fac. Agronomía,Agronomía,Estatal,240.0,V-2024B00098,2024-08-13,7.4,No Ingresante
+468,2025-II,David,Herrera Cabrera,70530135,Otras Escuelas,Ingeniería Civil,Estatal,240.0,V-2025B00109,2025-08-29,8.0,Ingresante
+469,2025-II,Nadia Fatima,Reyes Pérez,72753883,Fac. Recursos Naturales Renovables,Ingeniería Forestal,Estatal,240.0,V-2025B00110,2025-08-25,12.4,Ingresante
 470,2026-I,Víctor,Herrera Castro,77984462,Fac. Zootecnia,Zootecnia,Estatal,220.0,V-2026A00093,2026-03-13,6.6,No Ingresante
-471,2025-II,Kevin,Cutipa Benítez,70472228,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2025B00111,2025-08-23,18.8,Ingresante
+471,2025-II,Kevin,Cutipa Benítez,70472228,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2025B00111,2025-08-23,18.8,Ingresante
 472,2024-I,Raúl Javier,Flores Serrano,72848423,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2024A00091,2024-03-15,16.8,No Ingresante
-473,2026-I,Luis,Soto Castro,79864822,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Privado,240.0,V-2026A00094,2026-03-19,9.8,Ingresante
+473,2026-I,Luis,Soto Castro,79864822,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,240.0,V-2026A00094,2026-03-19,9.8,Ingresante
 474,2024-I,Héctor Alejandro,Huamán Serrano,78333769,Fac. Recursos Naturales Renovables,Ingeniería en Conservación de Suelos y Agua,Estatal,220.0,V-2024A00092,2024-03-20,7.6,No Ingresante
-475,2025-II,Ana,Sánchez Lozano,74821026,Fac. Ciencias Económicas y Administrativas,Administración,Privado,240.0,V-2025B00112,2025-08-15,15.8,Ingresante
-476,2024-I,Ronal,Lazo Navarro,71128599,Fac. Zootecnia,Zootecnia,Privado,240.0,V-2024A00093,2024-03-07,8.8,No Ingresante
+475,2025-II,Ana,Sánchez Lozano,74821026,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,240.0,V-2025B00112,2025-08-15,15.8,Ingresante
+476,2024-I,Ronal,Lazo Navarro,71128599,Fac. Zootecnia,Zootecnia,Estatal,240.0,V-2024A00093,2024-03-07,8.8,No Ingresante
 477,2025-II,Daniela Valeria,Pilco Martínez,76883025,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,220.0,V-2025B00113,2025-08-27,6.8,No Ingresante
 478,2025-II,Karina,Mamani Navarro,72288926,Fac. Ingeniería en Informática y Sistemas,Ingeniería en Informática y Sistemas,Estatal,220.0,V-2025B00114,2025-08-03,18.4,Ingresante
-479,2024-I,Sofía,Rojas Pérez,71066723,Otras Escuelas,Turismo,Privado,240.0,V-2024A00094,2024-03-22,16.8,No Ingresante
-480,2025-II,Miguel,Ccopa Fuentes,79579343,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Privado,240.0,V-2025B00115,2025-09-01,2.2,No Ingresante
+479,2024-I,Sofía,Rojas Pérez,71066723,Otras Escuelas,Turismo,Estatal,240.0,V-2024A00094,2024-03-22,16.8,No Ingresante
+480,2025-II,Miguel,Ccopa Fuentes,79579343,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,240.0,V-2025B00115,2025-09-01,2.2,No Ingresante
 481,2024-I,Ricardo,Campos Moran,73958384,Otras Escuelas,Ingeniería en Ciberseguridad,Estatal,220.0,V-2024A00095,2024-03-04,4.4,No Ingresante
-482,2025-I,Stephanie Fatima,López Muñoz,78950140,Fac. Ciencias Económicas y Administrativas,Economía,Privado,240.0,V-2025A00080,2025-03-14,10.8,Ingresante
+482,2025-I,Stephanie Fatima,López Muñoz,78950140,Fac. Ciencias Económicas y Administrativas,Economía,Estatal,240.0,V-2025A00080,2025-03-14,10.8,Ingresante
 483,2024-II,Alejandro,Chávez Álvarez,77972898,Fac. Ingeniería en Industrias Alimentarias,Ingeniería en Industrias Alimentarias,Estatal,220.0,V-2024B00099,2024-08-03,18.8,Ingresante
 484,2024-I,Sebastián,Ccallo Moran,75188664,Fac. Agronomía,Agronomía,Estatal,220.0,V-2024A00096,2024-03-18,6.0,Ingresante
 485,2025-II,Liliana,Ccallo Pérez,71514149,Otras Escuelas,Ingeniería en Ciberseguridad,Privado,240.0,V-2025B00116,2025-08-14,4.0,Ingresante
@@ -7688,7 +7688,7 @@ id,convocatoria,nombres,apellidos,dni,facultad,carrera,tipo_colegio,costo,vouche
 7687,2023-II,Karina,Castillo Navarro,71889963,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2024A01147,2023-08-11,9.8,No Ingresante
 7688,2023-II,Karina,López Fuentes,72714461,Fac. Ciencias Económicas y Administrativas,Administración,Estatal,220.0,V-2024A00802,2023-08-16,18.6,Ingresante
 7689,2023-II,Juan,Huanca Blanco,73613125,Otras Escuelas,Ingeniería Civil,Estatal,220.0,V-2024B00936,2023-08-19,10.4,Ingresante
-7690,2023-II,Liliana,Huanca Muñoz,73189967,Otras Escuelas,Turismo,Privado,240.0,V-2024A00156,2023-08-06,15.8,No Ingresante
-7691,2023-II,Claudia,Rodríguez Castro,79608085,Fac. Ciencias Económicas y Administrativas,Contabilidad,Privado,240.0,V-2024B00286,2023-08-09,2.2,No Ingresante
+7690,2023-II,Liliana,Huanca Muñoz,73189967,Otras Escuelas,Turismo,Estatal,240.0,V-2024A00156,2023-08-06,15.8,No Ingresante
+7691,2023-II,Claudia,Rodríguez Castro,79608085,Fac. Ciencias Económicas y Administrativas,Contabilidad,Estatal,240.0,V-2024B00286,2023-08-09,2.2,No Ingresante
 7692,2023-II,Iván José,Ortega Álvarez,73780612,Otras Escuelas,Turismo,Estatal,220.0,V-2024A00203,2023-08-18,11.0,Ingresante
 7693,2023-II,Nadia,Rodríguez Aguilar,71351461,Otras Escuelas,Ingeniería Mecánica Eléctrica,Estatal,220.0,V-2024B00301,2023-08-07,15.4,Ingresante
