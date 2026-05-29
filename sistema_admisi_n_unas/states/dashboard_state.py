@@ -25,6 +25,7 @@ class DashboardState(rx.State):
         {"label": "Inscripción", "icon": "user-plus", "href": "/inscripcion"},
         {"label": "Examen", "icon": "file-pen", "href": "/examen"},
         {"label": "Resultados", "icon": "trophy", "href": "/resultados"},
+        {"label": "Ingresantes", "icon": "bar-chart-3", "href": "/ingresantes"},
         {"label": "Recaudación", "icon": "wallet", "href": "/recaudacion"},
         {
             "label": "Retroalimentación",

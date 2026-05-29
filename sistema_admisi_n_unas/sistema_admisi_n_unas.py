@@ -3,6 +3,7 @@ import reflex as rx
 from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
 from sistema_admisi_n_unas.components.examen import examen_view
 from sistema_admisi_n_unas.components.feedback import feedback_view
+from sistema_admisi_n_unas.components.ingresantes import ingresantes_view
 from sistema_admisi_n_unas.components.inscripcion_form import inscripcion_form
 from sistema_admisi_n_unas.components.login_form import login_form
 from sistema_admisi_n_unas.components.page_layout import page_header
@@ -14,6 +15,7 @@ from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.feedback_state import FeedbackState
+from sistema_admisi_n_unas.states.ingresantes_state import IngresantesState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 from sistema_admisi_n_unas.states.recaudacion_state import RecaudacionState
 from sistema_admisi_n_unas.states.resultados_state import ResultadosState
@@ -501,6 +503,32 @@ def recaudacion_page() -> rx.Component:
     )
 
 
+def ingresantes_page() -> rx.Component:
+    return require_auth(
+        rx.el.div(
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Ingresantes por Período",
+                            "Análisis de ingresantes desde 2023-I hasta 2026-I",
+                            "bar-chart-3",
+                        ),
+                        ingresantes_view(),
+                        class_name="max-w-full",
+                    ),
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                ),
+                class_name="flex-1 flex flex-col",
+            ),
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
+    )
+
+
 app = rx.App(
     theme=rx.theme(appearance="light"),
     head_components=[
@@ -543,4 +571,9 @@ app.add_page(
     recaudacion_page,
     route="/recaudacion",
     on_load=RecaudacionState.cargar_datos_recaudacion,
+)
+app.add_page(
+    ingresantes_page,
+    route="/ingresantes",
+    on_load=IngresantesState.cargar_datos_ingresantes,
 )
