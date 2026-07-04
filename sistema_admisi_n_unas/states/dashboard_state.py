@@ -11,6 +11,7 @@ class DashboardState(rx.State):
     # KPIs Básicos que se reflejan en las cards
     current_page: str = "Dashboard"
     mobile_menu_open: bool = False
+    expanded_sidebar: list[str] = []
 
     total_postulantes: int = 0
     admitted_count: int = 0
@@ -19,23 +20,6 @@ class DashboardState(rx.State):
     total_privado: int = 0
     top_career: str = "Cargando..."
     general_avg: float = 0.0
-    sidebar_items: list[dict[str, str]] = [
-        {"label": "Dashboard", "icon": "layout-dashboard", "href": "/"},
-        {"label": "Postulantes", "icon": "users", "href": "/postulantes"},
-        {"label": "Inscripción", "icon": "user-plus", "href": "/inscripcion"},
-        {"label": "Examen", "icon": "file-pen", "href": "/examen"},
-        {"label": "Resultados", "icon": "trophy", "href": "/resultados"},
-        {"label": "Ingresantes", "icon": "bar-chart-3", "href": "/ingresantes"},
-        {"label": "Recaudación", "icon": "wallet", "href": "/recaudacion"},
-        {"label": "Tesorería", "icon": "receipt", "href": "/tesoreria"},
-        {"label": "Biblioteca", "icon": "book-open", "href": "/biblioteca"},
-        {
-            "label": "Retroalimentación",
-            "icon": "message-square",
-            "href": "/retroalimentacion",
-        },
-    ]
-
     # Listas dinámicas para alimentar a Recharts
     chart_postulantes_vs_ingresantes: List[Dict] = []
     chart_rendimiento_areas: List[Dict] = []
@@ -57,6 +41,13 @@ class DashboardState(rx.State):
     @rx.event
     def close_mobile_menu(self):
         self.mobile_menu_open = False
+
+    @rx.event
+    def toggle_sidebar_section(self, section: str):
+        if section in self.expanded_sidebar:
+            self.expanded_sidebar.remove(section)
+        else:
+            self.expanded_sidebar.append(section)
 
     @rx.event
     def cargar_datos_csv(self):

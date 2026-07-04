@@ -3,40 +3,113 @@ import reflex as rx
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 
+SIDEBAR_ITEMS = [
+    {"label": "Dashboard", "icon": "layout-dashboard", "href": "/"},
+    {
+        "label": "Admisión",
+        "icon": "users",
+        "children": [
+            {"label": "Postulantes", "icon": "users", "href": "/postulantes"},
+            {"label": "Inscripción", "icon": "user-plus", "href": "/inscripcion"},
+            {"label": "Examen", "icon": "file-pen", "href": "/examen"},
+            {"label": "Resultados", "icon": "trophy", "href": "/resultados"},
+            {"label": "Ingresantes", "icon": "bar-chart-3", "href": "/ingresantes"},
+        ],
+    },
+    {
+        "label": "Finanzas",
+        "icon": "wallet",
+        "children": [
+            {"label": "Recaudación", "icon": "wallet", "href": "/recaudacion"},
+            {"label": "Tesorería", "icon": "receipt", "href": "/tesoreria"},
+        ],
+    },
+    {
+        "label": "Servicios",
+        "icon": "book-open",
+        "children": [
+            {"label": "Biblioteca", "icon": "book-open", "href": "/biblioteca"},
+            {
+                "label": "Retroalimentación",
+                "icon": "message-square",
+                "href": "/retroalimentacion",
+            },
+        ],
+    },
+]
 
-def nav_item(item: dict[str, str]) -> rx.Component:
+
+def nav_item(item: dict) -> rx.Component:
     """Navigation item with hover effects and active state."""
-    is_active = DashboardState.current_page == item["label"]
-    return rx.el.a(
-        rx.el.div(
-            rx.icon(
-                item["icon"],
-                class_name=rx.cond(
-                    is_active,
-                    "h-5 w-5",
-                    "h-5 w-5 opacity-70 group-hover:opacity-100",
+    if item.get("children"):
+        label = item["label"]
+        is_expanded = DashboardState.expanded_sidebar.contains(label)
+        return rx.vstack(
+            rx.el.button(
+                rx.hstack(
+                    rx.hstack(
+                        rx.icon(item["icon"], color="black"),
+                        rx.text(item["label"], color="black"),
+                        align="center",
+                        spacing="3",
+                    ),
+                    rx.icon(
+                        rx.cond(is_expanded, "chevron-down", "chevron-right"),
+                        size=16,
+                        color="black",
+                    ),
+                    width="100%",
+                    align="center",
+                    justify="between",
                 ),
+                on_click=DashboardState.toggle_sidebar_section(label),
+                class_name="w-full rounded-lg px-2 py-2 hover:bg-gray-100 transition-colors",
             ),
-            rx.el.span(item["label"], class_name="flex-1"),
             rx.cond(
-                is_active,
-                rx.el.div(
-                    class_name="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-white rounded-r-full",
+                is_expanded,
+                rx.vstack(
+                    *[
+                        rx.link(
+                            rx.hstack(
+                                rx.icon(child["icon"], size=16, color="black"),
+                                rx.text(child["label"], color="black"),
+                                padding="10px 12px",
+                                margin_left="20px",
+                                border_radius="8px",
+                                _hover={"background": "#f0f0f0"},
+                                spacing="3",
+                            ),
+                            href=child["href"],
+                            width="100%",
+                        )
+                        for child in item["children"]
+                    ],
+                    width="100%",
+                    spacing="2",
                 ),
             ),
-            class_name=rx.cond(
-                is_active,
-                "relative flex items-center gap-3 px-4 py-3 rounded-xl bg-[#003366] text-white font-semibold transition-all shadow-md",
-                "relative flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-100 hover:text-[#003366] font-semibold transition-all group",
-            ),
+            width="100%",
+            align_items="start",
+            spacing="2",
+        )
+
+    return rx.link(
+        rx.hstack(
+            rx.icon(item["icon"], color="black"),
+            rx.text(item["label"], color="black"),
+            padding="12px",
+            border_radius="8px",
+            _hover={"background": "#0000"},
+            spacing="3",
         ),
         href=item["href"],
-        on_click=[
-            DashboardState.set_page(item["label"]),
-            DashboardState.close_mobile_menu,
-        ],
-        class_name="block w-full",
+        width="100%",
     )
+
+
+def render_sidebar_items() -> list[rx.Component]:
+    """Render static sidebar items without Reflex foreach typing issues."""
+    return [nav_item(item) for item in SIDEBAR_ITEMS]
 
 
 def sidebar() -> rx.Component:
@@ -78,8 +151,8 @@ def sidebar() -> rx.Component:
                         "MENÚ PRINCIPAL",
                         class_name="px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2",
                     ),
-                    rx.foreach(DashboardState.sidebar_items, nav_item),
-                    class_name="flex flex-col gap-1 p-4",
+                    *render_sidebar_items(),
+                    class_name="flex flex-col gap-3 p-4",
                 ),
                 class_name="flex-1 overflow-y-auto",
             ),
@@ -166,8 +239,8 @@ def mobile_sidebar() -> rx.Component:
                     # Navigation
                     rx.el.nav(
                         rx.el.div(
-                            rx.foreach(DashboardState.sidebar_items, nav_item),
-                            class_name="flex flex-col gap-1 p-4",
+                            *render_sidebar_items(),
+                            class_name="flex flex-col gap-3 p-4",
                         ),
                         class_name="flex-1 overflow-y-auto",
                     ),
