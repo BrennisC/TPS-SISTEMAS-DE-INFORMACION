@@ -33,6 +33,31 @@ class DashboardState(rx.State):
     chart_top_carreras_puntaje: list[dict[str, float | str]] = []
     paginated_postulantes: list[dict[str, str]] = []
 
+    @rx.var
+    def general_avg_percentage(self) -> float:
+        # Evitar división por cero o promedios inconsistentes
+        val = self.general_avg if self.general_avg <= 20.0 else 20.0
+        return round((val / 20.0) * 100.0, 2)
+
+    @rx.var
+    def gauge_needle_angle(self) -> float:
+        val = self.general_avg if self.general_avg <= 20.0 else 20.0
+        # 0 de promedio -> 0 grados (apunta a la izquierda)
+        # 20 de promedio -> 180 grados (apunta a la derecha)
+        return round((val / 20.0) * 180.0, 2)
+
+    @rx.var
+    def general_avg_low(self) -> bool:
+        return self.general_avg < 10.5
+
+    @rx.var
+    def general_avg_medium(self) -> bool:
+        return 10.5 <= self.general_avg < 14.0
+
+    @rx.var
+    def general_avg_high(self) -> bool:
+        return self.general_avg >= 14.0
+
     @rx.event
     def set_page(self, page: str):
         self.current_page = page
@@ -56,6 +81,9 @@ class DashboardState(rx.State):
     def set_dashboard_tab(self, tab: str):
         """Cambia entre el dashboard de admisión y finanzas."""
         self.active_dashboard_tab = tab
+        if tab == "finanzas":
+            from .recaudacion_state import RecaudacionState
+            return RecaudacionState.cargar_datos_recaudacion
 
     @rx.event
     def cargar_datos_csv(self):

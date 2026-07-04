@@ -266,6 +266,147 @@ def require_auth(content: rx.Component) -> rx.Component:
     return rx.cond(AuthState.is_authenticated, content, login_page())
 
 
+def gauge_velocimetro() -> rx.Component:
+    return rx.el.div(
+        rx.el.svg(
+            rx.el.svg.defs(
+                rx.el.svg.linear_gradient(
+                    rx.el.svg.stop(offset="0%", stop_color="#ef4444"),
+                    rx.el.svg.stop(offset="25%", stop_color="#f97316"),
+                    rx.el.svg.stop(offset="50%", stop_color="#eab308"),
+                    rx.el.svg.stop(offset="75%", stop_color="#84cc16"),
+                    rx.el.svg.stop(offset="100%", stop_color="#22c55e"),
+                    id="gauge-grad",
+                    x1="0%",
+                    y1="0%",
+                    x2="100%",
+                    y2="0%",
+                )
+            ),
+            rx.el.svg.path(
+                d="M 20 90 A 65 65 0 0 1 150 90",
+                fill="none",
+                stroke="url(#gauge-grad)",
+                stroke_width="16",
+                stroke_linecap="round",
+            ),
+            rx.el.svg.polygon(
+                points="85,93 85,87 25,90",
+                fill="#374151",
+                transform="rotate(" + DashboardState.gauge_needle_angle.to_string() + " 85 90)",
+                class_name="transition-transform duration-1000 ease-out"
+            ),
+            rx.el.svg.circle(
+                cx="85",
+                cy="90",
+                r="7",
+                fill="#1f2937",
+            ),
+            view_box="0 0 170 105",
+            class_name="w-full h-auto",
+        ),
+        rx.el.div(
+            rx.icon("frown", class_name="text-red-500 w-5 h-5 flex-shrink-0"),
+            rx.el.div(
+                rx.cond(
+                    DashboardState.general_avg > 0,
+                    DashboardState.general_avg.to_string(),
+                    "0.00",
+                ),
+                class_name="border border-gray-200 rounded-md px-2 py-0.5 font-bold text-gray-800 text-xs bg-gray-50/80 shadow-inner min-w-[50px] text-center"
+            ),
+            rx.icon("smile", class_name="text-green-500 w-5 h-5 flex-shrink-0"),
+            class_name="flex items-center justify-between px-2 mt-1 w-full"
+        ),
+        class_name="flex flex-col items-center w-full max-w-[170px]"
+    )
+
+
+def mini_semaforo() -> rx.Component:
+    return rx.el.div(
+        rx.el.p("% Cumplimiento (Semáforo)", class_name="text-[9px] font-semibold text-gray-400 uppercase tracking-wider mb-1"),
+        rx.el.div(
+            rx.el.div(
+                rx.el.div(
+                    class_name=rx.cond(
+                        DashboardState.general_avg_low,
+                        "w-2 h-2 rounded-full bg-red-500 shadow-[0_0_6px_rgba(239,68,68,0.8)] border border-red-400",
+                        "w-2 h-2 rounded-full bg-red-950/40"
+                    )
+                ),
+                rx.el.div(
+                    class_name=rx.cond(
+                        DashboardState.general_avg_medium,
+                        "w-2 h-2 rounded-full bg-yellow-400 shadow-[0_0_6px_rgba(234,179,8,0.8)] border border-yellow-300",
+                        "w-2 h-2 rounded-full bg-yellow-950/40"
+                    )
+                ),
+                rx.el.div(
+                    class_name=rx.cond(
+                        DashboardState.general_avg_high,
+                        "w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.8)] border border-green-400",
+                        "w-2 h-2 rounded-full bg-green-950/40"
+                    )
+                ),
+                class_name="flex items-center gap-1 bg-gray-950 px-1.5 py-0.5 rounded-full w-fit"
+            ),
+            rx.el.span(
+                DashboardState.general_avg_percentage.to_string() + "%",
+                class_name="text-xs font-bold text-gray-700 ml-2"
+            ),
+            class_name="flex items-center"
+        ),
+        class_name="bg-gray-50/50 p-1.5 rounded-xl border border-gray-100/80 w-full"
+    )
+
+
+def bloques_bateria() -> rx.Component:
+    p = DashboardState.general_avg_percentage
+    return rx.el.div(
+        rx.el.p("% Cumplimiento (Batería)", class_name="text-[9px] font-semibold text-gray-400 uppercase tracking-wider mb-1"),
+        rx.el.div(
+            rx.el.div(
+                rx.el.div(class_name=rx.cond(p >= 10, "w-2.5 h-2 bg-red-500 rounded-sm", "w-2.5 h-2 bg-gray-200 rounded-sm")),
+                rx.el.div(class_name=rx.cond(p >= 35, "w-2.5 h-2 bg-orange-400 rounded-sm", "w-2.5 h-2 bg-gray-200 rounded-sm")),
+                rx.el.div(class_name=rx.cond(p >= 50, "w-2.5 h-2 bg-yellow-400 rounded-sm", "w-2.5 h-2 bg-gray-200 rounded-sm")),
+                rx.el.div(class_name=rx.cond(p >= 70, "w-2.5 h-2 bg-lime-400 rounded-sm", "w-2.5 h-2 bg-gray-200 rounded-sm")),
+                rx.el.div(class_name=rx.cond(p >= 90, "w-2.5 h-2 bg-green-500 rounded-sm", "w-2.5 h-2 bg-gray-200 rounded-sm")),
+                class_name="flex gap-0.5 bg-gray-100 p-0.5 rounded border border-gray-200 w-fit"
+            ),
+            rx.el.span(
+                DashboardState.general_avg_percentage.to_string() + "%",
+                class_name="text-xs font-bold text-gray-700 ml-2"
+            ),
+            class_name="flex items-center"
+        ),
+        class_name="bg-gray-50/50 p-1.5 rounded-xl border border-gray-100/80 w-full"
+    )
+
+
+def barra_con_indicador() -> rx.Component:
+    return rx.el.div(
+        rx.el.p("% Cumplimiento (Línea)", class_name="text-[9px] font-semibold text-gray-400 uppercase tracking-wider mb-1"),
+        rx.el.div(
+            rx.el.div(
+                rx.el.div(
+                    class_name="w-full h-1 rounded-full bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 relative"
+                ),
+                rx.el.div(
+                    class_name="absolute top-[-5px] w-0.5 h-3 bg-gray-900 border border-white rounded shadow-md transform -translate-x-1/2 transition-all duration-1000 ease-out",
+                    style={"left": DashboardState.general_avg_percentage.to_string() + "%"}
+                ),
+                class_name="relative w-full h-3 flex items-center mr-2"
+            ),
+            rx.el.span(
+                DashboardState.general_avg_percentage.to_string() + "%",
+                class_name="text-xs font-bold text-gray-700 flex-shrink-0"
+            ),
+            class_name="flex items-center w-full"
+        ),
+        class_name="bg-gray-50/50 p-1.5 rounded-xl border border-gray-100/80 w-full"
+    )
+
+
 def admision_dashboard_content() -> rx.Component:
     """Contenido del dashboard de Admisión (vista por defecto)."""
     return rx.el.div(
@@ -304,26 +445,33 @@ def admision_dashboard_content() -> rx.Component:
         # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
         rx.el.div(
             rx.el.div(
-                rx.el.h3(
-                    "Rendimiento General del Examen",
-                    class_name="text-sm font-bold text-gray-700 mb-4",
-                ),
                 rx.el.div(
-                    rx.el.h1(
-                        rx.cond(
-                            DashboardState.general_avg > 0,
-                            f"{DashboardState.general_avg:.2f}",
-                            "0.00",
-                        ),
-                        class_name="text-4xl font-extrabold text-gray-900",
+                    rx.el.h3(
+                        "Rendimiento General del Examen",
+                        class_name="text-sm font-bold text-gray-700",
                     ),
                     rx.el.p(
                         "Promedio General Real (Data CSV)",
-                        class_name="text-xs text-gray-500 mt-1",
+                        class_name="text-[10px] text-gray-400 font-semibold",
                     ),
-                    class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
+                    class_name="mb-4",
                 ),
-                class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+                rx.el.div(
+                    # Lado izquierdo: Velocímetro
+                    rx.el.div(
+                        gauge_velocimetro(),
+                        class_name="flex-1 flex justify-center items-center py-2"
+                    ),
+                    # Lado derecho: Micro-widgets
+                    rx.el.div(
+                        barra_con_indicador(),
+                        bloques_bateria(),
+                        mini_semaforo(),
+                        class_name="flex-1 flex flex-col gap-2 w-full"
+                    ),
+                    class_name="flex flex-col sm:flex-row items-center gap-4 w-full justify-between"
+                ),
+                class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1 hover:shadow-md transition-shadow",
             ),
             grafico_postulantes_vs_ingresantes(),
             class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
@@ -360,73 +508,8 @@ def admision_dashboard_content() -> rx.Component:
 
 
 def finanzas_dashboard_content() -> rx.Component:
-    """Contenido del dashboard de Finanzas (Recaudación + Tesorería)."""
+    """Contenido del dashboard de Finanzas."""
     return rx.el.div(
-        # Cards de estadísticas financieras
-        rx.el.div(
-            stats_card(
-                "Total Recaudado",
-                f"S/. {RecaudacionState.total_recaudado:,.2f}",
-                "Desde todas las convocatorias",
-                "wallet",
-                "#228B22",
-            ),
-            stats_card(
-                "Recaudación Estatal",
-                f"S/. {RecaudacionState.recaudacion_estatal:,.2f}",
-                "Colegios estatales",
-                "school",
-                "#003366",
-            ),
-            stats_card(
-                "Recaudación Privada",
-                f"S/. {RecaudacionState.recaudacion_privada:,.2f}",
-                "Colegios privados",
-                "building-2",
-                "#d97706",
-            ),
-            stats_card(
-                "Promedio por Postulante",
-                f"S/. {RecaudacionState.promedio_por_postulante:,.2f}",
-                "Costo promedio",
-                "trending-up",
-                "#7c3aed",
-            ),
-            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
-        ),
-        # Tesorería: Cards de estado de pagos
-        rx.el.div(
-            stats_card(
-                "Pagos Validados",
-                f"{TesoreriaState.pagos_validados}",
-                "Comprobantes conformes",
-                "receipt",
-                "#228B22",
-            ),
-            stats_card(
-                "Pagos Pendientes",
-                f"{TesoreriaState.pagos_pendientes}",
-                f"Monto por revisar: S/. {TesoreriaState.monto_pendiente:,.2f}",
-                "clock-3",
-                "#d97706",
-            ),
-            stats_card(
-                "Pagos Observados",
-                f"{TesoreriaState.pagos_observados}",
-                "Requieren regularización",
-                "triangle-alert",
-                "#dc2626",
-            ),
-            stats_card(
-                "Total Validado",
-                f"S/. {TesoreriaState.total_recaudado:,.2f}",
-                f"Operaciones: {TesoreriaState.total_pagos}",
-                "badge-check",
-                "#003366",
-            ),
-            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
-        ),
-        # Gráficos de recaudación embebidos
         recaudacion_view(),
     )
 
