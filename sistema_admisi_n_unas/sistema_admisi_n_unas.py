@@ -1,6 +1,7 @@
 import reflex as rx
 
 from sistema_admisi_n_unas.components.chart_utils import TOOLTIP_PROPS, chart_legend
+from sistema_admisi_n_unas.components.biblioteca import biblioteca_view
 from sistema_admisi_n_unas.components.examen import examen_view
 from sistema_admisi_n_unas.components.feedback import feedback_view
 from sistema_admisi_n_unas.components.ingresantes import ingresantes_view
@@ -12,13 +13,16 @@ from sistema_admisi_n_unas.components.recaudacion import recaudacion_view
 from sistema_admisi_n_unas.components.resultados import resultados_view
 from sistema_admisi_n_unas.components.sidebar import mobile_sidebar, sidebar
 from sistema_admisi_n_unas.components.stats_card import stats_card
+from sistema_admisi_n_unas.components.tesoreria import tesoreria_view
 from sistema_admisi_n_unas.states.auth_state import AuthState
+from sistema_admisi_n_unas.states.biblioteca_state import BibliotecaState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.feedback_state import FeedbackState
 from sistema_admisi_n_unas.states.ingresantes_state import IngresantesState
 from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 from sistema_admisi_n_unas.states.recaudacion_state import RecaudacionState
 from sistema_admisi_n_unas.states.resultados_state import ResultadosState
+from sistema_admisi_n_unas.states.tesoreria_state import TesoreriaState
 
 from .components.charts import (
     grafico_distribucion_colegios,
@@ -529,6 +533,58 @@ def ingresantes_page() -> rx.Component:
     )
 
 
+def tesoreria_page() -> rx.Component:
+    return require_auth(
+        rx.el.div(
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Tesorería",
+                            "Validación de pagos y control operativo para el proceso de admisión",
+                            "receipt",
+                        ),
+                        tesoreria_view(),
+                        class_name="max-w-full",
+                    ),
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                ),
+                class_name="flex-1 flex flex-col",
+            ),
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
+    )
+
+
+def biblioteca_page() -> rx.Component:
+    return require_auth(
+        rx.el.div(
+            mobile_sidebar(),
+            sidebar(),
+            rx.el.div(
+                mobile_header(),
+                rx.el.main(
+                    rx.el.div(
+                        page_header(
+                            "Biblioteca",
+                            "Catálogo y préstamos iniciales vinculados al flujo académico",
+                            "book-open",
+                        ),
+                        biblioteca_view(),
+                        class_name="max-w-full",
+                    ),
+                    class_name="flex-1 bg-gray-50/50 p-6 md:p-10 overflow-y-auto",
+                ),
+                class_name="flex-1 flex flex-col",
+            ),
+            class_name="flex min-h-screen bg-white font-['Inter']",
+        )
+    )
+
+
 app = rx.App(
     theme=rx.theme(appearance="light"),
     head_components=[
@@ -576,4 +632,14 @@ app.add_page(
     ingresantes_page,
     route="/ingresantes",
     on_load=IngresantesState.cargar_datos_ingresantes,
+)
+app.add_page(
+    tesoreria_page,
+    route="/tesoreria",
+    on_load=TesoreriaState.cargar_pagos,
+)
+app.add_page(
+    biblioteca_page,
+    route="/biblioteca",
+    on_load=BibliotecaState.cargar_biblioteca,
 )

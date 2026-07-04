@@ -27,6 +27,8 @@ class DashboardState(rx.State):
         {"label": "Resultados", "icon": "trophy", "href": "/resultados"},
         {"label": "Ingresantes", "icon": "bar-chart-3", "href": "/ingresantes"},
         {"label": "Recaudación", "icon": "wallet", "href": "/recaudacion"},
+        {"label": "Tesorería", "icon": "receipt", "href": "/tesoreria"},
+        {"label": "Biblioteca", "icon": "book-open", "href": "/biblioteca"},
         {
             "label": "Retroalimentación",
             "icon": "message-square",
