@@ -8,6 +8,9 @@ from ..utils.csv_loader import cargar_postulantes
 
 
 class DashboardState(rx.State):
+    # Tab del dashboard activo: "admision" o "finanzas"
+    active_dashboard_tab: str = "admision"
+
     # KPIs Básicos que se reflejan en las cards
     current_page: str = "Dashboard"
     mobile_menu_open: bool = False
@@ -48,6 +51,11 @@ class DashboardState(rx.State):
             self.expanded_sidebar.remove(section)
         else:
             self.expanded_sidebar.append(section)
+
+    @rx.event
+    def set_dashboard_tab(self, tab: str):
+        """Cambia entre el dashboard de admisión y finanzas."""
+        self.active_dashboard_tab = tab
 
     @rx.event
     def cargar_datos_csv(self):

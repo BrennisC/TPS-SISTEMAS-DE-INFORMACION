@@ -16,6 +16,7 @@ from sistema_admisi_n_unas.components.stats_card import stats_card
 from sistema_admisi_n_unas.components.tesoreria import tesoreria_view
 from sistema_admisi_n_unas.states.auth_state import AuthState
 from sistema_admisi_n_unas.states.biblioteca_state import BibliotecaState
+from sistema_admisi_n_unas.states.biblioteca_dashboard_state import BibliotecaDashboardState
 from sistema_admisi_n_unas.states.dashboard_state import DashboardState
 from sistema_admisi_n_unas.states.feedback_state import FeedbackState
 from sistema_admisi_n_unas.states.ingresantes_state import IngresantesState
@@ -23,6 +24,7 @@ from sistema_admisi_n_unas.states.postulantes_state import PostulantesState
 from sistema_admisi_n_unas.states.recaudacion_state import RecaudacionState
 from sistema_admisi_n_unas.states.resultados_state import ResultadosState
 from sistema_admisi_n_unas.states.tesoreria_state import TesoreriaState
+from sistema_admisi_n_unas.components.biblioteca_dashboard import biblioteca_executive_dashboard
 
 from .components.charts import (
     grafico_distribucion_colegios,
@@ -45,6 +47,20 @@ def mobile_header() -> rx.Component:
             class_name="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors",
         ),
         class_name="md:hidden flex items-center gap-4 p-4 bg-white border-b border-gray-200",
+    )
+
+
+def dashboard_tab_button(label: str, icon_name: str, tab_value: str) -> rx.Component:
+    """Botón de tab para alternar entre dashboards."""
+    return rx.el.button(
+        rx.icon(icon_name, class_name="h-4 w-4 mr-2"),
+        label,
+        on_click=DashboardState.set_dashboard_tab(tab_value),
+        class_name=rx.cond(
+            DashboardState.active_dashboard_tab == tab_value,
+            "flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-[#228B22] shadow-md transition-all duration-200",
+            "flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200",
+        ),
     )
 
 
@@ -77,6 +93,13 @@ def dashboard_header() -> rx.Component:
                 class_name="flex items-center gap-3",
             ),
             class_name="flex flex-col md:flex-row md:items-center justify-between gap-4 w-full",
+        ),
+        # Toggle buttons: Admisión / Finanzas / Biblioteca
+        rx.el.div(
+            dashboard_tab_button("Admisión", "graduation-cap", "admision"),
+            dashboard_tab_button("Finanzas", "wallet", "finanzas"),
+            dashboard_tab_button("Biblioteca", "book-open", "biblioteca"),
+            class_name="flex items-center gap-3 mt-6 p-1 bg-gray-100/70 rounded-2xl w-fit",
         ),
         class_name="mb-8",
     )
@@ -243,6 +266,178 @@ def require_auth(content: rx.Component) -> rx.Component:
     return rx.cond(AuthState.is_authenticated, content, login_page())
 
 
+def admision_dashboard_content() -> rx.Component:
+    """Contenido del dashboard de Admisión (vista por defecto)."""
+    return rx.el.div(
+        # 1. FILA SUPERIOR: Cards de control con datos reales del CSV
+        rx.el.div(
+            stats_card(
+                "Total Postulantes",
+                f"{DashboardState.total_postulantes}",
+                "Registrados en CSV",
+                "users",
+                "#228B22",
+            ),
+            stats_card(
+                "Total Ingresantes",
+                f"{DashboardState.admitted_count}",
+                "Vacantes validadas",
+                "user-check",
+                "#228B22",
+            ),
+            stats_card(
+                "Total Recaudado",
+                f"S/. {DashboardState.total_recaudado:,.2f}",
+                f"Estatal: {DashboardState.total_estatal} | Priv.: {DashboardState.total_privado}",
+                "circle-dollar-sign",
+                "#228B22",
+            ),
+            stats_card(
+                "Carrera Más Demandada",
+                f"{DashboardState.top_career}",
+                "Mayor N° de registros",
+                "graduation-cap",
+                "#003366",
+            ),
+            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
+        ),
+        # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
+        rx.el.div(
+            rx.el.div(
+                rx.el.h3(
+                    "Rendimiento General del Examen",
+                    class_name="text-sm font-bold text-gray-700 mb-4",
+                ),
+                rx.el.div(
+                    rx.el.h1(
+                        rx.cond(
+                            DashboardState.general_avg > 0,
+                            f"{DashboardState.general_avg:.2f}",
+                            "0.00",
+                        ),
+                        class_name="text-4xl font-extrabold text-gray-900",
+                    ),
+                    rx.el.p(
+                        "Promedio General Real (Data CSV)",
+                        class_name="text-xs text-gray-500 mt-1",
+                    ),
+                    class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
+                ),
+                class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
+            ),
+            grafico_postulantes_vs_ingresantes(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+        ),
+        # 3. TERCERA FILA: Evolución de Años + Gráfico de Torta de Colegios
+        rx.el.div(
+            grafico_evolucion_historica(),
+            grafico_distribucion_colegios(),
+            recent_activity(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+        ),
+        # 4. CUARTA FILA: Áreas Analíticas + Top Errores Fijos
+        rx.el.div(
+            grafico_rendimiento_areas(),
+            panel_preguntas_errores(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+        ),
+        # 5. QUINTA FILA: Análisis de puntajes
+        rx.el.div(
+            grafico_distribucion_puntajes(),
+            grafico_promedio_convocatoria(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+        ),
+        rx.el.div(
+            grafico_top_carreras_puntaje(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
+        ),
+        # 6. SEXTA FILA: Tabla de alumnos del CSV
+        rx.el.div(
+            tabla_ultimos_registrados(),
+            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
+        ),
+    )
+
+
+def finanzas_dashboard_content() -> rx.Component:
+    """Contenido del dashboard de Finanzas (Recaudación + Tesorería)."""
+    return rx.el.div(
+        # Cards de estadísticas financieras
+        rx.el.div(
+            stats_card(
+                "Total Recaudado",
+                f"S/. {RecaudacionState.total_recaudado:,.2f}",
+                "Desde todas las convocatorias",
+                "wallet",
+                "#228B22",
+            ),
+            stats_card(
+                "Recaudación Estatal",
+                f"S/. {RecaudacionState.recaudacion_estatal:,.2f}",
+                "Colegios estatales",
+                "school",
+                "#003366",
+            ),
+            stats_card(
+                "Recaudación Privada",
+                f"S/. {RecaudacionState.recaudacion_privada:,.2f}",
+                "Colegios privados",
+                "building-2",
+                "#d97706",
+            ),
+            stats_card(
+                "Promedio por Postulante",
+                f"S/. {RecaudacionState.promedio_por_postulante:,.2f}",
+                "Costo promedio",
+                "trending-up",
+                "#7c3aed",
+            ),
+            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
+        ),
+        # Tesorería: Cards de estado de pagos
+        rx.el.div(
+            stats_card(
+                "Pagos Validados",
+                f"{TesoreriaState.pagos_validados}",
+                "Comprobantes conformes",
+                "receipt",
+                "#228B22",
+            ),
+            stats_card(
+                "Pagos Pendientes",
+                f"{TesoreriaState.pagos_pendientes}",
+                f"Monto por revisar: S/. {TesoreriaState.monto_pendiente:,.2f}",
+                "clock-3",
+                "#d97706",
+            ),
+            stats_card(
+                "Pagos Observados",
+                f"{TesoreriaState.pagos_observados}",
+                "Requieren regularización",
+                "triangle-alert",
+                "#dc2626",
+            ),
+            stats_card(
+                "Total Validado",
+                f"S/. {TesoreriaState.total_recaudado:,.2f}",
+                f"Operaciones: {TesoreriaState.total_pagos}",
+                "badge-check",
+                "#003366",
+            ),
+            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
+        ),
+        # Gráficos de recaudación embebidos
+        recaudacion_view(),
+    )
+
+
+def biblioteca_dashboard_content() -> rx.Component:
+    """Contenido del dashboard de Biblioteca."""
+    return rx.el.div(
+        biblioteca_executive_dashboard(),
+    )
+
+
 def index() -> rx.Component:
     return require_auth(
         rx.el.div(
@@ -253,92 +448,15 @@ def index() -> rx.Component:
                 rx.el.main(
                     rx.el.div(
                         dashboard_header(),
-                        # 1. FILA SUPERIOR: Cards de control con datos reales del CSV
-                        rx.el.div(
-                            stats_card(
-                                "Total Postulantes",
-                                f"{DashboardState.total_postulantes}",
-                                "Registrados en CSV",
-                                "users",
-                                "#228B22",
+                        # Contenido condicional según el tab activo
+                        rx.cond(
+                            DashboardState.active_dashboard_tab == "admision",
+                            admision_dashboard_content(),
+                            rx.cond(
+                                DashboardState.active_dashboard_tab == "finanzas",
+                                finanzas_dashboard_content(),
+                                biblioteca_dashboard_content(),
                             ),
-                            stats_card(
-                                "Total Ingresantes",
-                                f"{DashboardState.admitted_count}",
-                                "Vacantes validadas",
-                                "user-check",
-                                "#228B22",
-                            ),
-                            stats_card(
-                                "Total Recaudado",
-                                f"S/. {DashboardState.total_recaudado:,.2f}",
-                                f"Estatal: {DashboardState.total_estatal} | Priv.: {DashboardState.total_privado}",
-                                "circle-dollar-sign",
-                                "#228B22",
-                            ),
-                            stats_card(
-                                "Carrera Más Demandada",
-                                f"{DashboardState.top_career}",
-                                "Mayor N° de registros",
-                                "graduation-cap",
-                                "#003366",
-                            ),
-                            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
-                        ),
-                        # 2. SEGUNDA FILA: Calibrador Promedio + Gráfico Barras Doble
-                        rx.el.div(
-                            rx.el.div(
-                                rx.el.h3(
-                                    "Rendimiento General del Examen",
-                                    class_name="text-sm font-bold text-gray-700 mb-4",
-                                ),
-                                rx.el.div(
-                                    rx.el.h1(
-                                        rx.cond(
-                                            DashboardState.general_avg > 0,
-                                            f"{DashboardState.general_avg:.2f}",
-                                            "0.00",
-                                        ),
-                                        class_name="text-4xl font-extrabold text-gray-900",
-                                    ),
-                                    rx.el.p(
-                                        "Promedio General Real (Data CSV)",
-                                        class_name="text-xs text-gray-500 mt-1",
-                                    ),
-                                    class_name="flex flex-col items-center justify-center h-48 border-2 border-dashed border-gray-100 rounded-xl",
-                                ),
-                                class_name="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm col-span-1",
-                            ),
-                            grafico_postulantes_vs_ingresantes(),
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                        ),
-                        # 3. TERCERA FILA (¡AÑADIDA!): Evolución de Años + Gráfico de Torta de Colegios
-                        rx.el.div(
-                            grafico_evolucion_historica(),
-                            grafico_distribucion_colegios(),
-                            recent_activity(),  # Mantiene tu componente lateral original
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                        ),
-                        # 4. CUARTA FILA: Áreas Analíticas + Top Errores Fijos
-                        rx.el.div(
-                            grafico_rendimiento_areas(),
-                            panel_preguntas_errores(),
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                        ),
-                        # 5. QUINTA FILA: Análisis de puntajes
-                        rx.el.div(
-                            grafico_distribucion_puntajes(),
-                            grafico_promedio_convocatoria(),
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                        ),
-                        rx.el.div(
-                            grafico_top_carreras_puntaje(),
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6",
-                        ),
-                        # 6. SEXTA FILA: Tabla de alumnos del CSV
-                        rx.el.div(
-                            tabla_ultimos_registrados(),
-                            class_name="grid grid-cols-1 lg:grid-cols-3 gap-6",
                         ),
                         class_name="max-w-7xl mx-auto",
                     ),
@@ -599,7 +717,13 @@ app = rx.App(
 app.add_page(
     index,
     route="/",
-    on_load=DashboardState.cargar_datos_csv,
+    on_load=[
+        DashboardState.cargar_datos_csv,
+        RecaudacionState.cargar_datos_recaudacion,
+        TesoreriaState.cargar_pagos,
+        BibliotecaState.cargar_biblioteca,
+        BibliotecaDashboardState.cargar_dashboard_biblioteca,
+    ],
 )
 app.add_page(login_page, route="/login")
 app.add_page(

@@ -1,0 +1,51 @@
+id,codigo,titulo,autor,categoria,editorial,stock,disponibles,estado,prestamos_total
+1,LIB-001,Matematica Basica,Carlos Paredes,Ciencias,UNMSM Press,8,3,Disponible,47
+2,LIB-002,Comprension Lectora,Maria Torres,Humanidades,Santillana,6,2,Disponible,62
+3,LIB-003,Biologia General,Juan Mendoza,Ciencias,Pearson,5,1,Disponible,55
+4,LIB-004,Quimica Preuniversitaria,Rosa Flores,Ciencias,McGraw Hill,7,4,Disponible,38
+5,LIB-005,Historia del Peru,Pedro Vasquez,Sociales,Lumbreras,4,0,Prestado,71
+6,LIB-006,Fisica Universitaria,Sears Zemansky,Ciencias,Addison Wesley,6,2,Disponible,44
+7,LIB-007,Calculo Diferencial,James Stewart,Matematica,Cengage,9,5,Disponible,83
+8,LIB-008,Programacion en Python,Eric Matthes,Informatica,No Starch,5,1,Disponible,91
+9,LIB-009,Base de Datos,Abraham Silberschatz,Informatica,McGraw Hill,4,0,Prestado,67
+10,LIB-010,Ingenieria de Software,Ian Sommerville,Informatica,Pearson,3,1,Disponible,54
+11,LIB-011,Estadistica Aplicada,Murray Spiegel,Matematica,Schaum,7,3,Disponible,49
+12,LIB-012,Ecologia General,Eugene Odum,Ciencias,Saunders,4,2,Disponible,36
+13,LIB-013,Edafologia,Hans Jenny,Agricultura,Wiley,3,0,Mantenimiento,28
+14,LIB-014,Silvicultura Tropical,Daniel Lamprecht,Agricultura,GTZ,5,3,Disponible,41
+15,LIB-015,Economia General,Paul Samuelson,Economia,McGraw Hill,6,2,Disponible,57
+16,LIB-016,Contabilidad Basica,Elias Lara,Economia,Trillas,4,1,Disponible,33
+17,LIB-017,Administracion Moderna,Stephen Robbins,Administracion,Pearson,5,2,Disponible,45
+18,LIB-018,Marketing Digital,Philip Kotler,Administracion,Pearson,3,0,Prestado,52
+19,LIB-019,Derecho Ambiental,Carlos Andaluz,Ciencias,Iustitia,4,3,Disponible,19
+20,LIB-020,Metodologia Investigacion,Roberto Hernandez,Ciencias,McGraw Hill,8,4,Disponible,76
+21,LIB-021,Algoritmos y Estructuras,Thomas Cormen,Informatica,MIT Press,3,0,Extraviado,48
+22,LIB-022,Redes de Computadoras,Andrew Tanenbaum,Informatica,Pearson,4,2,Disponible,37
+23,LIB-023,Sistemas Operativos,William Stallings,Informatica,Pearson,3,1,Disponible,42
+24,LIB-024,Botanica General,Alonso Vega,Agricultura,UNAS Press,5,2,Disponible,31
+25,LIB-025,Zoologia Vertebrados,Kent George,Ciencias,Cengage,4,1,Disponible,25
+26,LIB-026,Suelos Tropicales,Alfred Hartemink,Agricultura,Springer,3,0,Mantenimiento,22
+27,LIB-027,Genetica Molecular,James Watson,Ciencias,Pearson,4,2,Disponible,39
+28,LIB-028,Microbiologia,Gerard Tortora,Ciencias,Pearson,5,3,Disponible,46
+29,LIB-029,Hidrologia,Ven Te Chow,Ingenieria,McGraw Hill,3,1,Disponible,34
+30,LIB-030,Topografia,Paul Wolf,Ingenieria,Alfaomega,4,2,Disponible,29
+31,LIB-031,Resistencia Materiales,Ferdinand Singer,Ingenieria,Harper Row,3,1,Disponible,27
+32,LIB-032,Mecanica de Fluidos,Frank White,Ingenieria,McGraw Hill,4,0,Prestado,35
+33,LIB-033,Termodinamica,Yunus Cengel,Ingenieria,McGraw Hill,5,2,Disponible,40
+34,LIB-034,Nutricion Animal,Peter McDonald,Agricultura,Acribia,3,1,Disponible,23
+35,LIB-035,Fisiologia Vegetal,Lincoln Taiz,Agricultura,Sinauer,4,2,Disponible,30
+36,LIB-036,Economia Agraria,Luis Malassis,Economia,Mundi Prensa,3,1,Disponible,18
+37,LIB-037,Sociologia Rural,Henri Mendras,Sociales,Alianza,4,3,Disponible,15
+38,LIB-038,Psicologia Educativa,Anita Woolfolk,Humanidades,Pearson,5,2,Disponible,43
+39,LIB-039,Ingles Tecnico,Raymond Murphy,Humanidades,Cambridge,6,4,Disponible,58
+40,LIB-040,Redaccion Academica,Daniel Cassany,Humanidades,Anagrama,4,1,Disponible,36
+41,LIB-041,Inteligencia Artificial,Stuart Russell,Informatica,Pearson,3,0,Prestado,65
+42,LIB-042,Machine Learning,Tom Mitchell,Informatica,McGraw Hill,2,0,Extraviado,44
+43,LIB-043,Gestion Ambiental,Carlos Andaluz,Ciencias,Iustitia,4,2,Disponible,26
+44,LIB-044,Conservacion Suelos,Norman Hudson,Agricultura,Batsford,3,1,Disponible,20
+45,LIB-045,Economia Internacional,Paul Krugman,Economia,Pearson,5,3,Disponible,32
+46,LIB-046,Finanzas Corporativas,Stephen Ross,Economia,McGraw Hill,4,2,Disponible,28
+47,LIB-047,Investigacion Operativa,Hamdy Taha,Matematica,Pearson,3,1,Disponible,37
+48,LIB-048,Algebra Lineal,David Lay,Matematica,Pearson,5,3,Disponible,41
+49,LIB-049,Filosofia de la Ciencia,Mario Bunge,Humanidades,Siglo XXI,3,2,Disponible,14
+50,LIB-050,Etica Profesional,Augusto Hortal,Humanidades,Desclee,4,3,Disponible,11
