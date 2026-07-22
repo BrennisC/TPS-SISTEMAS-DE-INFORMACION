@@ -1,7 +1,7 @@
 import reflex as rx
 
 from ..components.stats_card import stats_card
-from ..states.tesoreria_state import TesoreriaState
+from ..states.tesoreria_state import TesoreriaState, LISTA_TIPOS
 
 
 def estado_badge(estado: str) -> rx.Component:
@@ -16,6 +16,19 @@ def estado_badge(estado: str) -> rx.Component:
     )
 
 
+def tipo_pago_badge(tipo: str) -> rx.Component:
+    classes = {
+        "Admisión": "bg-blue-50 text-blue-700 border-blue-200",
+        "Comedor universitario": "bg-orange-50 text-orange-700 border-orange-200",
+        "Residencia universitaria": "bg-purple-50 text-purple-700 border-purple-200",
+        "Matrícula": "bg-violet-50 text-violet-700 border-violet-200",
+    }
+    return rx.el.span(
+        tipo,
+        class_name=f"px-2 py-0.5 rounded-full text-xs font-semibold border {classes.get(tipo, 'bg-gray-50 text-gray-700 border-gray-200')}",
+    )
+
+
 def tesoreria_input(label: str, placeholder: str, value: rx.Var, on_change, input_type: str = "text") -> rx.Component:
     return rx.el.div(
         rx.el.label(label, class_name="block text-sm font-semibold text-gray-700 mb-2"),
@@ -25,6 +38,18 @@ def tesoreria_input(label: str, placeholder: str, value: rx.Var, on_change, inpu
             on_change=on_change.debounce(300),
             type=input_type,
             class_name="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10",
+        ),
+    )
+
+
+def tesoreria_select(label: str, value: rx.Var, on_change, options: list[str]) -> rx.Component:
+    return rx.el.div(
+        rx.el.label(label, class_name="block text-sm font-semibold text-gray-700 mb-2"),
+        rx.el.select(
+            rx.foreach(options, lambda opt: rx.el.option(opt, value=opt)),
+            value=value,
+            on_change=on_change,
+            class_name="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10",
         ),
     )
 
@@ -43,7 +68,7 @@ def payment_modal() -> rx.Component:
                         rx.el.div(
                             rx.el.h2("Registrar pago", class_name="text-xl font-bold text-gray-900"),
                             rx.el.p(
-                                "Ingresa el DNI y Tesorería rellenará los datos desde postulantes.csv.",
+                                "Ingresa el DNI y seleccioná el tipo de pago.",
                                 class_name="text-sm text-gray-500 mt-1",
                             ),
                         ),
@@ -56,10 +81,25 @@ def payment_modal() -> rx.Component:
                     ),
                     rx.el.div(
                         tesoreria_input("DNI", "Ej: 73698379", TesoreriaState.f_dni, TesoreriaState.set_dni),
+                        tesoreria_select("Tipo de pago", TesoreriaState.f_tipo_pago, TesoreriaState.set_tipo_pago, LISTA_TIPOS),
                         tesoreria_input("Voucher", "Ej: V-2026A00001", TesoreriaState.f_voucher, TesoreriaState.set_voucher),
                         tesoreria_input("Monto", "Ej: 220.00", TesoreriaState.f_monto, TesoreriaState.set_monto),
-                        tesoreria_input("Concepto", "Derecho de admision", TesoreriaState.f_concepto, TesoreriaState.set_concepto),
                         class_name="grid grid-cols-1 md:grid-cols-2 gap-4",
+                    ),
+                    rx.el.div(
+                        rx.el.p(
+                            f"Concepto: {TesoreriaState.f_concepto}",
+                            class_name="text-sm text-gray-500 italic",
+                        ),
+                        rx.cond(
+                            TesoreriaState.f_tipo_pago == "Comedor universitario",
+                            rx.el.p(
+                                f"Cuotas pagadas este semestre: {TesoreriaState.cuotas_comedor_actuales}",
+                                class_name="text-sm font-semibold text-orange-600 mt-1",
+                            ),
+                            rx.fragment(),
+                        ),
+                        class_name="bg-gray-50 rounded-xl px-4 py-3 mt-3",
                     ),
                     rx.el.div(
                         rx.el.div(
@@ -250,13 +290,10 @@ def tesoreria_view() -> rx.Component:
                     rx.el.div(
                         rx.icon("tag", class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
                         rx.el.select(
-                            rx.el.option("Todos los conceptos", value="Todos"),
-                            rx.el.option("Derecho de admision", value="Derecho de admision"),
-                            rx.el.option("Derecho de admisión", value="Derecho de admisión"),
-                            rx.el.option("Comedor universitario", value="Comedor universitario"),
-                            rx.el.option("Residencia universitaria", value="Residencia universitaria"),
-                            value=TesoreriaState.filter_concepto,
-                            on_change=TesoreriaState.set_filter_concepto,
+                            rx.el.option("Todos los tipos", value="Todos"),
+                            rx.foreach(LISTA_TIPOS, lambda t: rx.el.option(t, value=t)),
+                            value=TesoreriaState.filter_tipo_pago,
+                            on_change=TesoreriaState.set_filter_tipo_pago,
                             class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 min-w-[220px]",
                         ),
                         rx.icon("chevron-down", class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
@@ -286,7 +323,7 @@ def tesoreria_view() -> rx.Component:
                                 rx.el.th("Postulante", class_name="px-4 py-3 text-left text-sm font-bold text-gray-600 bg-gray-50"),
                                 rx.el.th("DNI", class_name="px-4 py-3 text-left text-sm font-bold text-gray-600 bg-gray-50"),
                                 rx.el.th("Convocatoria", class_name="px-4 py-3 text-left text-sm font-bold text-gray-600 bg-gray-50"),
-                                rx.el.th("Concepto", class_name="px-4 py-3 text-left text-sm font-bold text-gray-600 bg-gray-50"),
+                                rx.el.th("Tipo", class_name="px-4 py-3 text-left text-sm font-bold text-gray-600 bg-gray-50"),
                                 rx.el.th("Monto", class_name="px-4 py-3 text-right text-sm font-bold text-gray-600 bg-gray-50"),
                                 rx.el.th("Estado", class_name="px-4 py-3 text-center text-sm font-bold text-gray-600 bg-gray-50"),
                                 rx.el.th("Acciones", class_name="px-4 py-3 text-center text-sm font-bold text-gray-600 bg-gray-50"),
@@ -299,7 +336,7 @@ def tesoreria_view() -> rx.Component:
                                     rx.el.td(pago["postulante"], class_name="px-4 py-3 text-sm font-medium text-gray-900 border-b border-gray-100"),
                                     rx.el.td(pago["dni"], class_name="px-4 py-3 text-sm text-gray-600 border-b border-gray-100"),
                                     rx.el.td(pago["convocatoria"], class_name="px-4 py-3 text-sm text-gray-600 border-b border-gray-100"),
-                                    rx.el.td(pago["concepto"], class_name="px-4 py-3 text-sm text-gray-600 border-b border-gray-100"),
+                                    rx.el.td(tipo_pago_badge(pago.get("tipo_pago", "")), class_name="px-4 py-3 border-b border-gray-100"),
                                     rx.el.td(f"S/. {pago['monto']:,.2f}", class_name="px-4 py-3 text-sm text-right font-semibold text-gray-900 border-b border-gray-100"),
                                     rx.el.td(
                                         rx.el.div(estado_badge(pago["estado_pago"]), class_name="flex justify-center border-b border-gray-100 py-3"),

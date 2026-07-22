@@ -8,11 +8,16 @@ class RecaudacionState(rx.State):
     recaudacion_por_colegio: list[dict] = []
     recaudacion_por_carrera: list[dict] = []
     recaudacion_por_año: list[dict] = []
+    recaudacion_por_tipo_pago: list[dict] = []
 
     total_recaudado: float = 0.0
     promedio_por_postulante: float = 0.0
     recaudacion_estatal: float = 0.0
     recaudacion_privada: float = 0.0
+    recaudacion_admision: float = 0.0
+    recaudacion_comedor: float = 0.0
+    recaudacion_residencia: float = 0.0
+    recaudacion_matricula: float = 0.0
 
     @rx.event
     def cargar_datos_recaudacion(self):
@@ -95,3 +100,40 @@ class RecaudacionState(rx.State):
             key=lambda x: x["año"],
         )
         self.recaudacion_por_año = recaudacion_año
+
+        tipos: Dict[str, float] = {}
+        admision_total = 0.0
+        comedor_total = 0.0
+        residencia_total = 0.0
+        matricula_total = 0.0
+        for pago in pagos_validados:
+            tp = pago.get("tipo_pago", "")
+            concepto = pago.get("concepto", "")
+            if tp:
+                tipos[tp] = tipos.get(tp, 0) + pago["monto"]
+            if concepto in ("Derecho de admision", "Derecho de admisión"):
+                admision_total += pago["monto"]
+            elif concepto == "Comedor universitario":
+                comedor_total += pago["monto"]
+            elif concepto == "Residencia universitaria":
+                residencia_total += pago["monto"]
+            elif concepto == "Matrícula":
+                matricula_total += pago["monto"]
+
+        self.recaudacion_admision = round(admision_total, 2)
+        self.recaudacion_comedor = round(comedor_total, 2)
+        self.recaudacion_residencia = round(residencia_total, 2)
+        self.recaudacion_matricula = round(matricula_total, 2)
+
+        tipo_colors = {
+            "Admisión": "#228B22",
+            "Comedor universitario": "#003366",
+            "Residencia universitaria": "#d97706",
+            "Matrícula": "#8b5cf6",
+        }
+        recaudacion_tipos = sorted(
+            [{"tipo": k, "monto": round(v, 2), "fill": tipo_colors.get(k, "#8884d8")} for k, v in tipos.items()],
+            key=lambda x: x["monto"],
+            reverse=True,
+        )
+        self.recaudacion_por_tipo_pago = recaudacion_tipos

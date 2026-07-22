@@ -141,13 +141,75 @@ def recaudacion_view() -> rx.Component:
             class_name="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto mb-8",
         ),
 
-        # Fila 2: Gráfico de barras por convocatoria
+        # Fila 2: Recaudacion por tipo de pago
+        rx.el.div(
+            rx.el.div(
+                rx.el.h3(
+                    "Recaudación por Tipo de Pago",
+                    class_name="text-lg font-bold text-gray-900 mb-6",
+                ),
+                rx.recharts.bar_chart(
+                    rx.recharts.bar(
+                        data_key="monto",
+                        fill="#8b5cf6",
+                        name="Monto (S/)",
+                    ),
+                    rx.recharts.x_axis(data_key="tipo", angle=-45, height=80),
+                    rx.recharts.y_axis(),
+                    rx.recharts.tooltip(),
+                    rx.recharts.legend(),
+                    rx.recharts.cartesian_grid(stroke_dasharray="3 3"),
+                    data=RecaudacionState.recaudacion_por_tipo_pago,
+                    height=300,
+                    margin={"top": 5, "right": 30, "left": 0, "bottom": 80},
+                ),
+                class_name="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex-1",
+            ),
+            rx.el.div(
+                rx.el.h3(
+                    "Resumen por Tipo",
+                    class_name="text-lg font-bold text-gray-900 mb-6",
+                ),
+                rx.el.div(
+                    rx.el.div(
+                        rx.el.div("Admisión", class_name="text-sm font-semibold text-gray-600"),
+                        rx.el.div(f"S/. {RecaudacionState.recaudacion_admision:,.2f}", class_name="text-xl font-bold text-[#228B22]"),
+                        class_name="flex justify-between items-center p-4 bg-gray-50 rounded-lg",
+                    ),
+                    rx.el.div(
+                        rx.el.div("Comedor", class_name="text-sm font-semibold text-gray-600"),
+                        rx.el.div(f"S/. {RecaudacionState.recaudacion_comedor:,.2f}", class_name="text-xl font-bold text-[#003366]"),
+                        class_name="flex justify-between items-center p-4 bg-gray-50 rounded-lg",
+                    ),
+                    rx.el.div(
+                        rx.el.div("Residencia", class_name="text-sm font-semibold text-gray-600"),
+                        rx.el.div(f"S/. {RecaudacionState.recaudacion_residencia:,.2f}", class_name="text-xl font-bold text-[#d97706]"),
+                        class_name="flex justify-between items-center p-4 bg-gray-50 rounded-lg",
+                    ),
+                    rx.el.div(
+                        rx.el.div("Matrícula", class_name="text-sm font-semibold text-gray-600"),
+                        rx.el.div(f"S/. {RecaudacionState.recaudacion_matricula:,.2f}", class_name="text-xl font-bold text-[#8b5cf6]"),
+                        class_name="flex justify-between items-center p-4 bg-gray-50 rounded-lg",
+                    ),
+                    rx.el.div(
+                        rx.el.div("Total recaudado", class_name="text-sm font-bold text-gray-800"),
+                        rx.el.div(f"S/. {RecaudacionState.total_recaudado:,.2f}", class_name="text-xl font-bold text-gray-900"),
+                        class_name="flex justify-between items-center p-4 bg-amber-50 rounded-lg border border-amber-200",
+                    ),
+                    class_name="flex flex-col gap-3",
+                ),
+                class_name="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex-1",
+            ),
+            class_name="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto mb-8",
+        ),
+
+        # Fila 3: Gráfico de barras por convocatoria
         rx.el.div(
             chart_bar_recaudacion_por_convocatoria(),
             class_name="max-w-7xl mx-auto mb-8",
         ),
 
-        # Fila 3: Gráfico de top carreras
+        # Fila 4: Gráfico de top carreras
         rx.el.div(
             chart_bar_top_carreras(),
             class_name="max-w-7xl mx-auto mb-8",

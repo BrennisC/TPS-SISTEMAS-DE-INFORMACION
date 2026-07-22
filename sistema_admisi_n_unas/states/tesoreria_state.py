@@ -6,6 +6,16 @@ import reflex as rx
 from ..utils.csv_loader import cargar_pagos, cargar_postulantes, guardar_pagos
 
 
+TIPOS_PAGO = {
+    "Admisión": {"concepto": "Derecho de admision"},
+    "Comedor universitario": {"concepto": "Comedor universitario", "monto": 87.0, "monto_total": 348.0, "cuotas": 4},
+    "Residencia universitaria": {"concepto": "Residencia universitaria", "monto": 40.0},
+    "Matrícula": {"concepto": "Matrícula", "monto": 60.0},
+}
+
+LISTA_TIPOS = list(TIPOS_PAGO.keys())
+
+
 class Pago(TypedDict):
     id: int
     postulante_id: int
@@ -13,6 +23,7 @@ class Pago(TypedDict):
     dni: str
     convocatoria: str
     concepto: str
+    tipo_pago: str
     monto: float
     voucher: str
     fecha_pago: str
@@ -31,12 +42,14 @@ class TesoreriaState(rx.State):
     f_dni: str = ""
     f_voucher: str = ""
     f_monto: str = ""
+    f_tipo_pago: str = "Admisión"
     f_concepto: str = "Derecho de admision"
     f_observacion: str = ""
 
     search_query: str = ""
     filter_estado: str = "Todos"
     filter_concepto: str = "Todos"
+    filter_tipo_pago: str = "Todos"
     filter_convocatoria: str = "Todos"
     current_page: int = 1
     page_size: int = 10
@@ -64,6 +77,26 @@ class TesoreriaState(rx.State):
                 return postulante
         return None
 
+    def _autocompletar_monto(self):
+        if self.f_tipo_pago == "Admisión":
+            postulante = self._buscar_postulante(self.f_dni)
+            if postulante:
+                self.f_monto = str(postulante["costo"])
+                self.f_concepto = "Derecho de admision"
+        elif self.f_tipo_pago in TIPOS_PAGO:
+            cfg = TIPOS_PAGO[self.f_tipo_pago]
+            if "monto" in cfg:
+                self.f_monto = str(cfg["monto"])
+            self.f_concepto = cfg["concepto"]
+
+    def _contar_cuotas_comedor(self, dni: str, convocatoria: str) -> int:
+        return sum(
+            1 for p in self.pagos
+            if p["dni"] == dni
+            and p["convocatoria"] == convocatoria
+            and p.get("tipo_pago", "") == "Comedor universitario"
+        )
+
     @rx.event
     def set_dni(self, value: str):
         self.f_dni = value.strip()
@@ -71,7 +104,7 @@ class TesoreriaState(rx.State):
             self.postulantes = cargar_postulantes()
         postulante = self._buscar_postulante(self.f_dni)
         if postulante:
-            self.f_monto = str(postulante["costo"])
+            self._autocompletar_monto()
             self.f_voucher = postulante["voucher"]
             self.mensaje = "Datos del postulante cargados."
         else:
@@ -84,6 +117,11 @@ class TesoreriaState(rx.State):
     @rx.event
     def set_monto(self, value: str):
         self.f_monto = value.strip()
+
+    @rx.event
+    def set_tipo_pago(self, value: str):
+        self.f_tipo_pago = value.strip()
+        self._autocompletar_monto()
 
     @rx.event
     def set_concepto(self, value: str):
@@ -106,6 +144,11 @@ class TesoreriaState(rx.State):
     @rx.event
     def set_filter_concepto(self, value: str):
         self.filter_concepto = value
+        self.current_page = 1
+
+    @rx.event
+    def set_filter_tipo_pago(self, value: str):
+        self.filter_tipo_pago = value
         self.current_page = 1
 
     @rx.event
@@ -155,23 +198,45 @@ class TesoreriaState(rx.State):
         if any(pago["voucher"].lower() == self.f_voucher.lower() for pago in self.pagos):
             self.mensaje = "Ese voucher ya fue registrado."
             return
-        if any(
-            pago["dni"] == postulante["dni"]
-            and pago["convocatoria"] == postulante["convocatoria"]
-            for pago in self.pagos
-        ):
-            self.mensaje = "Ese postulante ya tiene un pago registrado para esta convocatoria."
-            return
+
+        tipo = self.f_tipo_pago
+        cfg = TIPOS_PAGO.get(tipo, {})
+
+        cuotas_existentes = self._contar_cuotas_comedor(postulante["dni"], postulante["convocatoria"])
+        if tipo == "Comedor universitario":
+            cuotas_max = cfg.get("cuotas", 4)
+            if cuotas_existentes >= cuotas_max:
+                self.mensaje = f"Ya tiene las {cuotas_max} cuotas de comedor registradas para {postulante['convocatoria']}."
+                return
+        else:
+            ya_tiene = any(
+                p["dni"] == postulante["dni"]
+                and p["convocatoria"] == postulante["convocatoria"]
+                and p.get("tipo_pago", "") == tipo
+                for p in self.pagos
+            )
+            if ya_tiene:
+                self.mensaje = f"Ya tiene un pago de {tipo} registrado para {postulante['convocatoria']}."
+                return
+
         try:
             monto = float(self.f_monto)
         except ValueError:
             self.mensaje = "El monto debe ser numérico."
             return
 
-        costo_esperado = postulante["costo"]
-        if monto != costo_esperado:
-            self.mensaje = f"El monto S/. {monto:.2f} no coincide con el costo de inscripción S/. {costo_esperado:.2f}"
-            return
+        if tipo == "Admisión":
+            costo_esperado = postulante["costo"]
+            if monto != costo_esperado:
+                self.mensaje = f"El monto S/. {monto:.2f} no coincide con el costo de admisión S/. {costo_esperado:.2f}"
+                return
+        elif "monto" in cfg:
+            esperado = cfg["monto"]
+            if monto != esperado:
+                self.mensaje = f"El monto S/. {monto:.2f} no coincide con el esperado S/. {esperado:.2f} para {tipo}"
+                return
+
+        concepto = cfg.get("concepto", self.f_concepto) if tipo in TIPOS_PAGO else self.f_concepto
 
         pago: Pago = {
             "id": max([p["id"] for p in self.pagos], default=0) + 1,
@@ -179,7 +244,8 @@ class TesoreriaState(rx.State):
             "dni": postulante["dni"],
             "postulante": f"{postulante['nombres']} {postulante['apellidos']}",
             "convocatoria": postulante["convocatoria"],
-            "concepto": self.f_concepto or "Derecho de admision",
+            "concepto": concepto,
+            "tipo_pago": tipo,
             "monto": monto,
             "voucher": self.f_voucher,
             "fecha_pago": date.today().isoformat(),
@@ -192,9 +258,15 @@ class TesoreriaState(rx.State):
         self.f_dni = ""
         self.f_voucher = ""
         self.f_monto = ""
+        self.f_tipo_pago = "Admisión"
         self.f_concepto = "Derecho de admision"
         self.f_observacion = ""
-        self.mensaje = "Pago registrado como pendiente."
+        cuotas_restantes = ""
+        if tipo == "Comedor universitario":
+            total_cuotas = cfg.get("cuotas", 4)
+            pagadas = cuotas_existentes + 1
+            cuotas_restantes = f" Cuota {pagadas} de {total_cuotas}."
+        self.mensaje = f"Pago registrado como pendiente.{cuotas_restantes}"
         self.show_payment_modal = False
 
     @rx.event
@@ -260,12 +332,22 @@ class TesoreriaState(rx.State):
         return postulante["estado"] if postulante else "-"
 
     @rx.var
+    def cuotas_comedor_actuales(self) -> str:
+        postulante = self._buscar_postulante(self.f_dni)
+        if not postulante:
+            return "0 / 4"
+        pagadas = self._contar_cuotas_comedor(postulante["dni"], postulante["convocatoria"])
+        return f"{pagadas} / 4"
+
+    @rx.var
     def filtered_pagos(self) -> list[Pago]:
         result = list(self.pagos)
         if self.filter_estado != "Todos":
             result = [p for p in result if p["estado_pago"] == self.filter_estado]
         if self.filter_concepto != "Todos":
             result = [p for p in result if p["concepto"] == self.filter_concepto]
+        if self.filter_tipo_pago != "Todos":
+            result = [p for p in result if p.get("tipo_pago", "") == self.filter_tipo_pago]
         if self.filter_convocatoria != "Todos":
             result = [p for p in result if p["convocatoria"] == self.filter_convocatoria]
         if self.search_query.strip():
@@ -306,11 +388,16 @@ class TesoreriaState(rx.State):
         return round(sum(p["monto"] for p in self.pagos if p["estado_pago"] == "Validado" and p.get("concepto", "") == "Residencia universitaria"), 2)
 
     @rx.var
+    def recaudacion_matricula(self) -> float:
+        return round(sum(p["monto"] for p in self.pagos if p["estado_pago"] == "Validado" and p.get("concepto", "") == "Matrícula"), 2)
+
+    @rx.var
     def recaudacion_por_concepto(self) -> list[dict]:
         return [
             {"concepto": "Admisión", "monto": self.recaudacion_admision, "fill": "#228B22"},
             {"concepto": "Comedor", "monto": self.recaudacion_comedor, "fill": "#003366"},
             {"concepto": "Residencia", "monto": self.recaudacion_residencia, "fill": "#d97706"},
+            {"concepto": "Matrícula", "monto": self.recaudacion_matricula, "fill": "#8b5cf6"},
         ]
 
     @rx.var
@@ -319,6 +406,10 @@ class TesoreriaState(rx.State):
         for p in self.pagos:
             convs.add(p["convocatoria"])
         return sorted(convs, reverse=True)
+
+    @rx.var
+    def tipo_pagos_disponibles(self) -> list[str]:
+        return sorted(set(p.get("tipo_pago", "") for p in self.pagos if p.get("tipo_pago", "")))
 
     @rx.var
     def recaudacion_por_semestre(self) -> list[dict]:
@@ -335,7 +426,7 @@ class TesoreriaState(rx.State):
     @rx.var
     def recaudacion_por_semestre_concepto(self) -> list[dict]:
         from collections import defaultdict
-        data: dict[str, dict[str, float]] = defaultdict(lambda: {"Admisión": 0.0, "Comedor": 0.0, "Residencia": 0.0})
+        data: dict[str, dict[str, float]] = defaultdict(lambda: {"Admisión": 0.0, "Comedor": 0.0, "Residencia": 0.0, "Matrícula": 0.0})
         for p in self.pagos:
             if p["estado_pago"] != "Validado":
                 continue
@@ -347,8 +438,10 @@ class TesoreriaState(rx.State):
                 data[conv]["Comedor"] += p["monto"]
             elif concepto == "Residencia universitaria":
                 data[conv]["Residencia"] += p["monto"]
+            elif concepto == "Matrícula":
+                data[conv]["Matrícula"] += p["monto"]
         return sorted(
-            [{"semestre": k, "Admisión": round(v["Admisión"], 2), "Comedor": round(v["Comedor"], 2), "Residencia": round(v["Residencia"], 2)}
+            [{"semestre": k, "Admisión": round(v["Admisión"], 2), "Comedor": round(v["Comedor"], 2), "Residencia": round(v["Residencia"], 2), "Matrícula": round(v["Matrícula"], 2)}
              for k, v in data.items()],
             key=lambda x: x["semestre"],
         )
