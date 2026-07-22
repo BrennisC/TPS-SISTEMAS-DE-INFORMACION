@@ -48,6 +48,44 @@ PREGUNTAS_ERROR_FIELDS = [
     "total_respuestas",
 ]
 
+PAGOS_FIELDS = [
+    "id",
+    "postulante_id",
+    "dni",
+    "postulante",
+    "convocatoria",
+    "concepto",
+    "monto",
+    "voucher",
+    "fecha_pago",
+    "estado_pago",
+    "observacion",
+]
+
+BIBLIOTECA_FIELDS = [
+    "id",
+    "codigo",
+    "titulo",
+    "autor",
+    "categoria",
+    "editorial",
+    "stock",
+    "disponibles",
+    "estado",
+    "prestamos_total",
+]
+
+PRESTAMOS_FIELDS = [
+    "id",
+    "dni_lector",
+    "lector",
+    "libro_codigo",
+    "libro",
+    "fecha_prestamo",
+    "fecha_devolucion",
+    "estado",
+]
+
 
 def _ruta_postulantes(ruta: str) -> str:
     return os.path.join(os.path.dirname(__file__), "..", ruta)
@@ -78,6 +116,118 @@ def cargar_postulantes(ruta: str = "postulantes.csv") -> list[dict]:
                 }
             )
     return postulantes
+
+
+def _ensure_csv(ruta_abs: str, fieldnames: list[str]) -> None:
+    if os.path.exists(ruta_abs) and os.path.getsize(ruta_abs) > 0:
+        return
+    with open(ruta_abs, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+
+
+def cargar_pagos(ruta: str = "pagos.csv") -> list[dict]:
+    ruta_abs = _ruta_postulantes(ruta)
+    _ensure_csv(ruta_abs, PAGOS_FIELDS)
+    pagos = []
+    with open(ruta_abs, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row.get("id"):
+                continue
+            pagos.append(
+                {
+                    "id": int(row["id"]),
+                    "postulante_id": int(row.get("postulante_id") or 0),
+                    "dni": row.get("dni", ""),
+                    "postulante": row.get("postulante", ""),
+                    "convocatoria": row.get("convocatoria", ""),
+                    "concepto": row.get("concepto", "Derecho de admision"),
+                    "monto": float(row.get("monto") or 0),
+                    "voucher": row.get("voucher", ""),
+                    "fecha_pago": row.get("fecha_pago", ""),
+                    "estado_pago": row.get("estado_pago", "Pendiente"),
+                    "observacion": row.get("observacion", ""),
+                }
+            )
+    return pagos
+
+
+def guardar_pagos(pagos: list[dict], ruta: str = "pagos.csv") -> None:
+    ruta_abs = _ruta_postulantes(ruta)
+    with open(ruta_abs, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=PAGOS_FIELDS)
+        writer.writeheader()
+        for pago in pagos:
+            writer.writerow({field: pago.get(field, "") for field in PAGOS_FIELDS})
+
+
+def cargar_libros(ruta: str = "biblioteca_data.csv") -> list[dict]:
+    ruta_abs = _ruta_postulantes(ruta)
+    _ensure_csv(ruta_abs, BIBLIOTECA_FIELDS)
+    libros = []
+    with open(ruta_abs, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row.get("id"):
+                continue
+            libros.append(
+                {
+                    "id": int(row["id"]),
+                    "codigo": row.get("codigo", ""),
+                    "titulo": row.get("titulo", ""),
+                    "autor": row.get("autor", ""),
+                    "categoria": row.get("categoria", ""),
+                    "editorial": row.get("editorial", ""),
+                    "stock": int(row.get("stock") or 0),
+                    "disponibles": int(row.get("disponibles") or 0),
+                    "estado": row.get("estado", "Disponible"),
+                    "prestamos_total": int(row.get("prestamos_total") or 0),
+                }
+            )
+    return libros
+
+
+def guardar_libros(libros: list[dict], ruta: str = "biblioteca_data.csv") -> None:
+    ruta_abs = _ruta_postulantes(ruta)
+    with open(ruta_abs, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=BIBLIOTECA_FIELDS)
+        writer.writeheader()
+        for libro in libros:
+            writer.writerow({field: libro.get(field, "") for field in BIBLIOTECA_FIELDS})
+
+
+def cargar_prestamos(ruta: str = "prestamos.csv") -> list[dict]:
+    ruta_abs = _ruta_postulantes(ruta)
+    _ensure_csv(ruta_abs, PRESTAMOS_FIELDS)
+    prestamos = []
+    with open(ruta_abs, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row.get("id"):
+                continue
+            prestamos.append(
+                {
+                    "id": int(row["id"]),
+                    "dni_lector": row.get("dni_lector", ""),
+                    "lector": row.get("lector", ""),
+                    "libro_codigo": row.get("libro_codigo", ""),
+                    "libro": row.get("libro", ""),
+                    "fecha_prestamo": row.get("fecha_prestamo", ""),
+                    "fecha_devolucion": row.get("fecha_devolucion", ""),
+                    "estado": row.get("estado", "Prestado"),
+                }
+            )
+    return prestamos
+
+
+def guardar_prestamos(prestamos: list[dict], ruta: str = "prestamos.csv") -> None:
+    ruta_abs = _ruta_postulantes(ruta)
+    with open(ruta_abs, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=PRESTAMOS_FIELDS)
+        writer.writeheader()
+        for prestamo in prestamos:
+            writer.writerow({field: prestamo.get(field, "") for field in PRESTAMOS_FIELDS})
 
 
 def cargar_resultados(ruta: str = "resultados_examen.csv") -> list[dict]:

@@ -59,8 +59,8 @@ CARRERA_FACULTAD = {
     "Contabilidad": "Fac. Ciencias Económicas",
     "Economía": "Fac. Ciencias Económicas",
     "Ing. Mecánica Eléctrica": "Otras Escuelas",
-    "Desarrollo Rural": "Otras Escuelas",
     "Ing. Conservación Suelos": "Fac. Recursos Naturales Renovables",
+    "Turismo y Hoteleria": "FACEA",
     "Ing. Recursos Naturales": "Fac. Recursos Naturales Renovables",
 }
 
