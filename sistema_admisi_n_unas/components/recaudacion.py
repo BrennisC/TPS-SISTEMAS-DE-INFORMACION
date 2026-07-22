@@ -126,49 +126,6 @@ def chart_bar_top_carreras() -> rx.Component:
 def recaudacion_view() -> rx.Component:
     """Vista principal del dashboard de recaudación con gráficos"""
     return rx.el.div(
-        # Botón para cargar datos
-        rx.el.div(
-            rx.el.button(
-                "Cargar Datos de Recaudación",
-                on_click=RecaudacionState.cargar_datos_recaudacion,
-                class_name="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium mb-6",
-            ),
-            class_name="max-w-7xl mx-auto",
-        ),
-        
-        # Tarjetas de estadísticas principales
-        rx.el.div(
-            stat_card(
-                "Total Recaudado",
-                f"S/ {RecaudacionState.total_recaudado}",
-                "Desde todas las convocatorias",
-                "wallet",
-                "green"
-            ),
-            stat_card(
-                "Recaudación Estatal",
-                f"S/ {RecaudacionState.recaudacion_estatal}",
-                f"{RecaudacionState.recaudacion_estatal}",
-                "school",
-                "blue"
-            ),
-            stat_card(
-                "Recaudación Privada",
-                f"S/ {RecaudacionState.recaudacion_privada}",
-                f"{RecaudacionState.recaudacion_privada}",
-                "building-2",
-                "orange"
-            ),
-            stat_card(
-                "Promedio por Postulante",
-                f"S/ {RecaudacionState.promedio_por_postulante}",
-                "Costo promedio",
-                "trending-up",
-                "purple"
-            ),
-            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-8",
-        ),
-        
         # Fila 1: Gráficos principales
         rx.el.div(
             # Gráfico de barras: Recaudación por año
@@ -183,19 +140,19 @@ def recaudacion_view() -> rx.Component:
             ),
             class_name="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto mb-8",
         ),
-        
+
         # Fila 2: Gráfico de barras por convocatoria
         rx.el.div(
             chart_bar_recaudacion_por_convocatoria(),
             class_name="max-w-7xl mx-auto mb-8",
         ),
-        
+
         # Fila 3: Gráfico de top carreras
         rx.el.div(
             chart_bar_top_carreras(),
             class_name="max-w-7xl mx-auto mb-8",
         ),
-        
+
         # Tabla de recaudación por convocatoria (detalles)
         rx.el.div(
             rx.el.div(
@@ -265,6 +222,6 @@ def recaudacion_view() -> rx.Component:
             ),
             class_name="mb-8",
         ),
-        
+
         class_name="space-y-6 pb-8",
     )

@@ -426,6 +426,95 @@ def finanzas_dashboard_content() -> rx.Component:
             ),
             class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
         ),
+        # Cards por concepto
+        rx.el.div(
+            stats_card(
+                "Admisión",
+                f"S/. {TesoreriaState.recaudacion_admision:,.2f}",
+                "Derecho de admisión",
+                "graduation-cap",
+                "#228B22",
+            ),
+            stats_card(
+                "Comedor",
+                f"S/. {TesoreriaState.recaudacion_comedor:,.2f}",
+                "Comedor universitario",
+                "utensils",
+                "#003366",
+            ),
+            stats_card(
+                "Residencia",
+                f"S/. {TesoreriaState.recaudacion_residencia:,.2f}",
+                "Residencia universitaria",
+                "home",
+                "#d97706",
+            ),
+            class_name="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6",
+        ),
+        # Gráfico pastel: Recaudación por concepto
+        rx.el.div(
+            rx.el.div(
+                rx.el.h3(
+                    "Recaudación por Concepto",
+                    class_name="text-lg font-bold text-gray-900 mb-6",
+                ),
+                rx.recharts.pie_chart(
+                    rx.recharts.pie(
+                        data=TesoreriaState.recaudacion_por_concepto,
+                        data_key="monto",
+                        name_key="concepto",
+                        cx="50%",
+                        cy="50%",
+                        label=True,
+                        fill="#8884d8",
+                    ),
+                    rx.recharts.tooltip(),
+                    rx.recharts.legend(),
+                    height=350,
+                ),
+                class_name="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm",
+            ),
+            class_name="mb-6",
+        ),
+        # Gráfico barras apiladas: Recaudación por semestre y concepto
+        rx.el.div(
+            rx.el.div(
+                rx.el.h3(
+                    "Recaudación por Semestre y Concepto",
+                    class_name="text-lg font-bold text-gray-900 mb-6",
+                ),
+                rx.recharts.bar_chart(
+                    rx.recharts.bar(
+                        data_key="Admisión",
+                        fill="#228B22",
+                        name="Admisión",
+                        stack_id="a",
+                    ),
+                    rx.recharts.bar(
+                        data_key="Comedor",
+                        fill="#003366",
+                        name="Comedor",
+                        stack_id="a",
+                    ),
+                    rx.recharts.bar(
+                        data_key="Residencia",
+                        fill="#d97706",
+                        name="Residencia",
+                        stack_id="a",
+                    ),
+                    rx.recharts.x_axis(data_key="semestre", angle=-45, height=70),
+                    rx.recharts.y_axis(),
+                    rx.recharts.tooltip(),
+                    rx.recharts.legend(),
+                    rx.recharts.cartesian_grid(stroke_dasharray="3 3"),
+                    data=TesoreriaState.recaudacion_por_semestre_concepto,
+                    height=400,
+                    margin={"top": 5, "right": 30, "left": 0, "bottom": 70},
+                ),
+                class_name="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm",
+            ),
+            class_name="mb-6",
+        ),
         # Gráficos de recaudación embebidos
         recaudacion_view(),
     )
@@ -734,7 +823,7 @@ app.add_page(
 app.add_page(
     postulantes_page,
     route="/postulantes",
-    on_load=PostulantesState.cargar_datos,
+    on_load=[PostulantesState.cargar_datos, PostulantesState.cargar_estado_pagos],
 )
 app.add_page(examen_page, route="/examen")
 app.add_page(

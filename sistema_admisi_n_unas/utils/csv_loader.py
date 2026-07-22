@@ -315,6 +315,55 @@ def cargar_preguntas_error(ruta: str = "preguntas_error.csv") -> list[dict]:
     return preguntas
 
 
+def cargar_estado_pagos(ruta: str = "pagos.csv") -> dict:
+    """Devuelve dict {(dni, convocatoria): estado_pago} solo para pagos de admision."""
+    lookup: dict[tuple, str] = {}
+    ruta_abs = _ruta_postulantes(ruta)
+    if not os.path.exists(ruta_abs):
+        return lookup
+    with open(ruta_abs, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            concepto = row.get("concepto", "").strip().lower()
+            if "admision" not in concepto:
+                continue
+            dni = row.get("dni", "").strip()
+            conv = row.get("convocatoria", "").strip()
+            estado = row.get("estado_pago", "Pendiente").strip()
+            if dni and conv:
+                lookup[(dni, conv)] = estado
+    return lookup
+
+
+def cargar_pagos_validados(ruta: str = "pagos.csv") -> list[dict]:
+    """Carga pagos validados con datos de postulante para reportes de recaudacion."""
+    pagos = []
+    ruta_abs = _ruta_postulantes(ruta)
+    if not os.path.exists(ruta_abs):
+        return pagos
+    with open(ruta_abs, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row.get("id"):
+                continue
+            if row.get("estado_pago", "").strip() != "Validado":
+                continue
+            pagos.append({
+                "id": int(row["id"]),
+                "postulante_id": int(row.get("postulante_id") or 0),
+                "dni": row.get("dni", ""),
+                "postulante": row.get("postulante", ""),
+                "convocatoria": row.get("convocatoria", ""),
+                "concepto": row.get("concepto", "Derecho de admision"),
+                "monto": float(row.get("monto") or 0),
+                "voucher": row.get("voucher", ""),
+                "fecha_pago": row.get("fecha_pago", ""),
+                "estado_pago": "Validado",
+                "observacion": row.get("observacion", ""),
+            })
+    return pagos
+
+
 def append_postulante(postulante: dict, ruta: str = "postulantes.csv") -> None:
     ruta_abs = _ruta_postulantes(ruta)
     needs_header = not os.path.exists(ruta_abs) or os.path.getsize(ruta_abs) == 0

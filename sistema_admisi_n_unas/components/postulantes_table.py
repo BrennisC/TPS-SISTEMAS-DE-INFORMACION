@@ -51,7 +51,35 @@ def get_initials(nombres: rx.Var, apellidos: rx.Var) -> rx.Var:
     return f"{nombres.split(' ')[0][0]}{apellidos.split(' ')[0][0]}"
 
 
-def table_row(p: Postulante) -> rx.Component:
+def pago_badge(estado: str) -> rx.Component:
+    return rx.cond(
+        estado == "Validado",
+        rx.el.span(
+            "Validado",
+            class_name="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 w-fit whitespace-nowrap",
+        ),
+        rx.cond(
+            estado == "Pendiente",
+            rx.el.span(
+                "Pendiente",
+                class_name="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 w-fit whitespace-nowrap",
+            ),
+            rx.cond(
+                estado == "Observado",
+                rx.el.span(
+                    "Observado",
+                    class_name="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-50 text-red-700 w-fit whitespace-nowrap",
+                ),
+                rx.el.span(
+                    "Sin pago",
+                    class_name="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-gray-50 text-gray-500 w-fit whitespace-nowrap",
+                ),
+            ),
+        ),
+    )
+
+
+def table_row(p: dict) -> rx.Component:
     return rx.el.tr(
         rx.el.td(
             rx.el.div(
@@ -110,6 +138,10 @@ def table_row(p: Postulante) -> rx.Component:
         ),
         rx.el.td(estado_badge(p["estado"]), class_name="px-6 py-4"),
         rx.el.td(
+            pago_badge(p.get("estado_pago", "Sin pago")),
+            class_name="px-6 py-4",
+        ),
+        rx.el.td(
             rx.el.div(
                 rx.el.button(
                     rx.icon("refresh-cw", class_name="h-4 w-4"),
@@ -148,7 +180,7 @@ def empty_state() -> rx.Component:
                 ),
                 class_name="flex flex-col items-center justify-center py-16",
             ),
-            col_span=9,
+            col_span=10,
         ),
     )
 
@@ -202,6 +234,27 @@ def filters_bar() -> rx.Component:
                 ),
                 value=PostulantesState.filter_convocatoria,
                 on_change=PostulantesState.set_filter_convocatoria,
+                class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[180px]",
+            ),
+            rx.icon(
+                "chevron-down",
+                class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+            ),
+            class_name="relative",
+        ),
+        rx.el.div(
+            rx.icon(
+                "wallet",
+                class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none",
+            ),
+            rx.el.select(
+                rx.el.option("Todos los pagos", value="Todos"),
+                rx.el.option("Validado", value="Validado"),
+                rx.el.option("Pendiente", value="Pendiente"),
+                rx.el.option("Observado", value="Observado"),
+                rx.el.option("Sin pago", value="Sin pago"),
+                value=PostulantesState.filter_pago,
+                on_change=PostulantesState.set_filter_pago,
                 class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 transition-all min-w-[180px]",
             ),
             rx.icon(
@@ -325,6 +378,10 @@ def postulantes_table() -> rx.Component:
                             ),
                             rx.el.th(
                                 "Estado",
+                                class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
+                            ),
+                            rx.el.th(
+                                "Pago",
                                 class_name="px-6 py-3.5 text-left text-xs font-bold text-gray-600 uppercase tracking-wider bg-gray-50",
                             ),
                             rx.el.th(

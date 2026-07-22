@@ -214,13 +214,70 @@ def tesoreria_view() -> rx.Component:
             payment_modal(),
             rx.el.div(
                 rx.el.div(
-                    rx.el.h2("Operaciones recientes", class_name="text-lg font-bold text-gray-900"),
+                    rx.el.h2("Operaciones", class_name="text-lg font-bold text-gray-900"),
                     rx.el.button(
                         "Actualizar pagos",
                         on_click=TesoreriaState.cargar_pagos,
                         class_name="px-4 py-2 rounded-xl bg-[#003366] text-white text-sm font-semibold hover:opacity-90",
                     ),
                     class_name="flex items-center justify-between gap-3 mb-4",
+                ),
+                rx.el.div(
+                    rx.el.div(
+                        rx.icon("search", class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        rx.el.input(
+                            placeholder="Buscar por DNI, nombre o voucher...",
+                            default_value=TesoreriaState.search_query,
+                            on_change=TesoreriaState.set_search_query.debounce(400),
+                            class_name="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10",
+                        ),
+                        class_name="relative flex-1 max-w-md",
+                    ),
+                    rx.el.div(
+                        rx.icon("filter", class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        rx.el.select(
+                            rx.el.option("Todos los estados", value="Todos"),
+                            rx.el.option("Validado", value="Validado"),
+                            rx.el.option("Pendiente", value="Pendiente"),
+                            rx.el.option("Observado", value="Observado"),
+                            value=TesoreriaState.filter_estado,
+                            on_change=TesoreriaState.set_filter_estado,
+                            class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 min-w-[200px]",
+                        ),
+                        rx.icon("chevron-down", class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        class_name="relative",
+                    ),
+                    rx.el.div(
+                        rx.icon("tag", class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        rx.el.select(
+                            rx.el.option("Todos los conceptos", value="Todos"),
+                            rx.el.option("Derecho de admision", value="Derecho de admision"),
+                            rx.el.option("Derecho de admisión", value="Derecho de admisión"),
+                            rx.el.option("Comedor universitario", value="Comedor universitario"),
+                            rx.el.option("Residencia universitaria", value="Residencia universitaria"),
+                            value=TesoreriaState.filter_concepto,
+                            on_change=TesoreriaState.set_filter_concepto,
+                            class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 min-w-[220px]",
+                        ),
+                        rx.icon("chevron-down", class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        class_name="relative",
+                    ),
+                    rx.el.div(
+                        rx.icon("calendar", class_name="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        rx.el.select(
+                            rx.el.option("Todos los semestres", value="Todos"),
+                            rx.foreach(
+                                TesoreriaState.convocatorias_disponibles,
+                                lambda conv: rx.el.option(conv, value=conv),
+                            ),
+                            value=TesoreriaState.filter_convocatoria,
+                            on_change=TesoreriaState.set_filter_convocatoria,
+                            class_name="pl-10 pr-10 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-[#003366] focus:ring-2 focus:ring-[#003366]/10 min-w-[180px]",
+                        ),
+                        rx.icon("chevron-down", class_name="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"),
+                        class_name="relative",
+                    ),
+                    class_name="flex flex-col md:flex-row gap-3 mb-4",
                 ),
                 rx.el.div(
                     rx.el.table(
@@ -237,7 +294,7 @@ def tesoreria_view() -> rx.Component:
                         ),
                         rx.el.tbody(
                             rx.foreach(
-                                TesoreriaState.pagos_recientes,
+                                TesoreriaState.paginated_pagos,
                                 lambda pago: rx.el.tr(
                                     rx.el.td(pago["postulante"], class_name="px-4 py-3 text-sm font-medium text-gray-900 border-b border-gray-100"),
                                     rx.el.td(pago["dni"], class_name="px-4 py-3 text-sm text-gray-600 border-b border-gray-100"),
@@ -268,6 +325,38 @@ def tesoreria_view() -> rx.Component:
                         class_name="w-full",
                     ),
                     class_name="overflow-x-auto",
+                ),
+                rx.el.div(
+                    rx.el.div(
+                        rx.el.button(
+                            rx.icon("chevron-left", class_name="h-4 w-4"),
+                            "Anterior",
+                            on_click=TesoreriaState.prev_page,
+                            disabled=TesoreriaState.current_page == 1,
+                            class_name=rx.cond(
+                                TesoreriaState.current_page == 1,
+                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                            ),
+                        ),
+                        rx.el.span(
+                            f"Página {TesoreriaState.current_page} de {TesoreriaState.total_pages}",
+                            class_name="text-sm font-medium text-gray-600",
+                        ),
+                        rx.el.button(
+                            "Siguiente",
+                            rx.icon("chevron-right", class_name="h-4 w-4"),
+                            on_click=TesoreriaState.next_page,
+                            disabled=TesoreriaState.current_page == TesoreriaState.total_pages,
+                            class_name=rx.cond(
+                                TesoreriaState.current_page == TesoreriaState.total_pages,
+                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100 cursor-not-allowed",
+                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50",
+                            ),
+                        ),
+                        class_name="flex items-center justify-center gap-4",
+                    ),
+                    class_name="mt-4",
                 ),
                 class_name="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm",
             ),

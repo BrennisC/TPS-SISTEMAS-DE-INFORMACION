@@ -3,6 +3,7 @@ from typing import TypedDict
 from datetime import datetime
 from sistema_admisi_n_unas.utils.csv_loader import (
     cargar_postulantes,
+    cargar_estado_pagos,
     append_postulante,
 )
 
@@ -19,6 +20,9 @@ class Postulante(TypedDict):
     fecha: str
     estado: str
     convocatoria: str
+    puntaje: float
+    facultad: str
+    estado_pago: str
 
 
 CARRERAS: list[str] = [
@@ -61,8 +65,10 @@ class PostulantesState(rx.State):
     search_query: str = ""
     filter_carrera: str = "Todas"
     filter_convocatoria: str = "Todas"
+    filter_pago: str = "Todos"
     current_page: int = 1
     page_size: int = 10
+    pagos_lookup: dict = {}
 
     carreras: list[str] = CARRERAS
     tipos_colegio: list[str] = ["Estatal", "Privado"]
@@ -82,6 +88,10 @@ class PostulantesState(rx.State):
             self.next_id = max(p["id"] for p in datos) + 1
         else:
             self.next_id = 1
+
+    @rx.event
+    def cargar_estado_pagos(self):
+        self.pagos_lookup = cargar_estado_pagos()
 
     # Validation computed vars
     @rx.var
@@ -227,7 +237,20 @@ class PostulantesState(rx.State):
                 or q in p["dni"]
                 or q in p["voucher"].lower()
             ]
+        if self.filter_pago != "Todos":
+            enriched = []
+            for p in result:
+                estado = self._obtener_estado_pago(p)
+                if estado == self.filter_pago:
+                    enriched.append(p)
+            result = enriched
         return result
+
+    def _obtener_estado_pago(self, postulante: dict) -> str:
+        dni = postulante.get("dni", "")
+        convocatoria = postulante.get("convocatoria", "")
+        key = (dni, convocatoria)
+        return self.pagos_lookup.get(key, "Sin pago")
 
     @rx.var
     def total_pages(self) -> int:
@@ -241,7 +264,26 @@ class PostulantesState(rx.State):
         page = min(max(self.current_page, 1), self.total_pages)
         start = (page - 1) * self.page_size
         end = start + self.page_size
-        return self.filtered_postulantes[start:end]
+        result: list[Postulante] = []
+        for p in self.filtered_postulantes[start:end]:
+            enriched: Postulante = {
+                "id": p["id"],
+                "nombres": p["nombres"],
+                "apellidos": p["apellidos"],
+                "dni": p["dni"],
+                "carrera": p["carrera"],
+                "tipo_colegio": p["tipo_colegio"],
+                "costo": p["costo"],
+                "voucher": p["voucher"],
+                "fecha": p.get("fecha", ""),
+                "estado": p.get("estado", "Inscrito"),
+                "convocatoria": p.get("convocatoria", ""),
+                "puntaje": p.get("puntaje", 0.0),
+                "facultad": p.get("facultad", ""),
+                "estado_pago": self._obtener_estado_pago(p),
+            }
+            result.append(enriched)
+        return result
 
     @rx.event
     def set_nombres(self, v: str):
@@ -280,6 +322,11 @@ class PostulantesState(rx.State):
     @rx.event
     def set_filter_convocatoria(self, v: str):
         self.filter_convocatoria = v
+        self.current_page = 1
+
+    @rx.event
+    def set_filter_pago(self, v: str):
+        self.filter_pago = v
         self.current_page = 1
 
     @rx.event
