@@ -9,6 +9,7 @@ class RecaudacionState(rx.State):
     recaudacion_por_carrera: list[dict] = []
     recaudacion_por_año: list[dict] = []
     recaudacion_por_tipo_pago: list[dict] = []
+    recaudacion_por_semestre_tipo: list[dict] = []
 
     total_recaudado: float = 0.0
     promedio_por_postulante: float = 0.0
@@ -137,3 +138,25 @@ class RecaudacionState(rx.State):
             reverse=True,
         )
         self.recaudacion_por_tipo_pago = recaudacion_tipos
+
+        semestres_tipo: Dict[str, Dict[str, float]] = {}
+        for pago in pagos_validados:
+            conv = pago.get("convocatoria", "Sin información")
+            concepto = pago.get("concepto", "")
+            if conv not in semestres_tipo:
+                semestres_tipo[conv] = {"Admisión": 0.0, "Comedor": 0.0, "Residencia": 0.0, "Matrícula": 0.0}
+            if concepto in ("Derecho de admision", "Derecho de admisión"):
+                semestres_tipo[conv]["Admisión"] += pago["monto"]
+            elif concepto == "Comedor universitario":
+                semestres_tipo[conv]["Comedor"] += pago["monto"]
+            elif concepto == "Residencia universitaria":
+                semestres_tipo[conv]["Residencia"] += pago["monto"]
+            elif concepto == "Matrícula":
+                semestres_tipo[conv]["Matrícula"] += pago["monto"]
+
+        recaudacion_sem_tipo = sorted(
+            [{"semestre": k, "Admisión": round(v["Admisión"], 2), "Comedor": round(v["Comedor"], 2), "Residencia": round(v["Residencia"], 2), "Matrícula": round(v["Matrícula"], 2)}
+             for k, v in semestres_tipo.items()],
+            key=lambda x: x["semestre"],
+        )
+        self.recaudacion_por_semestre_tipo = recaudacion_sem_tipo

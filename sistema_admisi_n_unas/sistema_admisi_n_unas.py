@@ -449,7 +449,14 @@ def finanzas_dashboard_content() -> rx.Component:
                 "home",
                 "#d97706",
             ),
-            class_name="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6",
+            stats_card(
+                "Matrícula",
+                f"S/. {TesoreriaState.recaudacion_matricula:,.2f}",
+                "Matrícula semestral",
+                "credit-card",
+                "#8b5cf6",
+            ),
+            class_name="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6",
         ),
         # Gráfico pastel: Recaudación por concepto
         rx.el.div(
@@ -496,12 +503,18 @@ def finanzas_dashboard_content() -> rx.Component:
                         name="Comedor",
                         stack_id="a",
                     ),
-                    rx.recharts.bar(
-                        data_key="Residencia",
-                        fill="#d97706",
-                        name="Residencia",
-                        stack_id="a",
-                    ),
+                rx.recharts.bar(
+                    data_key="Residencia",
+                    fill="#d97706",
+                    name="Residencia",
+                    stack_id="a",
+                ),
+                rx.recharts.bar(
+                    data_key="Matrícula",
+                    fill="#8b5cf6",
+                    name="Matrícula",
+                    stack_id="a",
+                ),
                     rx.recharts.x_axis(data_key="semestre", angle=-45, height=70),
                     rx.recharts.y_axis(),
                     rx.recharts.tooltip(),

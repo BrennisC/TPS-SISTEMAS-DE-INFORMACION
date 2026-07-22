@@ -203,13 +203,59 @@ def recaudacion_view() -> rx.Component:
             class_name="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto mb-8",
         ),
 
-        # Fila 3: Gráfico de barras por convocatoria
+        # Fila 3: Gráfico apilado — Recaudación por Semestre y Tipo
+        rx.el.div(
+            rx.el.div(
+                rx.el.h3(
+                    "Recaudación por Semestre y Tipo de Pago",
+                    class_name="text-lg font-bold text-gray-900 mb-6",
+                ),
+                rx.recharts.bar_chart(
+                    rx.recharts.bar(
+                        data_key="Admisión",
+                        fill="#228B22",
+                        name="Admisión",
+                        stack_id="a",
+                    ),
+                    rx.recharts.bar(
+                        data_key="Comedor",
+                        fill="#003366",
+                        name="Comedor",
+                        stack_id="a",
+                    ),
+                    rx.recharts.bar(
+                        data_key="Residencia",
+                        fill="#d97706",
+                        name="Residencia",
+                        stack_id="a",
+                    ),
+                    rx.recharts.bar(
+                        data_key="Matrícula",
+                        fill="#8b5cf6",
+                        name="Matrícula",
+                        stack_id="a",
+                    ),
+                    rx.recharts.x_axis(data_key="semestre", angle=-45, height=70),
+                    rx.recharts.y_axis(),
+                    rx.recharts.tooltip(),
+                    rx.recharts.legend(),
+                    rx.recharts.cartesian_grid(stroke_dasharray="3 3"),
+                    data=RecaudacionState.recaudacion_por_semestre_tipo,
+                    height=400,
+                    margin={"top": 5, "right": 30, "left": 0, "bottom": 70},
+                ),
+                class_name="bg-white p-6 rounded-lg border border-gray-200 shadow-sm",
+            ),
+            class_name="max-w-7xl mx-auto mb-8",
+        ),
+
+        # Fila 4: Gráfico de barras por convocatoria
         rx.el.div(
             chart_bar_recaudacion_por_convocatoria(),
             class_name="max-w-7xl mx-auto mb-8",
         ),
 
-        # Fila 4: Gráfico de top carreras
+        # Fila 5: Gráfico de top carreras
         rx.el.div(
             chart_bar_top_carreras(),
             class_name="max-w-7xl mx-auto mb-8",
